@@ -75,7 +75,7 @@
 
 <script>
 
-    import { mapState } from 'vuex';
+    import { mapState, mapActions } from 'vuex';
 
     import Hero from "../components/Hero.vue";
     import ContentBlock from "../components/ContentBlock.vue";
@@ -83,6 +83,7 @@
     import AwardsOverlay from '../components/AwardsOverlay.vue';
 
     export default {
+
         name: 'Home',
         watchQuery: ["page"],
         key: to => to.fullPath,
@@ -108,6 +109,19 @@
 
             }
         },
+        created() {
+
+            this.updateCallToAction({
+                isVisible: true,
+                content: {
+                    header: 'Want to see more?',
+                    buttonText: 'We have plenty to share!',
+                    url: '/weddings',
+                    urlTitle: 'Visit our Weddings page to view more of our work'
+                }
+            })
+
+        },
         computed: {
 
             ...mapState({
@@ -115,6 +129,14 @@
             })
 
         },
+        methods: {
+
+            ...mapActions([
+                'updateCallToAction'
+            ])
+
+        }
+
     };
 
 </script>

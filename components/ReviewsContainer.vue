@@ -14,24 +14,22 @@
                             <p class="title" style="text-align:right;padding-top:1.5 rem"> - {{ review.name }}</p>
                         </div>
                         <footer class="card-footer">
-                            <p class="card-footer-item">
-                                <span>
-                                    <a v-if=" review.website === 'theknot' "
-                                        href="https://www.theknot.com/marketplace/color-room-films-llc-jackson-nj-963435"
-                                        title="Read Elizabeth M.'s and others like it at The Knot"
-                                        target="_blank"
-                                    >
-                                        Read more on The Knot
-                                    </a>
-                                    <a v-else
-                                        href="https://www.theknot.com/marketplace/color-room-films-llc-jackson-nj-963435"
-                                        title="Read Meghan's and others like it at WeddingWire"
-                                        target="_blank"
-                                    >
-                                        Read more on WeddingWire
-                                    </a>
-                                </span>
-                            </p>
+                            <a v-if=" review.website === 'theknot' "
+                                href="https://www.theknot.com/marketplace/color-room-films-llc-jackson-nj-963435"
+                                title="Read Elizabeth M.'s and others like it at The Knot"
+                                target="_blank"
+                                class="card-footer-item"
+                            >
+                                Read more on The Knot
+                            </a>
+                            <a v-else
+                                href="https://www.theknot.com/marketplace/color-room-films-llc-jackson-nj-963435"
+                                title="Read Meghan's and others like it at WeddingWire"
+                                target="_blank"
+                                class="card-footer-item"
+                            >
+                                Read more on WeddingWire
+                            </a>
                         </footer>
                     </div>
                 </div>
