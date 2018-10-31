@@ -1,6 +1,6 @@
 <template>
 
-    <section :class="[ 'hero', 'is-' + color, 'is-' + size, hasGradient ? 'is-bold' : '' ]">
+    <section :class="[ 'hero', 'is-' + color, 'is-' + size, { 'is-bold': hasGradient, 'has-text-centered': hasTextCentered } ]">
         <div class="hero-body">
             <div class="container">
                 <slot></slot>
@@ -33,6 +33,11 @@
                 type: Boolean,
                 required: false,
                 default: true
+            },
+            hasTextCentered: {
+                type: Boolean,
+                required: false,
+                default: false
             }
         }
 

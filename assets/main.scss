@@ -1,0 +1,668 @@
+/* * * * * Import Bulma * * * * */
+
+		@charset "utf-8";
+
+		@import "~bulma/sass/utilities/_all";
+		@import "~bulma/sass/base/_all";
+		@import "~bulma/sass/elements/_all";
+		@import "~bulma/sass/components/_all";
+		@import "~bulma/sass/grid/_all";
+		@import "~bulma/sass/layout/_all";
+
+		$primary: #71cbd2;
+
+/* * * * * General Classes * * * * */
+
+		.title {
+			font-weight: 200;
+
+			strong {
+				font-weight: 700;
+			}
+			span {
+				color: $primary;
+			}
+		}
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%; /* 16:9 */
+			padding-top: 25px;
+			height: 0;
+
+			iframe {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		}
+		.button.is-primary:hover, .button.is-primary.is-hovered,
+		.button.is-primary:hover, .button.is-primary.is-hovered {
+			background-color: transparent;
+			border-color: $primary;
+			color: $primary;
+		}
+		.dark-overlay {
+			background-color: rgba(0,0,0,0.25);
+		}
+			.darker-overlay {
+				background-color: rgba(0,0,0,0.35);
+			}
+		.light-overlay {
+			background-color: rgba(255,255,255,0.25);
+		}
+			.lighter-overlay {
+				background-color: rgba(255,255,255,0.35);
+			}
+		.about-card .card-content {
+			height: 403px;
+		}
+		a {
+			color: $primary;
+		}
+
+/* * * * * Tooltip Classes * * * * */
+
+		.tooltip {
+			position: relative;
+			display: inline-block;
+
+			.tooltiptext {
+				visibility: hidden;
+				width: 100%;
+				background-color: #FFF;
+				color: $grey-dark;
+				text-align: center;
+				padding: 0.75em;
+				font-size: 1rem;
+				border-radius: 3px;
+				border: 1px solid $grey-dark;
+				/* Position the tooltip */
+				position: absolute;
+				z-index: 1;
+				bottom: 100%;
+
+				strong {
+					color: $primary;
+				}
+			}
+			&:hover .tooltiptext {
+				visibility: visible;
+			}
+			a:hover {
+				background-color: $grey-dark;
+				color: #FFF;
+				opacity: 1 !important;
+				border: 1px solid #FFF;
+
+				strong {
+					color: #FFF;
+				}
+			}
+		}
+
+/* * * * * Navigation Classes * * * * */
+
+		nav {
+			position: fixed !important;
+			top: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(255,255,255,0.8) !important;
+
+			.is-hidden-tablet i {
+				margin-right: 1rem;
+			}
+			.nav-item a.is-tab.is-active, a.nav-item.is-tab.is-active,
+			.nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
+				border-bottom-color: $grey-dark;
+				color: $grey-dark;
+			}
+			.is-icon {
+				color: #FFF;
+				background-color: $grey-dark;
+
+				&:hover {
+					color: #FFF !important;
+					border-bottom-color: #FFF !important;
+				}
+			}
+			.nav-item {
+				img {
+					height: 1.75rem;
+
+					&:hover {
+						opacity: 0.7;
+					}
+				}
+			}
+			.nav-toggle{
+				&:hover {
+					background-color: transparent;
+				}
+				span {
+					background-color: $grey-dark;
+				}
+				&.is-active span {
+					background-color: $grey-dark;
+				}
+			}
+			.nav-toggle.is-active {
+		    background-color: #FFF;
+			}
+		}
+		.nav-item a.is-tab, a.nav-item.is-tab {
+			border-bottom: 3px solid transparent;
+		}
+
+/* * * * * Hero Component * * * * */
+
+		section.hero {
+			-webkit-background-size: cover !important;
+			-moz-background-size: cover !important;
+			-o-background-size: cover !important;
+			background-size: cover !important;
+			color: #FFF;
+
+			a {
+				border-bottom: 1px dotted #FFF;
+
+				&:hover {
+					opacity: 0.9;
+				}
+			}
+		}
+		.responsive-hero {
+			margin-top: 3.2rem;
+			position: relative;
+			display: inline-block;
+
+			img {
+				display: block;
+				margin-bottom: -6px;
+			}
+			.hero-overlay {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+				transform: translate(0, -50%);
+				text-align: center;
+				text-shadow: 0 0 50px #000;
+
+				h1,h2,h3,h4,h5,p {
+					color: #FFF;
+				}
+			}
+			a {
+				border-bottom: 1px dotted #FFF;
+				color: #FFF;
+
+				&:hover {
+					opacity: 0.9;
+				}
+			}
+		}
+
+/* * * * * Reviews Component * * * * */
+
+		.reviews-container {
+
+			.card {
+				background-color: rgba(255,255,255,0.85);
+			}
+			.container {
+				padding: 6rem 3rem 6rem 3rem;
+			}
+			.light-overlay {
+				background-color: rgba(255,255,255,0.85)
+			}
+			.content h1, .content h2, .content h3,
+			.content h4, .content h5, .content h6 {
+				font-weight: 200;
+			}
+			figure {
+				border-right: 1px solid #000;
+			}
+			i {
+				font-size: 4.2rem;
+				line-height: 5.4rem;
+			}
+			.awards {
+				.container {
+					padding-top: 3rem;
+					padding-bottom: 3rem;
+				}
+			}
+		}
+
+		@media (max-width: 563px) {
+			.reviews-container figure {
+				border-right: none;
+			}
+		}
+
+/* * * * * Pricing Table Component * * * * */
+
+		.pricing {
+			border: 1px solid $grey-dark;
+
+			h3 {
+				padding: 2rem;
+				border-bottom: 1px solid $grey-dark;
+				font-weight: 300;
+
+				&.title {
+					margin: 0;
+					color: $primary;
+
+					&:hover {
+						color: $grey-dark;
+					}
+				}
+			}
+			.feature {
+				padding: 0.7rem 2rem;
+
+				&:hover {
+					background-color: rgba(38, 166, 154, 0.1);
+				}
+				&:nth-child(even) {
+					background-color: #EFEFEF;
+
+					&:hover {
+						background-color: rgba(38, 166, 154, 0.1);
+					}
+				}
+				span {
+					color: #333;
+				}
+			}
+			.pricing-footer {
+				background-color: $grey-dark;
+				padding: 1rem;
+				color: #FFF;
+
+				span {
+					font-size: 1.5rem;
+				}
+			}
+			a.tier-url {
+				display: block;
+				background-color: $primary;
+				color: #FFF;
+				padding: 0.5rem;
+				line-height: 1;
+
+				&:hover {
+					background-color: #FFF;
+					color: $primary;
+				}
+			}
+		}
+
+/* * * * * Pricing Grid Component * * * * */
+
+		.pricing-grid {
+			.is-1 {
+				padding-bottom: 2rem;
+			}
+			i {
+				font-size: 1.2rem;
+			}
+			&.minus h3.title.is-3 i {
+				color: $red;
+			}
+			&.plus h3.title.is-3 i {
+				color: $primary;
+			}
+		}
+
+/* * * * * Footer Component * * * * */
+
+		.superfooter {
+			background-color: $grey-lighter;
+			font-size: 1rem;
+			padding: 1.5rem 0 1.5rem 0;
+
+			i {
+				color : $grey-dark;
+			}
+			.columns {
+				margin: 0;
+			}
+		}
+		.footer {
+			background-color: $grey-dark;
+			color: #FFF;
+			font-size: 1.5rem;
+			padding: 1.5rem;
+
+			a {
+				color: #FFF;
+				padding: 0.5rem;
+
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+			.social {
+				text-align: right;
+			}
+		}
+
+/* * * * * Wedding Video Grid * * * * */
+
+		section.video-grid {
+			overflow: hidden;
+		}
+		/*! fancyBox v2.1.5 fancyapps.com | fancyapps.com/fancybox/#license */
+		.fancybox-wrap,
+		.fancybox-skin,
+		.fancybox-outer,
+		.fancybox-inner,
+		.fancybox-image,
+		.fancybox-wrap iframe,
+		.fancybox-wrap object,
+		.fancybox-nav,
+		.fancybox-nav span,
+		.fancybox-tmp
+		{
+			padding: 0;
+			margin: 0;
+			border: 0;
+			outline: none;
+			vertical-align: top;
+		}
+
+		.fancybox-wrap {
+			position: absolute;
+			top: 0;
+			left: 0;
+			-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+			z-index: 8020;
+		}
+
+		.fancybox-skin {
+			position: relative;
+			background: #f9f9f9;
+			color: #444;
+			text-shadow: none;
+			-webkit-border-radius: 4px;
+			   -moz-border-radius: 4px;
+			        border-radius: 4px;
+		}
+
+		.fancybox-opened {
+			z-index: 8030;
+		}
+
+		.fancybox-opened .fancybox-skin {
+			-webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+			   -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+			        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+		}
+
+		.fancybox-outer, .fancybox-inner {
+			position: relative;
+		}
+
+		.fancybox-inner {
+			overflow: hidden;
+		}
+
+		.fancybox-type-iframe .fancybox-inner {
+			-webkit-overflow-scrolling: touch;
+		}
+
+		.fancybox-error {
+			color: #444;
+			font: 14px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			margin: 0;
+			padding: 15px;
+			white-space: nowrap;
+		}
+
+		.fancybox-image, .fancybox-iframe {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		.fancybox-image {
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+		#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+			background-image: url("~/images/fancybox_sprite.png");
+		}
+
+		#fancybox-loading {
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			margin-top: -22px;
+			margin-left: -22px;
+			background-position: 0 -108px;
+			opacity: 0.8;
+			cursor: pointer;
+			z-index: 8060;
+		}
+
+		#fancybox-loading div {
+			width: 44px;
+			height: 44px;
+			background: url("~/images/fancybox_loading.gif") center center no-repeat;
+		}
+
+		.fancybox-close {
+			position: absolute;
+			top: -18px;
+			right: -18px;
+			width: 36px;
+			height: 36px;
+			cursor: pointer;
+			z-index: 8040;
+		}
+
+		.fancybox-nav {
+			position: absolute;
+			top: 0;
+			width: 40%;
+			height: 100%;
+			cursor: pointer;
+			text-decoration: none;
+			background: transparent url("~/images/blank.gif"); /* helps IE */
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+			z-index: 8040;
+		}
+
+		.fancybox-prev {
+			left: 0;
+		}
+
+		.fancybox-next {
+			right: 0;
+		}
+
+		.fancybox-nav span {
+			position: absolute;
+			top: 50%;
+			width: 36px;
+			height: 34px;
+			margin-top: -18px;
+			cursor: pointer;
+			z-index: 8040;
+			visibility: hidden;
+		}
+
+		.fancybox-prev span {
+			left: 10px;
+			background-position: 0 -36px;
+		}
+
+		.fancybox-next span {
+			right: 10px;
+			background-position: 0 -72px;
+		}
+
+		.fancybox-nav:hover span {
+			visibility: visible;
+		}
+
+		.fancybox-tmp {
+			position: absolute;
+			top: -99999px;
+			left: -99999px;
+			max-width: 99999px;
+			max-height: 99999px;
+			overflow: visible !important;
+		}
+
+		/* Overlay helper */
+
+		.fancybox-lock {
+		    overflow: visible !important;
+		    width: auto;
+		}
+
+		.fancybox-lock body {
+		    overflow: hidden !important;
+		}
+
+		.fancybox-lock-test {
+		    overflow-y: hidden !important;
+		}
+
+		.fancybox-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+			display: none;
+			z-index: 8010;
+		    background-color: rgba(0,0,0,0.9);
+		}
+
+		.fancybox-overlay-fixed {
+			position: fixed;
+			bottom: 0;
+			right: 0;
+		}
+
+		.fancybox-lock .fancybox-overlay {
+			overflow: auto;
+			overflow-y: scroll;
+		}
+
+		/* Title helper */
+
+		.fancybox-title {
+			visibility: hidden;
+			font: normal 13px/20px "Helvetica Neue",Helvetica,Arial,sans-serif;
+			position: relative;
+			text-shadow: none;
+			z-index: 8050;
+		}
+
+		.fancybox-opened .fancybox-title {
+			visibility: visible;
+		}
+
+		.fancybox-title-float-wrap {
+			position: absolute;
+			bottom: 0;
+			right: 50%;
+			margin-bottom: -35px;
+			z-index: 8050;
+			text-align: center;
+		}
+
+		.fancybox-title-float-wrap .child {
+			display: inline-block;
+			margin-right: -100%;
+			padding: 2px 20px;
+			background: transparent; /* Fallback for web browsers that doesn't support RGBa */
+			background: rgba(0, 0, 0, 0.8);
+			-webkit-border-radius: 15px;
+			   -moz-border-radius: 15px;
+			        border-radius: 15px;
+			text-shadow: 0 1px 2px #222;
+			color: #FFF;
+			font-weight: bold;
+			line-height: 24px;
+			white-space: nowrap;
+		}
+
+		.fancybox-title-outside-wrap {
+			position: relative;
+			margin-top: 10px;
+			color: #fff;
+		}
+
+		.fancybox-title-inside-wrap {
+			padding-top: 10px;
+		}
+
+		.fancybox-title-over-wrap {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			color: #fff;
+			padding: 10px;
+			background: #000;
+			background: rgba(0, 0, 0, .8);
+		}
+
+		/*Retina graphics!*/
+		@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+			   only screen and (min--moz-device-pixel-ratio: 1.5),
+			   only screen and (min-device-pixel-ratio: 1.5){
+
+			#fancybox-loading, .fancybox-close, .fancybox-prev span, .fancybox-next span {
+				background-image: url("~/images/fancybox_sprite@2x.png");
+				background-size: 44px 152px; /*The size of the normal image, half the size of the hi-res image*/
+			}
+
+			#fancybox-loading div {
+				background-image: url("~/images/fancybox_loading@2x.gif");
+				background-size: 24px 24px; /*The size of the normal image, half the size of the hi-res image*/
+			}
+		}
+
+		.video {
+			width: 25%; /* Thumbnails 4 across */
+			float: left;
+			margin-bottom: -7px;
+		}
+		figure {
+			margin: 0;
+		}
+		// @media (max-width: 1600px) {
+		// 	.video {
+		// 	  	width: 33.333%;
+		// 	}
+		// }
+		@media (max-width: 1200px) {
+			.video {
+			  	width: 50%;
+			}
+		}
+
+		@media (max-width: 360px) {
+			.video {
+			  display: block;
+			  width: 100%;
+			  float: none;
+			}
+		}
+		.video img {
+			width: 100%;
+			opacity: 1;
+		}
+		.video img:hover, .video img:active, .video img:focus {
+			opacity: 0.75;
+		}
