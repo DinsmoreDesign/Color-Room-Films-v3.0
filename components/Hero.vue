@@ -12,7 +12,7 @@
                     <div class="tabs is-centered">
                         <ul>
                             <li>
-                                <a role="button" href="JavaScript:Void(0);" title="Continue to content" @click="scrollToContent">
+                                <a role="button" href="javascript:void(0);" title="Continue to content" @click="scrollToContent">
                                     <i class="icon-angle-down subtitle is-1" aria-hidden="true"></i>
                                 </a>
                             </li>
