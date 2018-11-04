@@ -11,8 +11,8 @@
             <div class="columns">
                 <div class="column">
                     <h3 class="title is-1">{{ cta.content.header }}</h3>
-                    <nuxt-link class="button is-primary is-outlined is-large" :to="cta.content.url" :title="cta.content.title">
-                        {{ cta.content.text }}
+                    <nuxt-link class="button is-primary is-outlined is-large" :to="cta.content.url" :title="cta.content.urlTitle">
+                        {{ cta.content.buttonText }}
                     </nuxt-link>
                 </div>
                 <div class="column">
@@ -73,10 +73,6 @@
 
 
 <style>
-
-    html {
-        scroll-behavior: smooth;
-    }
 
     .page-enter-active, .page-leave-active {
         transition: opacity .5s

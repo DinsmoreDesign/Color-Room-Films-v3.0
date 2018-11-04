@@ -12,7 +12,7 @@
                     <div class="tabs is-centered">
                         <ul>
                             <li>
-                                <a href="#content" title="Continue to content">
+                                <a role="button" href="JavaScript:Void(0);" title="Continue to content" @click="scrollToContent">
                                     <i class="icon-angle-down subtitle is-1" aria-hidden="true"></i>
                                 </a>
                             </li>
@@ -37,6 +37,20 @@
             background: {
                 type: String,
                 required: true
+            },
+            scrollAnchor: {
+                type: String,
+                required: false,
+                default: 'content'
+            }
+        },
+        methods: {
+            scrollToContent() {
+
+                document.getElementById(this.scrollAnchor).scrollIntoView({
+                    behavior: 'smooth'
+                });
+
             }
         }
 

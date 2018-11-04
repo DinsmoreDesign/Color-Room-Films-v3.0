@@ -49,16 +49,15 @@
         </ReviewsContainer>
 
         <ContentBlock hasTextCentered>
-            <div class="has-text-centered">
 
-                <h3 class="title is-1 has-text-centered">
-                    <span>Don't just take our word for it,</span>
-                </h3>
-                <p class="subtitle is-4">
-                    <em>see what others have to say about us:</em>
-                </p>
+            <h3 class="title is-1">
+                Check out one of our recent 
+                <a class="has-text-primary" href="https://www.instagram.com/explore/tags/MotionPictureMemories/" target="_blank" title="Check out some #MotionPictureMemories on Instagram!">
+                    #MotionPictureMemories
+                </a>
+                :
+            </h3>
 
-            </div>
         </ContentBlock>
 
         <div class="video-container">

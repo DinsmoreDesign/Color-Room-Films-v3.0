@@ -2,6 +2,8 @@
 
 		@charset "utf-8";
 
+		$primary: #71cbd2;
+
 		@import "~bulma/sass/utilities/_all";
 		@import "~bulma/sass/base/_all";
 		@import "~bulma/sass/elements/_all";
@@ -9,7 +11,6 @@
 		@import "~bulma/sass/grid/_all";
 		@import "~bulma/sass/layout/_all";
 
-		$primary: #71cbd2;
 
 /* * * * * General Classes * * * * */
 
@@ -164,14 +165,19 @@
 			-moz-background-size: cover !important;
 			-o-background-size: cover !important;
 			background-size: cover !important;
-			color: #FFF;
+			//color: #FFF;
 
 			a {
-				border-bottom: 1px dotted #FFF;
+				border-bottom: 1px dotted;
 
 				&:hover {
-					opacity: 0.9;
+					opacity: 0.7;
 				}
+
+				&.button {
+					border-style: solid; 
+				}
+
 			}
 		}
 		.responsive-hero {
