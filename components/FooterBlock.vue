@@ -4,13 +4,14 @@
 
         <footer class="footer has-text-centered">
             <div class="container">
+                
+                <i :class="[ 'icon-' + iconName ]"></i>
 
-                <div class="footer-section">
-                    <i :class="[ 'icon-' + iconName ]"></i>
+                <div class="footer-section" v-if="$slots.default">
                     <slot></slot>
                 </div>
 
-                <div class="footer-section">
+                <div class="footer-section" v-if="$slots.default">
                     <hr/>
                 </div>
 
