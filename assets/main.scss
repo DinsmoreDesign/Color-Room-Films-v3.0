@@ -14,6 +14,10 @@
 
 /* * * * * General Classes * * * * */
 
+		* {
+			-webkit-overflow-scrolling: touch;
+		}
+
 		.title {
 			font-weight: 200;
 
