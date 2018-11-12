@@ -14,6 +14,9 @@ const createStore = () => {
 
             contactInfo: {
                 companyName: 'Color Room Films',
+                address: [
+                    'Jackson, NJ'
+                ],
                 phoneNumber: '+1.862.221.5716',
                 emailAddress: 'info@colorroomfilms.com',
                 socialLinks: [
@@ -46,7 +49,7 @@ const createStore = () => {
                         url: 'https://www.youtube.com/channel/UCeeC4ieZCDdZzxIYZeGgHKQ',
                         title: 'View Color Room Films on YouTube',
                         icon: 'youtube'
-                    },
+                    }
                 ]
             }
 

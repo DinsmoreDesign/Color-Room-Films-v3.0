@@ -26,11 +26,17 @@
         </ContentBlock>
 
         <FooterBlock
+            iconName="crf"
+            :address="contactInfo.address"
             :phone="contactInfo.phoneNumber"
             :email="contactInfo.emailAddress"
             :companyName="contactInfo.companyName"
             :socialLinks="contactInfo.socialLinks"
-        />
+        >
+            <p>
+                Every story is unique and we strive to create a film as unique as your relationship, which you can share with your loved ones for years to come. Your wedding is a precious moment in your life and our goal is to capture it in the most emotional and honest way possible. We pride ourselves on <em>getting it right</em> without <em>getting in the way</em> to deliver a film you'll be proud to call your own.
+            </p>
+        </FooterBlock>
 
     </div>
 

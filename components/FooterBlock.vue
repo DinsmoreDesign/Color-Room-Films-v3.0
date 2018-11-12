@@ -2,36 +2,32 @@
 
     <div>
 
-        <div class="superfooter has-text-centered">
+        <footer class="footer has-text-centered">
             <div class="container">
-                <div class="columns">
 
-                    <div class="column">
-                        <a :href=" 'tel:' + phone " :title=" 'Give' + copyright + 'a Call' ">
-                            <i class="icon-phone"></i> {{ phone }}
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a :href=" 'mailto:' + email " :title=" 'Send' + copyright + 'an Email' ">
-                            <i class="icon-envelope"></i> {{ email }}
-                        </a>
-                    </div>
-
+                <div class="footer-section">
+                    <i :class="[ 'icon-' + iconName ]"></i>
+                    <slot></slot>
                 </div>
-            </div>
-        </div>
 
-        <footer class="footer">
-            <div class="columns">
-                <div class="column is-6 is-hidden-mobile">
-                    <span class="tooltip">
-                        © {{ copyright }}
-                        <a class="tooltiptext" href="https://dinsmoredesign.com" title="Contact Dinsmore Design to build your next website" target="_blank">
-                            Created by <strong>Dinsmore Design</strong> | We Build Brands
-                        </a>
-                    </span>
+                <div class="footer-section">
+                    <hr/>
                 </div>
-                <div class="column is-6 social is-hidden-mobile">
+
+                <div class="footer-section">
+                    <h4 class="title is-4 has-text-white">CONTACT US</h4>
+                    <p v-for="(line, index) in address" :key="index">
+                        {{ line }}
+                    </p>
+                    <p>
+                        <a :href=" 'tel:' + phone " :title=" 'Give ' + companyName + ' a Call' ">{{ phone }}</a>
+                    </p>
+                    <p>
+                        <a :href=" 'mailto:' + email " :title=" 'Send ' + companyName + ' an Email' ">{{ email }}</a>
+                    </p>
+                </div>
+                
+                <div class="footer-section">
                     <a v-for="link in socialLinks" :key="link.icon"
                         :href="link.url"
                         :title="link.title"
@@ -40,20 +36,19 @@
                         <i :class="[ 'icon-' + link.icon ]"></i>
                     </a>
                 </div>
-                <div class="column is-hidden-tablet has-text-centered">
-                    © {{ copyright }}
-                </div>
-                <div class="column is-hidden-tablet has-text-centered">
-                    <a v-for="link in socialLinks" :key="link.icon"
-                        :href="link.url"
-                        :title="link.title"
-                        target="_blank"
-                    >
-                        <i :class="[ 'icon-' + link.icon ]"></i>
-                    </a>
-                </div>
+                
+                <p>© {{ copyright }}. All Rights Reserved.</p>
+                
             </div>
         </footer>
+    
+        <div class="subfooter has-text-centered has-background-grey-light">
+            <p class="has-text-grey-dark">
+                <a class="has-text-grey-dark" href="https://dinsmoredesign.com" title="Dinsmore Design | We Build Brands" target="_blank">
+                    Built with <i class="icon-heart"></i> by Dinsmore Design.
+                </a>
+            </p>
+        </div>
 
     </div>
 
@@ -83,6 +78,14 @@
             socialLinks: {
                 type: Array,
                 required: true
+            },
+            address: {
+                type: Array,
+                required: true
+            },
+            iconName: {
+                type: String,
+                required: true
             }
         },
         computed: {
@@ -98,3 +101,45 @@
     }
 
 </script>
+
+
+
+
+<style lang="scss" scoped>
+
+    .footer {
+
+        .footer-section {
+            margin-bottom: 3rem;
+        }
+
+        p {
+            font-weight: 200;
+        }
+
+        .title {
+            font-weight: 400;
+        }
+
+        i.icon-crf {
+            font-size: 8rem;    
+        }
+
+        hr {
+            width: 50%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+    }
+
+    .subfooter {
+        font-size: 0.9rem;
+        padding: 0.45rem 0;
+
+        a:hover {
+            opacity: 0.7;
+        }
+    }
+
+</style>
