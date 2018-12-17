@@ -96,7 +96,7 @@
             }
 
             &.active {
-                color: #71cbd2;
+                color: #26a69a;
             }
 
         }
