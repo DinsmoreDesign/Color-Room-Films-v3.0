@@ -57,7 +57,8 @@ module.exports = {
   ** Global CSS
   */
   css: [
-
+    { src: '~/assets/simple-grid.scss', lang: 'scss' },
+    { src: '~/assets/fonts.scss', lang: 'scss' }
   ],
 
   /*
