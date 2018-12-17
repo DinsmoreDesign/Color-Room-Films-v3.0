@@ -57,7 +57,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: '~/assets/simple-grid.scss', lang: 'scss' },
+    { src: 'flexboxgrid/css/flexboxgrid.min.css', lang: 'css' },
     { src: '~/assets/fonts.scss', lang: 'scss' }
   ],
 

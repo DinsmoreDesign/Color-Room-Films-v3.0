@@ -58,8 +58,11 @@
 
 
 
-<style lang="scss" scoped>
+<style scoped>
 
-    
+    img {
+        min-width: 100%;
+        width: 100%;
+    }
 
 </style>

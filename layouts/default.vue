@@ -97,6 +97,30 @@
     html,
     body {
         margin: 0;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media only screen and (min-width: 48em) {
+            width: 80%;
+        }
+
+        @media only screen and (min-width: 64em) {
+            width: 75%;
+            //max-width: 60rem;
+        }
+    }
+
+    .row.no-gap {
+        margin: 0;
+    }
+
+    .row.no-gap div[class^="col-"] {
+        padding: 0;
     }
 
     .page-enter-active, .page-leave-active {
