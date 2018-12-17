@@ -44,9 +44,7 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/images/icons/favicon-96x96.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/icons/favicon-16x16.png' },
       { rel: 'manifest', href: '/images/icons/manifest.json' },
-      { rel: 'canonical', href: 'https://colorroomfilms.com' },
-      { rel: 'stylesheet', href: 'https://file.myfontastic.com/HDcwLXYryUfDWaXwTckhq4/icons.css' },
-      { rel: 'stylesheet', href: 'https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css' }
+      { rel: 'canonical', href: 'https://colorroomfilms.com' }
     ]
   },
 

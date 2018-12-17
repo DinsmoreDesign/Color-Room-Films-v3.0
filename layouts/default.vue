@@ -94,6 +94,7 @@
 
 <style lang="scss">
 
+    @import '~/assets/fonts.scss';
     @import '~/assets/simple-grid.scss';
 
     html,
