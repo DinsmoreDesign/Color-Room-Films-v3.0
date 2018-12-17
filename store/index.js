@@ -36,22 +36,19 @@ const createStore = () => {
                         icon: 'instagram'
                     },
                     {
-                        url: 'https://plus.google.com/+colorroomfilmsjackson',
-                        title: 'Visit Color Room Films on Google Plus',
-                        icon: 'google-plus'
-                    },
-                    {
                         url: 'https://vimeo.com/colorroomfilms',
                         title: 'View Color Room Films on Vimeo',
                         icon: 'vimeo'
-                    },
-                    {
-                        url: 'https://www.youtube.com/channel/UCeeC4ieZCDdZzxIYZeGgHKQ',
-                        title: 'View Color Room Films on YouTube',
-                        icon: 'youtube'
                     }
                 ]
-            }
+            },
+            navItems: [
+                { name: 'HOME', url: '/' },
+                { name: 'ABOUT', url: '/about' },
+                { name: 'WEDDINGS', url: '/weddings' },
+                { name: 'REVIEWS', url: '/reviews' },
+                { name: 'CONTACT', url: '/contact' }
+            ]
 
         }
 

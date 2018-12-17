@@ -1,34 +1,39 @@
 <template>
 
-    <nav class="navbar is-fixed-top">
+    <nav class="navbar">
 
-        <div class="navbar-brand">
-            <nuxt-link class="navbar-item" to="/">
-                <img src="https://colorroomfilms.com/img/logo.svg" alt="View the Color Room Films Homepage">
-            </nuxt-link>
-            <div class="navbar-burger burger" data-target="navMenu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+        <span class="navbar-toggle" @click="showMobileNav = !showMobileNav">
+            <i class="icon-bars" v-if="!showMobileNav"></i>
+            <i class="icon-close" v-else></i>
+        </span>
 
-        <div id="navMenu" class="navbar-menu">
+        <nuxt-link class="logo" to="/">
+            <img src="https://colorroomfilms.com/img/logo.svg" alt="View the Color Room Films Homepage">
+        </nuxt-link>
 
-            <div class="navbar-end">
-                <nuxt-link class="navbar-item is-tab" to="/" exactActiveClass="is-active" activeClass="parent-is-active">Home</nuxt-link>
-                <nuxt-link class="navbar-item is-tab" to="/about" exactActiveClass="is-active" activeClass="parent-is-active">About</nuxt-link>
-                <nuxt-link class="navbar-item is-tab" to="/weddings" exactActiveClass="is-active" activeClass="parent-is-active">Weddings</nuxt-link>
-                <nuxt-link class="navbar-item is-tab" to="/reviews" exactActiveClass="is-active" activeClass="parent-is-active">Reviews</nuxt-link>
-                <nuxt-link class="navbar-item is-tab" to="/contact" exactActiveClass="is-active" activeClass="parent-is-active">Contact</nuxt-link>
-                <a class="navbar-item is-tab is-icon is-hidden-mobile social" title="Visit Color Room Films on WeddingWire" href="http://www.weddingwire.com/reviews/color-room-films-jackson/fd77ea76d63e4a5f.html" target="_blank">
+        <ul :class="{ 'main-nav': true, 'active': showMobileNav }">
+
+            <li v-for="item in navItems" :key="item.name" @click="showMobileNav = false">
+                <nuxt-link
+                    class="nav-links"
+                    :to="item.url"
+                    exactActiveClass="active"
+                    activeClass="parent-active"
+                >{{ item.name }}</nuxt-link>
+            </li>
+            <li>
+                <a class="nav-links" title="Visit Color Room Films on WeddingWire" href="http://www.weddingwire.com/reviews/color-room-films-jackson/fd77ea76d63e4a5f.html" target="_blank">
                     <i class="icon-weddingwire"></i>
                 </a>
-                <a class="navbar-item is-tab is-icon is-hidden-mobile social" title="Visit Color Room Films on The Knot" href="https://www.theknot.com/marketplace/color-room-films-llc-jackson-nj-963435" target="_blank">
+            </li>
+            <li>
+                <a class="nav-links" title="Visit Color Room Films on The Knot" href="https://www.theknot.com/marketplace/color-room-films-llc-jackson-nj-963435" target="_blank">
                     <i class="icon-theknot"></i>
                 </a>
-            </div>
-        </div>
+            </li>
+            
+        </ul>
+
     </nav>
 
 </template>
@@ -41,7 +46,21 @@
 
     export default {
 
+        props: {
 
+            navItems: {
+                type: Array,
+                required: true
+            }
+
+        },
+        data() {
+
+            return {
+                showMobileNav: false
+            }
+            
+        }
 
     }
 
@@ -54,55 +73,137 @@
 <style lang="scss" scoped>
 
     .navbar {
-        min-height: 3.25rem;
-        background-color: rgba(255,255,255, 0.7);
+        font-size: 1.25rem;
+        background-color: #FFF;
+        padding-bottom: 0.5rem;
 
-        .navbar-brand {
+        .nav-links,
+        .logo {
+            text-decoration: none;
+            height: 2rem;
 
             img {
-                height: 1.75rem;
-                max-height: 3rem;
+                height: 2rem;
+            }
+            
+        }
+
+        .nav-links {
+            color: #4a4a4a;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            &.active {
+                color: #71cbd2;
             }
 
         }
 
-        .navbar-item {
-            color: #7a7a7a;
-            font-size: 1.5rem;
-            padding-bottom: calc(0.75rem - 1px);
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: calc(0.75rem - 1px);
+        ul {
+            margin: 1.25rem;
+            padding: 0;
+        }
+        
+    }
 
-            &.is-tab {
+    .main-nav {
+        list-style-type: none;
+        display: none;
 
-                &:hover {
-                    border-bottom-color: #4a4a4a;
-                    color: #4a4a4a;
-                    border-bottom-width: 3px;
-                }
-                
-                &.is-active {
-                    border-bottom-color: #4a4a4a;
-                    color: #4a4a4a;
-                }
+        &.active {
+            display: block;
+        }
 
-                &.is-icon {
-                    color: white;
-                    background-color: #4a4a4a;
-
-                    &:hover {
-                        color: white;
-                        border-bottom-color: white;
-                        background-color: #4a4a4a !important;
-                    }
-
-                }
-
-            }
-
+        li {
+            text-align: center;
+            margin: 15px auto;
         }
 
     }
+
+    .logo {
+        display: inline-block;
+        margin-top: 1rem;
+        margin-left: 1rem;
+    }
+
+    .navbar-toggle {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        cursor: pointer;
+        font-size: 1.75rem;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 0;
+            height: 70px;
+            align-items: center;
+        }
+
+        .main-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .nav-links {
+
+            &.active {
+                
+                &.active {
+                    color: #4a4a4a;
+                }
+
+                &:after {
+                    content: '';
+                    height: 1px;
+                    background: #4a4a4a; 
+                    display:block;
+                }
+
+            }
+
+            &:hover {
+
+                &:after {
+                    content: '';
+                    height: 1px;
+                    background: #4a4a4a; 
+                    display:block;
+                }
+
+            }
+
+        }
+
+        .main-nav li {
+            margin: 0;
+
+            &:not(:first-child) {
+                margin-left: 1.5rem;
+            }
+
+        }
+
+        .logo {
+            margin-top: 0;
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+    }
+
 
 </style>

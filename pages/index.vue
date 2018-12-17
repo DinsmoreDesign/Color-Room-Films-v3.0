@@ -2,9 +2,7 @@
   
     <div>
 
-        <Hero
-            class="home-hero"
-        />
+        <Hero class="home-hero" />
 
     </div>
 
@@ -72,24 +70,24 @@
 <style lang="scss">
 
     .home-hero {
-        background: url(../static/images/heros/home-480p.jpg) no-repeat center right fixed;
+        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/home-480p.jpg) no-repeat center right fixed;
     }
 
     @media only screen and (min-width: 1280px) {
         .home-hero {
-            background: url(../static/images/heros/home-720p.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/home-720p.jpg) no-repeat center center fixed;
         }
     }
 
     @media only screen and (min-width: 1920px) {
         .home-hero {
-            background: url(../static/images/heros/home-1080p.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/home-1080p.jpg) no-repeat center center fixed;
         }
     }
 
     @media only screen and (min-width: 2048) {
         .home-hero {
-            background: url(../static/images/heros/home-2k.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/home-2k.jpg) no-repeat center center fixed;
         }
     }
 

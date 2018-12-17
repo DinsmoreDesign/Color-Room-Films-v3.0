@@ -2,11 +2,11 @@
 
     <div>
         
-        <Navigation />
+        <Navigation :navItems="navItems" />
 
         <nuxt />
 
-        <ContentBlock hasTextCentered v-if="cta.isVisible">
+        <!-- <ContentBlock hasTextCentered v-if="cta.isVisible">
 
             <div class="columns">
                 <div class="column">
@@ -23,9 +23,9 @@
                 </div>
             </div>
 
-        </ContentBlock>
+        </ContentBlock> -->
 
-        <FooterBlock
+        <MainFooter
             iconName="crf"
             :address="contactInfo.address"
             :phone="contactInfo.phoneNumber"
@@ -46,7 +46,8 @@
             <p v-else>
                 Every story is unique and we strive to create a film as unique as your relationship, which you can share with your loved ones for years to come. Your wedding is a precious moment in your life and our goal is to capture it in the most emotional and honest way possible. We pride ourselves on <em>getting it right</em> without <em>getting in the way</em> to deliver a film you'll be proud to call your own.
             </p>
-        </FooterBlock>
+        </MainFooter>
+        <SubFooter/>
 
     </div>
 
@@ -61,21 +62,24 @@
     import { mapState } from 'vuex';
 
     import Navigation from '../components/Navigation.vue';
-    import FooterBlock from '../components/FooterBlock.vue';
+    import MainFooter from '../components/MainFooter.vue';
+    import SubFooter from '../components/SubFooter.vue';
     import ContentBlock from '../components/ContentBlock.vue';
 
     export default {
 
         components: {
             Navigation,
-            FooterBlock,
+            MainFooter,
+            SubFooter,
             ContentBlock
         },
         computed: {
 
             ...mapState({
                 contactInfo: state => state.contactInfo,
-                cta: state => state.cta
+                cta: state => state.cta,
+                navItems: state => state.navItems
             })
 
         }
@@ -88,7 +92,15 @@
 
 
 
-<style>
+<style lang="scss">
+
+    @import '~/assets/simple-grid.scss';
+
+    html,
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+    }
 
     .page-enter-active, .page-leave-active {
         transition: opacity .5s

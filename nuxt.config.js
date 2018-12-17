@@ -19,8 +19,8 @@ module.exports = {
       { name: 'apple-mobile-web-app-status-bar-style', content: '#26a69a' },
       { property: 'og:url', content: 'https://colorroomfilms.com' },
       { property: 'og:site_name', content: 'Color Room Films' },
-      { property: 'og:image', content: 'https://colorroomfilms.com/images/heros/home.jpg' },
-      { name: 'twitter:card', content: 'https://colorroomfilms.com/images/heros/home.jpg' },
+      { property: 'og:image', content: 'https://colorroomfilms.com/images/heros/home-2k.jpg' },
+      { name: 'twitter:card', content: 'https://colorroomfilms.com/images/heros/home-2k.jpg' },
       { name: 'twitter:site', content: '@colorroomfilms' },
       { name: 'twitter:creator', content: '@dinsmoredesign' },
       { property: 'fb:admins', content: '946947812026207' },
@@ -53,13 +53,13 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#FFFFFF' },
+  loading: { color: '#71cbd2' },
 
   /*
   ** Global CSS
   */
   css: [
-    { src: '~/assets/main.scss', lang: 'scss' }
+    // { src: '~/assets/main.scss', lang: 'scss' }
   ],
 
   /*
