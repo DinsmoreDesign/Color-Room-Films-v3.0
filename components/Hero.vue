@@ -1,7 +1,7 @@
 <template>
 
-    <section class="hero is-fullheight is-primary" :style=" 'background:url(' + background + ') no-repeat center center fixed' ">
-        <div class="hero is-fullheight dark-overlay">
+    <section class="hero is-fullheight" :style=" background ? 'background:url(' + background + ') no-repeat center center fixed' : '' ">
+        <div class="hero is-fullheight light-overlay">
             <div class="hero-body">
                 <div class="container has-text-centered">
                     <slot></slot>
@@ -36,7 +36,7 @@
         props: {
             background: {
                 type: String,
-                required: true
+                required: false
             },
             scrollAnchor: {
                 type: String,
@@ -78,8 +78,8 @@
 
     .hero {
 
-        &.dark-overlay {
-            background-color: rgba(0, 0, 0, 0.25);
+        &.light-overlay {
+            background-color: rgba(255, 255, 255, 0.3);
         }
 
     }
