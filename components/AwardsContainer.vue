@@ -3,7 +3,7 @@
     <div class="awards">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-xs-12">
                     <div class="row middle-xs">
                         <div class="col-xs-4 icon-container">
                             <i class="icon-theknot"></i>
@@ -16,12 +16,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-xs-12">
                     <div class="row middle-xs icon-container">
                         <i class="icon-smp-logo"></i>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-xs-12">
                     <div class="row middle-xs">
                         <div class="col-xs-4 icon-container">
                             <i class="icon-weddingwire"></i>

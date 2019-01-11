@@ -58,10 +58,10 @@
 <style lang="scss" scoped>
 
     .hero {
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-        background-size: cover;
+            -webkit-background-size: cover !important;
+            -moz-background-size: cover !important;
+            -o-background-size: cover !important;
+        background-size: cover !important;
         color: white;
         width: 100%;
     }

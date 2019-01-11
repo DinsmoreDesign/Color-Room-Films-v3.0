@@ -2,14 +2,12 @@
   
     <div>
 
-        <Hero background="https://colorroomfilms.com/img/heros/about.jpg">
-            <h1 class="title is-1">
-                <strong>Steve &amp; Jane DiMaggio</strong>
-            </h1>
-            <h2 class="subtitle is-4">
-                <em>Color Room Films - Owners / Cinematographers</em>
-            </h2>
-        </Hero>
+        <Hero class="about-hero"/>
+
+        <section class="container has-text-centered">
+            <h1>Our Story</h1>
+            <p>Award-winning #MotionPictureMemories for every event.</p>
+        </section>
 
         <ContentBlock :hasGradient="false" id="content">
             <h3 class="title is-2">
@@ -92,8 +90,22 @@
 
 
 
-<style>
+<style lang="scss" scoped>
 
+    .about-hero {
+        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about-720p.jpg) no-repeat center center fixed;
+    }
 
+    @media only screen and (min-width: 1280px) {
+        .about-hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about-1080p.jpg) no-repeat center center fixed;
+        }
+    }
+
+    @media only screen and (min-width: 1920px) {
+        .about-hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about-2k.jpg) no-repeat center center fixed;
+        }
+    }
 
 </style>

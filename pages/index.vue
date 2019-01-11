@@ -3,29 +3,27 @@
     <div>
 
         <div class="row no-gap between-xs">
-            <div class="col-xs-12 col-md-6">
-                <div style="margin-right: 1rem; background-color: #FFF;">
+            <div class="col-xs-12 col-sm-6">
+                <div class="image-container right-border">
                     <ResponsiveImage style="opacity: 0.7;"
-                        :smallImage="require('../static/images/heros/home-480p.jpg')"
-                        :mediumImage="require('../static/images/heros/home-720p.jpg')"
-                        :largeImage="require('../static/images/heros/home-1080p.jpg')"
-                        :xlImage="require('../static/images/heros/home-2k.jpg')"
+                        :smallImage="require('../static/images/heros/reviews-720p.jpg')"
+                        :mediumImage="require('../static/images/heros/home-1080p.jpg')"
+                        :largeImage="require('../static/images/heros/home-2k.jpg')"
                     />
                 </div>
             </div>
-            <div class="col-xs-12 col-md-6">
-                <div style="margin-left: 1rem; background-color: #FFF;">
+            <div class="col-xs-12 col-sm-6">
+                <div class="image-container left-border">
                     <ResponsiveImage style="opacity: 0.7;"
-                        :smallImage="require('../static/images/heros/reviews-480p.jpg')"
-                        :mediumImage="require('../static/images/heros/reviews-720p.jpg')"
-                        :largeImage="require('../static/images/heros/reviews-1080p.jpg')"
-                        :xlImage="require('../static/images/heros/reviews-2k.jpg')"
+                        :smallImage="require('../static/images/heros/reviews-720p.jpg')"
+                        :mediumImage="require('../static/images/heros/reviews-1080p.jpg')"
+                        :largeImage="require('../static/images/heros/reviews-2k.jpg')"
                     />
                 </div>
             </div>
         </div>
 
-        <section class="container">
+        <section class="container has-text-centered">
             <h1>Your wedding, your way</h1>
             <p>Award-winning #MotionPictureMemories for every event.</p>
         </section>
@@ -78,43 +76,25 @@
         margin-bottom: -0.4rem !important;
     }
 
-    section {
-        padding: 3rem 0;
-        text-align: center;
-
-        h1 {
-            font-size: 3rem;
-        }
-
-        h1,
-        p {
-            margin: 0;
-        }
-
+    .image-container {
+        box-sizing: border-box;
     }
 
-
-
-
-    .home-hero {
-        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/home-480p.jpg) no-repeat center right fixed;
-    }
-
-    @media only screen and (min-width: 1280px) {
-        .home-hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/home-720p.jpg) no-repeat center center fixed;
+    @media only screen and (min-width: 768px) {
+        .left-border {
+            border-left: .5rem solid transparent;
+        }
+        .right-border {
+            border-right: .5rem solid transparent;
         }
     }
 
-    @media only screen and (min-width: 1920px) {
-        .home-hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/home-1080p.jpg) no-repeat center center fixed;
+    @media only screen and (min-width: 992px) {
+        .left-border {
+            border-left: 1rem solid transparent;
         }
-    }
-
-    @media only screen and (min-width: 2048) {
-        .home-hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/home-2k.jpg) no-repeat center center fixed;
+        .right-border {
+            border-right: 1rem solid transparent;
         }
     }
 

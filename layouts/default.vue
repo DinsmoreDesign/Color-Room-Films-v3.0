@@ -123,6 +123,24 @@
         padding: 0;
     }
 
+    section {
+        padding: 3rem 0;
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        h1,
+        p {
+            margin: 0;
+        }
+
+    }
+
+    .has-text-centered {
+        text-align: center;
+    }
+
     .page-enter-active, .page-leave-active {
         transition: opacity .5s
     }
