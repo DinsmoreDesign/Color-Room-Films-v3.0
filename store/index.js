@@ -1,14 +1,16 @@
 import Vuex from 'vuex';
 
-import reviews from './modules/reviews.js';
 import cta from './modules/cta.js';
+import footer from './modules/footer.js';
+import reviews from './modules/reviews.js';
 
 const createStore = () => {
     return new Vuex.Store({
 
         modules: {
-            reviews,
-            cta
+            cta,
+            footer,
+            reviews
         },
         state: {
 

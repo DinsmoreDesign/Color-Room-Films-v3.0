@@ -6,24 +6,11 @@
 
         <nuxt />
 
-        <!-- <ContentBlock hasTextCentered v-if="cta.isVisible">
-
-            <div class="columns">
-                <div class="column">
-                    <h3 class="title is-1">{{ cta.content.header }}</h3>
-                    <nuxt-link class="button is-primary is-outlined is-large" :to="cta.content.url" :title="cta.content.urlTitle">
-                        {{ cta.content.buttonText }}
-                    </nuxt-link>
-                </div>
-                <div class="column">
-                    <h3 class="title is-1">Ready to talk?</h3>
-                    <nuxt-link class="button is-primary is-large" to="/contact" title="Visit our Contact page and send us a message">
-                        Call, text or message us!
-                    </nuxt-link>
-                </div>
-            </div>
-
-        </ContentBlock> -->
+        <section class="container has-text-centered" v-if="cta.isVisible">
+            <ButtonLink :url="cta.url" :title="cta.title">
+                {{ cta.content }}
+            </ButtonLink>
+        </section>
 
         <MainFooter
             iconName="crf"
@@ -32,21 +19,10 @@
             :email="contactInfo.emailAddress"
             :companyName="contactInfo.companyName"
             :socialLinks="contactInfo.socialLinks"
-        >
-            <div v-if=" $route.name !== 'index' ">
-                <h4 class="title is-4 has-text-white">OUR PHILOSOPHY</h4>
-                <p style="padding-bottom: 3rem;">
-                    The most important thing to us is your story. At Color Room Films, we deliver precious memories of your special day that you can relive for years to come. Our goal is to remain discreet and make sure you remain the focal point all day, while telling your story in the most emotional, cinematic and honest way possible. We use only the highest grade cinematic tools available to tell your story; the same cameras, lenses, aerial drones and other tools you would see on a Hollywood set, at the best value for your dollar.
-                </p>
-                <h4 class="title is-4 has-text-white">WHY US?</h4>
-                <p>
-                    Every wedding is unique and every couple is different, that's why every project we work on is approached differently. No two events we've filmed are ever the same; we purchase exclusive music publishing rights for each wedding and don't believe in releasing films that are lacking individuality. It's our job to get to know you and what you like, so we can represent your personality as genuinely as possible.
-                </p>
-            </div>
-            <p v-else>
-                Every story is unique and we strive to create a film as unique as your relationship, which you can share with your loved ones for years to come. Your wedding is a precious moment in your life and our goal is to capture it in the most emotional and honest way possible. We pride ourselves on <em>getting it right</em> without <em>getting in the way</em> to deliver a film you'll be proud to call your own.
-            </p>
-        </MainFooter>
+            :title="footer.title"
+            :content="footer.content"
+        />
+
         <SubFooter/>
 
     </div>
@@ -62,23 +38,25 @@
     import { mapState } from 'vuex';
 
     import Navigation from '../components/Navigation.vue';
+    import ButtonLink from '../components/ButtonLink.vue';
     import MainFooter from '../components/MainFooter.vue';
     import SubFooter from '../components/SubFooter.vue';
-    import ContentBlock from '../components/ContentBlock.vue';
 
     export default {
 
+        name: 'DefaultLayout',
         components: {
             Navigation,
+            ButtonLink,
             MainFooter,
-            SubFooter,
-            ContentBlock
+            SubFooter
         },
         computed: {
 
             ...mapState({
                 contactInfo: state => state.contactInfo,
                 cta: state => state.cta,
+                footer: state => state.footer,
                 navItems: state => state.navItems
             })
 
@@ -94,10 +72,13 @@
 
 <style lang="scss">
 
+    @import url('https://fonts.googleapis.com/css?family=Allura');
+
     html,
     body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
+        color: #5e5e5e;
     }
 
     .container {
@@ -122,17 +103,58 @@
     .row.no-gap div[class^="col-"] {
         padding: 0;
     }
+    
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-weight: 400;
+    }
 
     section {
         padding: 3rem 0;
 
-        h1 {
-            font-size: 3rem;
+        &.title-block {
+            color: #5e5e5e;
+
+            h1 {
+                font-size: 4.5rem;
+                font-family: 'Allura', cursive;
+                font-weight: 400;
+                
+            }
+
+            p {
+                font-size: 1.3rem;
+            }
+
+            h1,
+            p {
+                margin: 0;
+            }
+
         }
 
-        h1,
+        h3 {
+            font-size: 1.75rem;
+            margin: 0 0 3rem 0;
+        }
+
         p {
-            margin: 0;
+            margin: 0 0 1.5rem 0;
+            font-weight: 400;
+            font-size: 1.2rem;
+
+            &:last-child {
+                margin: 0;
+            }
+
+        }
+
+        &.dark {
+            background: #5e5e5e;
+            color: #FFF;
         }
 
     }

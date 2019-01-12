@@ -3,42 +3,43 @@ export default {
     state: {
 
         isVisible: false,
-        content: {
-            header: null,
-            buttonText: null,
-            url: null,
-            urlTitle: null
-        }
+        url: '',
+        title: '',
+        content: ''
 
     },
     mutations: {
 
-        UPDATE_IS_VISIBLE(state, condition) {
+        UPDATE_CTA_IS_VISIBLE(state, isVisible) {
 
-            state.isVisible = condition;
+            state.isVisible = isVisible;
 
         },
-        UPDATE_CONTENT(state, data) {
+        UPDATE_CTA_URL(state, url) {
 
-            Object.assign(state.content, data);
+            state.url = url;
+
+        },
+        UPDATE_CTA_TITLE(state, title) {
+
+            state.title = title;
+
+        },
+        UPDATE_CTA_CONTENT(state, content) {
+
+            state.content = content;
 
         }
 
     },
     actions: {
 
-        updateCallToAction({commit}, { isVisible, content }) {
+        updateCallToAction({commit}, { isVisible, url, title, content }) {
 
-            if (!isVisible) {
-
-                commit('UPDATE_IS_VISIBLE', false);
-
-            } else {
-
-                commit('UPDATE_IS_VISIBLE', true);
-                commit('UPDATE_CONTENT', content);
-
-            }
+            commit('UPDATE_CTA_IS_VISIBLE', isVisible);
+            commit('UPDATE_CTA_URL', url);
+            commit('UPDATE_CTA_TITLE', title);
+            commit('UPDATE_CTA_CONTENT', content);
 
         }
 

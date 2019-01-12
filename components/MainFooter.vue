@@ -5,16 +5,19 @@
             
             <i :class="[ 'icon-' + iconName ]"></i>
 
-            <div class="footer-section" v-if="$slots.default">
-                <slot></slot>
+            <div class="footer-section">
+                <h4 class="title" v-if="title">{{ title }}</h4>
+                <p>
+                    {{ content }}
+                </p>
             </div>
 
-            <div class="footer-section" v-if="$slots.default">
+            <div class="footer-section">
                 <hr/>
             </div>
 
             <div class="footer-section pad-small">
-                <h4>CONTACT US</h4>
+                <h4 class="title">CONTACT US</h4>
                 <p v-for="(line, index) in address" :key="index">
                     {{ line }}
                 </p>
@@ -76,6 +79,14 @@
             iconName: {
                 type: String,
                 required: true
+            },
+            title: {
+                type: String,
+                required: false
+            },
+            content: {
+                type: String,
+                required: true
             }
         },
         computed: {
@@ -102,6 +113,14 @@
         padding-bottom: 3rem;
         text-align: center;
         background: #dbdbdb;
+
+        .title {
+            font-size: 1.3rem;
+        }
+
+        h4 {
+            font-weight: 700;
+        }
 
         p,
         a,
@@ -150,7 +169,7 @@
         hr {
             width: 50%;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.5);
+            border-color: #5e5e5e;
         }
 
     }

@@ -23,7 +23,7 @@
             </div>
         </div>
 
-        <section class="container has-text-centered">
+        <section class="container title-block has-text-centered">
             <h1>Your wedding, your way</h1>
             <p>Award-winning #MotionPictureMemories for every event.</p>
         </section>
@@ -40,6 +40,8 @@
 
 
 <script>
+
+    import { mapActions } from 'vuex';
 
     import ResponsiveImage from "../components/ResponsiveImage.vue";
     import AwardsContainer from "../components/AwardsContainer.vue";
@@ -59,6 +61,26 @@
 
             ResponsiveImage,
             AwardsContainer
+
+        },
+        created() {
+
+            this.updateCallToAction({
+                isVisible: false
+            });
+
+            this.updateFooter({
+                title: '',
+                content: `Every story is unique and we strive to create a film as unique as your relationship, which you can share with your loved ones for years to come. Your wedding is a precious moment in your life and our goal is to capture it in the most emotional and honest way possible. We pride ourselves on getting it right without getting in the way to deliver a film you'll be proud to call your own.`
+            })
+
+        },
+        methods: {
+
+            ...mapActions([
+                'updateCallToAction',
+                'updateFooter'
+            ])
 
         }
 
