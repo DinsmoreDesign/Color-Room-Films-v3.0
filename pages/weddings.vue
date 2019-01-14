@@ -18,10 +18,7 @@
 
         <Hero class="wedding-hero"/>
 
-        <section class="container title-block has-text-centered">
-            <h1>#MotionPictureMemories</h1>
-            <p>You'll cherish forever.</p>
-        </section>
+        <TitleBlock title="#MotionPictureMemories" subtitle="You'll cherish forever." />
 
         <section class="container" style="padding-top: 0;">
             <div class="row video-grid">
@@ -63,7 +60,10 @@
     import Hero from '../components/Hero.vue';
     import VideoGridImage from '../components/VideoGridImage.vue';
     import Modal from '../components/Modal.vue';
+    import TitleBlock from '../components/TitleBlock.vue';
     import ResponsiveVideo from '../components/ResponsiveVideo';
+
+    import { observeFont } from '../mixins/observeFont.js';
 
     export default {
 
@@ -77,11 +77,19 @@
             
         },
         components: {
+
             Hero,
             VideoGridImage,
             VideoModal: Modal,
+            TitleBlock,
             ResponsiveVideo
+
         },
+        mixins: [
+
+            observeFont
+
+        ],
         data() {
             return {
 

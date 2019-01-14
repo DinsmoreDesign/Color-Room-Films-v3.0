@@ -115,27 +115,6 @@
     section {
         padding: 5rem 0;
 
-        &.title-block {
-            color: #5e5e5e;
-
-            h1 {
-                font-size: 4.5rem;
-                font-family: 'Allura', cursive;
-                font-weight: 400;
-                word-wrap: break-word;
-            }
-
-            p {
-                font-size: 1.3rem;
-            }
-
-            h1,
-            p {
-                margin: 0;
-            }
-
-        }
-
         h3 {
             font-size: 1.75rem;
             margin: 0 0 3rem 0;

@@ -23,10 +23,7 @@
             </div>
         </div>
 
-        <section class="container title-block has-text-centered">
-            <h1>Your wedding, your way</h1>
-            <p>Award-winning #MotionPictureMemories for every event.</p>
-        </section>
+        <TitleBlock title="Your wedding, your way" subtitle="Award-winning #MotionPictureMemories for every event." />
 
         <AwardsContainer/>
 
@@ -43,8 +40,11 @@
 
     import { mapActions } from 'vuex';
 
-    import ResponsiveImage from "../components/ResponsiveImage.vue";
-    import AwardsContainer from "../components/AwardsContainer.vue";
+    import ResponsiveImage from '../components/ResponsiveImage.vue';
+    import AwardsContainer from '../components/AwardsContainer.vue';
+    import TitleBlock from '../components/TitleBlock.vue';
+
+    import { observeFont } from '../mixins/observeFont.js';
 
     export default {
 
@@ -60,9 +60,15 @@
         components: {
 
             ResponsiveImage,
-            AwardsContainer
+            AwardsContainer,
+            TitleBlock
 
         },
+        mixins: [
+
+            observeFont
+
+        ],
         created() {
 
             this.updateCallToAction({

@@ -4,10 +4,7 @@
 
         <Hero class="contact-hero"/>
 
-        <section class="container title-block has-text-centered">
-            <h1>We'd love to talk!</h1>
-            <p>Call, text or email us your questions.</p>
-        </section>
+        <TitleBlock title="We'd love to talk!" subtitle="Call, text or email us your questions." />
 
         <section class="dark">
             <div class="container address-container">
@@ -69,6 +66,9 @@
     import { mapActions } from 'vuex';
 
     import Hero from '../components/Hero.vue';
+    import TitleBlock from '../components/TitleBlock.vue';
+
+    import { observeFont } from '../mixins/observeFont.js';
 
     export default {
 
@@ -76,12 +76,22 @@
         watchQuery: ['page'],
         key: to => to.fullPath,
         transition(to, from) {
+
             if (!from) return 'slide-left'
             return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+
         },
         components: {
-            Hero
+
+            Hero,
+            TitleBlock
+
         },
+        mixins: [
+
+            observeFont1
+
+        ],
         created() {
 
             this.updateCallToAction({

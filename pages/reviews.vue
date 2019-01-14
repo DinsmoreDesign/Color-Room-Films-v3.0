@@ -21,18 +21,31 @@
 <script>
 
     import Hero from '../components/Hero.vue';
+    import TitleBlock from '../components/TitleBlock.vue';
+
+    import { observeFont } from '../mixins/observeFont.js';
 
     export default {
 
         watchQuery: ['page'],
         key: to => to.fullPath,
         transition(to, from) {
+
             if (!from) return 'slide-left'
             return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+
         },
         components: {
-            Hero
-        }
+
+            Hero,
+            TitleBlock
+
+        },
+        mixins: [
+
+            observeFont
+
+        ]
 
     }
 

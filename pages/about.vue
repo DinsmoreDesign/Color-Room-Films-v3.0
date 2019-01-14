@@ -4,10 +4,7 @@
 
         <Hero class="about-hero"/>
 
-        <section class="container title-block has-text-centered">
-            <h1>Our Story</h1>
-            <p>Steve & Jane DiMaggio</p>
-        </section>
+        <TitleBlock title="Our Story" subtitle="Steve & Jane DiMaggio" />
 
         <section class="dark">
             <div class="container">
@@ -40,6 +37,9 @@
     import { mapActions } from 'vuex';
 
     import Hero from '../components/Hero.vue';
+    import TitleBlock from '../components/TitleBlock.vue';
+
+    import { observeFont } from '../mixins/observeFont.js';
 
     export default {
 
@@ -47,12 +47,22 @@
         watchQuery: ['page'],
         key: to => to.fullPath,
         transition(to, from) {
+
             if (!from) return 'slide-left'
             return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+            
         },
         components: {
-            Hero
+
+            Hero,
+            TitleBlock
+
         },
+        mixins: [
+
+            observeFont
+
+        ],
         created() {
 
             this.updateCallToAction({
