@@ -113,7 +113,7 @@
     }
 
     section {
-        padding: 3rem 0;
+        padding: 5rem 0;
 
         &.title-block {
             color: #5e5e5e;
@@ -122,7 +122,7 @@
                 font-size: 4.5rem;
                 font-family: 'Allura', cursive;
                 font-weight: 400;
-                
+                word-wrap: break-word;
             }
 
             p {

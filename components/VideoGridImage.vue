@@ -69,6 +69,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        text-shadow: 4px 4px 10px rgba(0, 0, 0, 1);
     }
 
 </style>

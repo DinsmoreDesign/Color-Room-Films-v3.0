@@ -2,6 +2,12 @@
   
     <div>
 
+        <Modal>
+            <div style="position: relative; padding-bottom: 53.25%; height: 0;">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://player.vimeo.com/video/303306826?color=26a69a&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" title="Ashley &amp; Adam - Wedding Trailer by Color Room Films" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" name="fitvid0"></iframe>
+            </div>
+        </Modal>
+
         <Hero class="wedding-hero"/>
 
         <section class="container title-block has-text-centered">
@@ -104,6 +110,7 @@
 
     import Hero from '../components/Hero.vue';
     import VideoGridImage from '../components/VideoGridImage.vue';
+    import Modal from '../components/Modal.vue';
 
     export default {
 
@@ -116,7 +123,8 @@
         },
         components: {
             Hero,
-            VideoGridImage
+            VideoGridImage,
+            Modal
         },
         created() {
 

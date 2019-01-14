@@ -109,8 +109,8 @@
 <style lang="scss" scoped>
 
     .footer {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
         text-align: center;
         background: #dbdbdb;
 
