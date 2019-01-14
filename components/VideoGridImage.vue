@@ -1,8 +1,8 @@
 <template>
 
-    <a @click.prevent="$emit('openModal', url)" href="javascript:void(0)" :title="imageTitle">
-        <img :src="image" :alt="imageTitle">
-        <p>{{ title }}</p>
+    <a @click.prevent="$emit('openModal')" href="javascript:void(0)" :title="imageTitle">
+        <img :src="image" :alt="imageTitle + ' - Video Thumbnail'">
+        <p class="title">{{ title }}</p>
     </a>
 
 </template>
@@ -22,10 +22,6 @@
                 required: true
             },
             title: {
-                type: String,
-                required: true
-            },
-            url: {
                 type: String,
                 required: true
             }
@@ -59,17 +55,21 @@
     a {
         display: block;
         position: relative;
-    }
-    p {
-        color: #FFF;
-        font-size: 2.5rem;
-        font-family: 'Allura', cursive;
-        font-weight: 400;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-shadow: 4px 4px 10px rgba(0, 0, 0, 1);
+
+        p.title {
+            color: #FFF;
+            font-size: 2rem;
+            font-family: 'Allura', cursive;
+            font-weight: 400;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 1);
+            width: 90%;
+            text-align: center;
+        }
+
     }
 
 </style>

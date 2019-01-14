@@ -1,11 +1,10 @@
 <template>
 
-    <div aria-role="dialog" class="modal-mask">
-        <button class="close" tabindex="1"></button>
-        <div class="modal-wrapper">
-            <div class="modal-content">
-                <slot/>
-            </div>
+    <div aria-role="dialog" class="modal">
+        <div class="modal-background" @click="$emit('close')"></div>
+        <button aria-label="close" class="modal-close" @click="$emit('close')" tabindex="1"></button>
+        <div class="modal-content" :style="{ 'background-color': background }">
+            <slot/>
         </div>
     </div>
 
@@ -20,10 +19,13 @@
     export default {
 
         props: {
-            
-        },
-        methods: {
-            
+
+            background: {
+                type: String,
+                required: false,
+                default: '#FFF'
+            }
+
         }
 
     }
@@ -36,61 +38,107 @@
 
 <style lang="scss" scoped>
 
-    .modal-mask {
-        position: fixed;
-        z-index: 9998;
-        top: 0;
+    .modal {
+        bottom: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, .75);
-        display: table;
-        transition: opacity .3s ease;
-    }
+        position: absolute;
+        right: 0;
+        top: 0;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+        align-items: center;
+            display: -webkit-box;
+            display: -ms-flexbox;
+        display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+        justify-content: center;
+        overflow: hidden;
+        position: fixed;
+        z-index: 20;
 
-    button {
-        cursor: pointer;
-        background: none;
-        border: none;
-
-        &.close {
-            color: #FFF;
-            font-size: 2rem;
+        .modal-background {
+            bottom: 0;
+            left: 0;
             position: absolute;
-            right: 1rem;
-            top: 1rem;
-            text-decoration: none;
-            opacity: 0.85;
+            right: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.75);
+        }
 
+        .modal-content {
+            margin: 0 20px;
+            max-height: calc(100vh - 160px);
+            overflow: auto;
+            position: relative;
+            width: 100%;
+                -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.3);
+                -moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.3);
+            box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.3);
+        }
+
+        @media screen and (min-width: 769px) {
+
+            .modal-content {
+                margin: 0 auto;
+                max-height: calc(100vh - 40px);
+                width: 640px;
+            }
+            
+        }
+
+        .modal-close {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+            user-select: none;
+                -moz-appearance: none;
+                -webkit-appearance: none;
+            background-color: rgba(10,10,10,.2);
+            border: none;
+            border-radius: 290486px;
+            cursor: pointer;
+            display: inline-block;
+                -webkit-box-flex: 0;
+                -ms-flex-positive: 0;
+            flex-grow: 0;
+                -ms-flex-negative: 0;
+            flex-shrink: 0;
+            font-size: 1rem;
+            outline: 0;
+            position: relative;
+            vertical-align: top;
+            background: 0 0;
+            height: 32px;
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            width: 32px;
+
+            &:before, &:after {
+                background-color: #fff;
+                content: "";
+                display: block;
+                left: 50%;
+                position: absolute;
+                top: 50%;
+                -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+                transform: translateX(-50%) translateY(-50%) rotate(45deg);
+                -webkit-transform-origin: center center;
+                transform-origin: center center;
+            }
+            &:before {
+                height: 2px;
+                width: 50%;
+            }
             &:after {
-                content: '✖';
-            }
-
-            &:hover {
-                opacity: 1;
-            }
-
-            &:active {
-                outline: 1px solid #FFF;
+                height: 50%;
+                width: 2px;
             }
 
         }
 
-    }
-    .modal-wrapper {
-        display: table-cell;
-        vertical-align: middle;
-    }
-
-    .modal-content {
-        margin: 0px auto;
-        //padding: 1.5rem;
-        background-color: #fff;
-        border-radius: 2px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-        transition: all .3s ease;
-        max-width: 80%;
-        max-height: 80%;
     }
 
 </style>

@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import cta from './modules/cta.js';
 import footer from './modules/footer.js';
 import reviews from './modules/reviews.js';
+import weddingVideos from './modules/weddingVideos.js';
 
 const createStore = () => {
     return new Vuex.Store({
@@ -10,7 +11,8 @@ const createStore = () => {
         modules: {
             cta,
             footer,
-            reviews
+            reviews,
+            weddingVideos
         },
         state: {
 

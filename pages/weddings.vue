@@ -2,11 +2,19 @@
   
     <div>
 
-        <Modal>
-            <div style="position: relative; padding-bottom: 53.25%; height: 0;">
-                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://player.vimeo.com/video/303306826?color=26a69a&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" title="Ashley &amp; Adam - Wedding Trailer by Color Room Films" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" name="fitvid0"></iframe>
-            </div>
-        </Modal>
+        <transition name="fade">
+            <VideoModal v-if="modal.isVisible"
+                @close="toggleModal(false, null, null)"
+                background="#000"
+            >
+                <ResponsiveVideo
+                    source="https://player.vimeo.com/video/"
+                    :id="modal.url"
+                    queries="?color=26a69a&title=0&byline=0&portrait=0&autoplay=1"
+                    :title="modal.title"
+                />
+            </VideoModal>
+        </transition>
 
         <Hero class="wedding-hero"/>
 
@@ -16,68 +24,12 @@
         </section>
 
         <section class="container" style="padding-top: 0;">
-            <div class="row">
-                <div class="col-xs-4">
+            <div class="row video-grid">
+                <div class="col-xs-12 col-sm-6 col-md-4" v-for="video in videos" :key="video.id">
                     <VideoGridImage
-                        :image="require('../static/images/heros/about-720p.jpg')"
-                        title="Test"
-                        url="google.com"
-                    />
-                </div>
-                <div class="col-xs-4">
-                    <VideoGridImage
-                        :image="require('../static/images/heros/about-720p.jpg')"
-                        title="Test"
-                        url="google.com"
-                    />
-                </div>
-                <div class="col-xs-4">
-                    <VideoGridImage
-                        :image="require('../static/images/heros/about-720p.jpg')"
-                        title="Test"
-                        url="google.com"
-                    />
-                </div>
-                <div class="col-xs-4">
-                    <VideoGridImage
-                        :image="require('../static/images/heros/about-720p.jpg')"
-                        title="Test"
-                        url="google.com"
-                    />
-                </div>
-                <div class="col-xs-4">
-                    <VideoGridImage
-                        :image="require('../static/images/heros/about-720p.jpg')"
-                        title="Test"
-                        url="google.com"
-                    />
-                </div>
-                <div class="col-xs-4">
-                    <VideoGridImage
-                        :image="require('../static/images/heros/about-720p.jpg')"
-                        title="Test"
-                        url="google.com"
-                    />
-                </div>
-                <div class="col-xs-4">
-                    <VideoGridImage
-                        :image="require('../static/images/heros/about-720p.jpg')"
-                        title="Test"
-                        url="google.com"
-                    />
-                </div>
-                <div class="col-xs-4">
-                    <VideoGridImage
-                        :image="require('../static/images/heros/about-720p.jpg')"
-                        title="Test"
-                        url="google.com"
-                    />
-                </div>
-                <div class="col-xs-4">
-                    <VideoGridImage
-                        :image="require('../static/images/heros/about-720p.jpg')"
-                        title="Test"
-                        url="google.com"
+                        :image="video.image"
+                        :title="video.title"
+                        @openModal="toggleModal(true, video.title, video.id)"
                     />
                 </div>
             </div>
@@ -106,11 +58,12 @@
 
 <script>
 
-    import { mapActions } from 'vuex';
+    import { mapActions, mapState } from 'vuex';
 
     import Hero from '../components/Hero.vue';
     import VideoGridImage from '../components/VideoGridImage.vue';
     import Modal from '../components/Modal.vue';
+    import ResponsiveVideo from '../components/ResponsiveVideo';
 
     export default {
 
@@ -118,13 +71,34 @@
         watchQuery: ['page'],
         key: to => to.fullPath,
         transition(to, from) {
+
             if (!from) return 'slide-left'
             return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+            
         },
         components: {
             Hero,
             VideoGridImage,
-            Modal
+            VideoModal: Modal,
+            ResponsiveVideo
+        },
+        data() {
+            return {
+
+                modal: {
+                    isVisible: false,
+                    title: null,
+                    url: null
+                }
+
+            }
+        },
+        computed: {
+
+            ...mapState({
+                videos: state => state.weddingVideos
+            })
+
         },
         created() {
 
@@ -144,9 +118,22 @@
         methods: {
 
             ...mapActions([
+
                 'updateCallToAction',
                 'updateFooter'
-            ])
+
+            ]),
+            toggleModal(condition, title, url) {
+
+                this.modal = {
+
+                    isVisible: condition,
+                    title: title + ' - Wedding Trailer',
+                    url: url
+
+                }
+
+            }
 
         }
 
@@ -159,6 +146,15 @@
 
 
 <style lang="scss" scoped>
+
+    .video-grid {
+        margin-bottom: -2rem;
+
+        div {
+            margin-bottom: 2rem;
+        }
+
+    }
 
     .wedding-hero {
         background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about-720p.jpg) no-repeat center center fixed;
