@@ -39,8 +39,6 @@
     import Hero from '../components/Hero.vue';
     import TitleBlock from '../components/TitleBlock.vue';
 
-    import { observeFont } from '../mixins/observeFont.js';
-
     export default {
 
         name: 'About',
@@ -58,11 +56,6 @@
             TitleBlock
 
         },
-        mixins: [
-
-            observeFont
-
-        ],
         created() {
 
             this.updateCallToAction({

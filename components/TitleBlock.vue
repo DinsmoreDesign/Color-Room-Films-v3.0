@@ -1,7 +1,7 @@
 <template>
 
     <section class="container title-block has-text-centered">
-        <h1 class="allura loaded title" v-if="title">{{ title }}</h1>
+        <h1 class="title" v-if="title">{{ title }}</h1>
         <p class="subtitle" v-if="subtitle">{{ subtitle }}</p>
     </section>
 
@@ -44,11 +44,7 @@
             font-family: cursive;
             font-weight: 400;
             word-wrap: break-word;
-
-            &.allura.loaded {
-                font-family: 'Allura', sans-serif;
-            }
-
+            font-family: 'Allura', sans-serif;
         }
 
         p {

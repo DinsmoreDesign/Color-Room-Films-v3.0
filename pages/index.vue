@@ -44,8 +44,6 @@
     import AwardsContainer from '../components/AwardsContainer.vue';
     import TitleBlock from '../components/TitleBlock.vue';
 
-    //import { observeFont } from '../mixins/observeFont.js';
-
     export default {
 
         name: 'Home',
@@ -64,11 +62,6 @@
             TitleBlock
 
         },
-        mixins: [
-
-            //observeFont
-
-        ],
         created() {
 
             this.updateCallToAction({

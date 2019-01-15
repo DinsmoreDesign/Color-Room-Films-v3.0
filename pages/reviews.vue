@@ -23,8 +23,6 @@
     import Hero from '../components/Hero.vue';
     import TitleBlock from '../components/TitleBlock.vue';
 
-    import { observeFont } from '../mixins/observeFont.js';
-
     export default {
 
         watchQuery: ['page'],
@@ -40,12 +38,7 @@
             Hero,
             TitleBlock
 
-        },
-        mixins: [
-
-            observeFont
-
-        ]
+        }
 
     }
 

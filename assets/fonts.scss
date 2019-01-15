@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+// @import url('https://fonts.googleapis.com/css?family=Allura');
+
+@font-face {
+  font-family: 'Allura';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src:url("../static/fonts/Allura-Regular.eot");
+  src:url("../static/fonts/Allura-Regular.eot?#iefix") format("embedded-opentype"),
+      url("../static/fonts/Allura-Regular.woff2") format("woff2"),
+      url("../static/fonts/Allura-Regular.woff") format("woff"),
+      url("../static/fonts/Allura-Regular.otf") format("opentype"),
+      //url("../static/fonts/Allura-Regular.ttf") format("truetype"),
+      url("../static/fonts/Allura-Regular.svg#color-room") format("svg");
+}
+
 @font-face {
   font-family: "color-room";
   font-display: swap;

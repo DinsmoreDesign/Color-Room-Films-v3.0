@@ -63,8 +63,6 @@
     import TitleBlock from '../components/TitleBlock.vue';
     import ResponsiveVideo from '../components/ResponsiveVideo';
 
-    import { observeFont } from '../mixins/observeFont.js';
-
     export default {
 
         name: 'Weddings',
@@ -85,11 +83,6 @@
             ResponsiveVideo
 
         },
-        mixins: [
-
-            observeFont
-
-        ],
         data() {
             return {
 
