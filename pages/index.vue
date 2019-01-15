@@ -44,7 +44,7 @@
     import AwardsContainer from '../components/AwardsContainer.vue';
     import TitleBlock from '../components/TitleBlock.vue';
 
-    import { observeFont } from '../mixins/observeFont.js';
+    //import { observeFont } from '../mixins/observeFont.js';
 
     export default {
 
@@ -66,7 +66,7 @@
         },
         mixins: [
 
-            observeFont
+            //observeFont
 
         ],
         created() {

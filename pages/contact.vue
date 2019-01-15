@@ -89,7 +89,7 @@
         },
         mixins: [
 
-            observeFont1
+            observeFont
 
         ],
         created() {

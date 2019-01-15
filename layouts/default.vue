@@ -72,7 +72,18 @@
 
 <style lang="scss">
 
-    @import url('https://fonts.googleapis.com/css?family=Allura');
+    //@import url('https://fonts.googleapis.com/css?family=Allura');
+
+    @font-face {
+        font-family: 'Allura';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+        src:    local('Allura Regular'),
+                local('Allura-Regular'),
+                url('https://fonts.gstatic.com/s/allura/v6/9oRPNYsQpS4zjuA_iwgW.woff2') format('woff2'),
+                url('https://fonts.gstatic.com/s/allura/v6/9oRPNYsQpS4zjuA_iwgQ.woff') format('woff');
+    }
 
     html,
     body {
