@@ -44,7 +44,9 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '96x96', href: '/images/icons/favicon-96x96.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/icons/favicon-16x16.png' },
       { rel: 'manifest', href: '/images/icons/manifest.json' },
-      { rel: 'canonical', href: 'https://colorroomfilms.com' }
+      { rel: 'canonical', href: 'https://colorroomfilms.com' },
+      { rel: 'preload', as: 'font', href: 'static/fonts/Allura-Regular.woff2', crossorigin: true},
+      { rel: 'preload', as: 'font', href: 'static/fonts/color-room.woff2', crossorigin: true}
     ]
   },
 

@@ -7,26 +7,27 @@
   font-style: normal;
   font-display: swap;
   font-weight: 400;
-  src:url("../static/fonts/Allura-Regular.eot");
-  src:url("../static/fonts/Allura-Regular.eot?#iefix") format("embedded-opentype"),
+  //src:url("../static/fonts/Allura-Regular.eot");
+  src:local("Allura Regular"),
+      local("Allura-Regular"),
+      //url("../static/fonts/Allura-Regular.eot?#iefix") format("embedded-opentype"),
       url("../static/fonts/Allura-Regular.woff2") format("woff2"),
       url("../static/fonts/Allura-Regular.woff") format("woff"),
-      url("../static/fonts/Allura-Regular.otf") format("opentype"),
-      //url("../static/fonts/Allura-Regular.ttf") format("truetype"),
-      url("../static/fonts/Allura-Regular.svg#color-room") format("svg");
+      url("../static/fonts/Allura-Regular.ttf") format("truetype");
+      //url("../static/fonts/Allura-Regular.svg#color-room") format("svg");
 }
 
 @font-face {
   font-family: "color-room";
   font-display: swap;
-  src:url("../static/fonts/color-room.eot");
-  src:url("../static/fonts/color-room.eot?#iefix") format("embedded-opentype"),
-    url("../static/fonts/color-room.woff") format("woff"),
-    url("../static/fonts/color-room.ttf") format("truetype"),
-    url("../static/fonts/color-room.svg#color-room") format("svg");
+  //src:url("../static/fonts/color-room.eot");
+  src://url("../static/fonts/color-room.eot?#iefix") format("embedded-opentype"),
+      url("../static/fonts/color-room.woff2") format("woff2"),
+      url("../static/fonts/color-room.woff") format("woff"),
+      url("../static/fonts/color-room.ttf") format("truetype");
+      //url("../static/fonts/color-room.svg#color-room") format("svg");
   font-weight: normal;
   font-style: normal;
-
 }
 
 [data-icon]:before {
