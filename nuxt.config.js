@@ -45,8 +45,8 @@ module.exports = {
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/images/icons/favicon-16x16.png' },
       { rel: 'manifest', href: '/images/icons/manifest.json' },
       { rel: 'canonical', href: 'https://colorroomfilms.com' },
-      { rel: 'preload', as: 'font', href: 'static/fonts/Allura-Regular.woff2', crossorigin: true},
-      { rel: 'preload', as: 'font', href: 'static/fonts/color-room.woff2', crossorigin: true}
+      { rel: 'preload', as: 'font', href: './static/fonts/Allura-Regular.woff2', crossorigin: 'crossorigin', type: 'font/woff2' },
+      { rel: 'preload', as: 'font', href: './static/fonts/color-room.woff2', crossorigin: 'crossorigin', type: 'font/woff2' }
     ]
   },
 
@@ -82,7 +82,17 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
+  /*
+  ** Custom Preloader for Fonts:
+  */
+  render: {
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        if (type === 'font') return /.woff2/.test(file)
+        return ['script', 'style'].includes(type)
+      }
+    }
+  },
   /*
   ** Build configuration
   */
