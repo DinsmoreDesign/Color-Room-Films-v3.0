@@ -1,11 +1,25 @@
 <template>
 
-    <!-- <img :src="smallImage" :sizes="size" :srcset="imageSources"> -->
-
     <picture>
-        <source type="image/webp" :srcset="imageSources.webp" />
-        <source :srcset="imageSources.jpg" />
-        <img :src=" largeImage + '.jpg' " :alt="title" />
+
+        <!-- ((1280px - 640px) / 2) + 640px -->
+        <!-- <source media="(max-width: 960px)" type="image/webp" :srcset=" smallImage + '.webp' " v-if="smallImage" />
+        <source media="(max-width: 960px)" type="image/jpeg" :srcset=" smallImage + '.jpg' " v-if="smallImage" /> -->
+
+        <!-- ((1920px - 1280px) / 2) + 1280px -->
+        <source media="(max-width: 1600px)" type="image/webp" :srcset=" smallImage + '.webp' " v-if="smallImage" />
+        <source media="(max-width: 1600px)" type="image/jpeg" :srcset=" smallImage + '.jpg' " v-if="smallImage" />
+
+        <!-- 1px + ((2560px - 1920px) / 2) + 1920px -->
+        <source media="(min-width: 1601px)" type="image/webp" :srcset=" mediumImage + '.webp' " v-if="mediumImage" />
+        <source media="(min-width: 1601px)" type="image/jpeg" :srcset=" mediumImage + '.jpg' " v-if="mediumImage" />
+
+        <!-- 2560px - ((2560px - 1920px) / 2) + 1px -->
+        <source media="(min-width: 2241px)" type="image/webp" :srcset=" largeImage + '.webp' " v-if="largeImage" />
+        <source media="(min-width: 2241px)" type="image/jpeg" :srcset=" largeImage + '.jpg' " v-if="largeImage" />
+
+        <img :src=" largeImage + '.jpg' " sizes="100vw" :srcset="imageSources.jpg">
+
     </picture>
 
 </template>
@@ -19,20 +33,15 @@
     export default {
 
         props: {
-            size: {
-                type: String,
-                required: false,
-                default: "100vw"
-            },
-            smallImage: {
+            smallImage: { // 480p
                 type: String,
                 required: true
             },
-            mediumImage: {
+            mediumImage: { // 720p
                 type: String,
                 required: false
             },
-            largeImage: {
+            largeImage: { // 1080p
                 type: String,
                 required: false
             },
