@@ -6,18 +6,20 @@
             <div class="col-xs-12 col-sm-6">
                 <div class="image-container right-border">
                     <ResponsiveImage style="opacity: 0.7;"
-                        :smallImage="require('../static/images/heros/reviews-720p.jpg')"
-                        :mediumImage="require('../static/images/heros/home-1080p.jpg')"
-                        :largeImage="require('../static/images/heros/home-2k.jpg')"
+                        smallImage="/images/heros/home/720p"
+                        mediumImage="/images/heros/home/1080p"
+                        largeImage="/images/heros/home/2k"
+                        title="Couple Embracing Outdoors"
                     />
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <div class="image-container left-border">
                     <ResponsiveImage style="opacity: 0.7;"
-                        :smallImage="require('../static/images/heros/reviews-720p.jpg')"
-                        :mediumImage="require('../static/images/heros/reviews-1080p.jpg')"
-                        :largeImage="require('../static/images/heros/reviews-2k.jpg')"
+                        smallImage="/images/heros/reviews/720p"
+                        mediumImage="/images/heros/reviews/1080p"
+                        largeImage="/images/heros/reviews/2k"
+                        title="Couple Embracing by Rolls Royce"
                     />
                 </div>
             </div>

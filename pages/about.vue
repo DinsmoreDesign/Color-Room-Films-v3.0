@@ -91,18 +91,18 @@
 <style lang="scss" scoped>
 
     .about-hero {
-        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about-720p.jpg) no-repeat center center fixed;
+        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about/720p.jpg) no-repeat center center fixed;
     }
 
     @media only screen and (min-width: 1280px) {
         .about-hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about-1080p.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about/1080p.jpg) no-repeat center center fixed;
         }
     }
 
     @media only screen and (min-width: 1920px) {
         .about-hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about-2k.jpg) no-repeat center center fixed;
+            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about/2k.jpg) no-repeat center center fixed;
         }
     }
 

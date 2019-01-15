@@ -1,6 +1,12 @@
 <template>
 
-    <img :src="smallImage" :sizes="size" :srcset="imageSources">  
+    <!-- <img :src="smallImage" :sizes="size" :srcset="imageSources"> -->
+
+    <picture>
+        <source type="image/webp" :srcset="imageSources.webp" />
+        <source :srcset="imageSources.jpg" />
+        <img :src=" largeImage + '.jpg' " :alt="title" />
+    </picture>
 
 </template>
 
@@ -30,22 +36,33 @@
                 type: String,
                 required: false
             },
-            xlImage: {
+            title: {
                 type: String,
-                required: false
+                required: true
             }
         },
         computed: {
             imageSources() {
 
-                let statement = '';
+                let sources = {
+                    webp: '',
+                    jpg: ''
+                };
 
-                if (this.smallImage) statement += this.smallImage + ' 640w, ';
-                if (this.mediumImage) statement += this.mediumImage + ' 1280w, ';
-                if (this.largeImage) statement += this.largeImage + ' 1920w, ';
-                if (this.xlImage) statement += this.xlImage + ' 2048w';
+                if (this.smallImage) {
+                    sources.webp += `${ this.smallImage }.webp 640w`;
+                    sources.jpg += `${ this.smallImage }.jpg 640w`;
+                }
+                if (this.mediumImage) {
+                    sources.webp += `, ${this.mediumImage}.webp 1280w`;
+                    sources.jpg += `, ${this.mediumImage}.jpg 1280w`;
+                }
+                if (this.largeImage) {
+                    sources.webp += `, ${this.largeImage}.webp 1920w`;
+                    sources.jpg += `, ${this.largeImage}.jpg 1920w`;
+                }
 
-                return statement;
+                return sources;
 
             }
         }
