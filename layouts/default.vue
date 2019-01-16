@@ -35,7 +35,7 @@
 
 <script>
 
-    import { mapState } from 'vuex';
+    import { mapState, mapActions } from 'vuex';
 
     import Navigation from '../components/Navigation.vue';
     import ButtonLink from '../components/ButtonLink.vue';
@@ -60,6 +60,18 @@
                 navItems: state => state.navItems
             })
 
+        },
+        created() {
+
+            this.updateSupportsWebP();
+
+        },
+        methods: {
+
+            ...mapActions([
+                'updateSupportsWebP'
+            ])
+
         }
 
     }
@@ -75,7 +87,7 @@
     html,
     body {
         margin: 0;
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Roboto', Arial, sans-serif;
         color: #5e5e5e;
     }
 

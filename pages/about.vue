@@ -2,7 +2,7 @@
   
     <div>
 
-        <Hero class="about-hero"/>
+        <Hero :class="[$store.state.supportsWebP ? 'about-hero-webp' : 'about-hero']" />
 
         <TitleBlock title="Our Story" subtitle="Steve & Jane DiMaggio" />
 
@@ -90,19 +90,61 @@
 
 <style lang="scss" scoped>
 
+    /* Modern Browsers: */
+    .about-hero-webp {
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(../static/images/heros/about/720p.webp);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: fixed;
+    }
+
+    @media only screen and (min-width: 1280px) {
+        .about-hero-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/about/1080p.webp);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: fixed;
+        }
+    }
+
+    @media only screen and (min-width: 1920px) {
+        .about-hero-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/about/2k.webp);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: fixed;
+        }
+    }
+
+    /* Legacy Browsers: */
     .about-hero {
-        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about/720p.jpg) no-repeat center center fixed;
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(../static/images/heros/about/720p.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: fixed;
     }
 
     @media only screen and (min-width: 1280px) {
         .about-hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about/1080p.jpg) no-repeat center center fixed;
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/about/1080p.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: fixed;
         }
     }
 
     @media only screen and (min-width: 1920px) {
         .about-hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about/2k.jpg) no-repeat center center fixed;
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/about/2k.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: fixed;
         }
     }
 

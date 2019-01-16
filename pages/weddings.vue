@@ -16,7 +16,7 @@
             </VideoModal>
         </transition>
 
-        <Hero class="wedding-hero"/>
+        <Hero :class="[$store.state.supportsWebP ? 'wedding-hero-webp' : 'wedding-hero']" />
 
         <TitleBlock title="#MotionPictureMemories" subtitle="You'll cherish forever." />
 
@@ -157,19 +157,61 @@
 
     }
 
-    .wedding-hero {
-        background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about/720p.jpg) no-repeat center center fixed;
+    /* Modern Browsers: */
+    .wedding-hero-webp {
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(../static/images/heros/about/720p.webp);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: fixed;
     }
 
     @media only screen and (min-width: 1280px) {
-        .contact-hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about/1080p.jpg) no-repeat center center fixed;
+        .wedding-hero-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/about/1080p.webp);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: fixed;
         }
     }
 
     @media only screen and (min-width: 1920px) {
-        .contact-hero {
-            background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../static/images/heros/about/2k.jpg) no-repeat center center fixed;
+        .wedding-hero-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/about/2k.webp);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: fixed;
+        }
+    }
+
+    /* Legacy Browsers: */
+    .wedding-hero {
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(../static/images/heros/about/720p.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: fixed;
+    }
+
+    @media only screen and (min-width: 1280px) {
+        .wedding-hero {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/about/1080p.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: fixed;
+        }
+    }
+
+    @media only screen and (min-width: 1920px) {
+        .wedding-hero {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/about/2k.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: fixed;
         }
     }
 
