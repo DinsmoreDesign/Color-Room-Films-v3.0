@@ -16,7 +16,20 @@
             </VideoModal>
         </transition>
 
-        <Hero :class="[$store.state.supportsWebP ? 'wedding-hero-webp' : 'wedding-hero']" />
+        <Hero v-if="!showHeroVideo"
+            :class="[$store.state.supportsWebP ? 'weddings-hero-webp' : 'weddings-hero']"
+            @click="showHeroVideo = true"
+        >
+            <svg @click="showHeroVideo = true" aria-hidden="true" data-prefix="far" data-icon="play-circle" class="svg-inline--fa fa-play-circle fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M371.7 238l-176-107c-15.8-8.8-35.7 2.5-35.7 21v208c0 18.4 19.8 29.8 35.7 21l176-101c16.4-9.1 16.4-32.8 0-42zM504 256C504 119 393 8 256 8S8 119 8 256s111 248 248 248 248-111 248-248zm-448 0c0-110.5 89.5-200 200-200s200 89.5 200 200-89.5 200-200 200S56 366.5 56 256z"></path></svg>
+        </Hero>
+
+        <ResponsiveVideo v-else
+            style="background-color: #000; padding: 56.25 0 0 0;"
+            source="https://player.vimeo.com/video/"
+            id="293412835"
+            queries="?background=1&autoplay=1&loop=1&byline=0&title=0"
+            title="Wedding Header Video"
+        />
 
         <TitleBlock title="#MotionPictureMemories" subtitle="You'll cherish forever." />
 
@@ -90,7 +103,8 @@
                     isVisible: false,
                     title: null,
                     url: null
-                }
+                },
+                showHeroVideo: false
 
             }
         },
@@ -148,6 +162,8 @@
 
 <style lang="scss" scoped>
 
+    
+
     .video-grid {
         margin-bottom: -2rem;
 
@@ -158,7 +174,7 @@
     }
 
     /* Modern Browsers: */
-    .wedding-hero-webp {
+    .weddings-hero-webp {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                             url(../static/images/heros/about/720p.webp);
         background-repeat: no-repeat;
@@ -167,7 +183,7 @@
     }
 
     @media only screen and (min-width: 1280px) {
-        .wedding-hero-webp {
+        .weddings-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(../static/images/heros/about/1080p.webp);
             background-repeat: no-repeat;
@@ -177,7 +193,7 @@
     }
 
     @media only screen and (min-width: 1920px) {
-        .wedding-hero-webp {
+        .weddings-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(../static/images/heros/about/2k.webp);
             background-repeat: no-repeat;
@@ -187,7 +203,7 @@
     }
 
     /* Legacy Browsers: */
-    .wedding-hero {
+    .weddings-hero {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                             url(../static/images/heros/about/720p.jpg);
         background-repeat: no-repeat;
@@ -196,7 +212,7 @@
     }
 
     @media only screen and (min-width: 1280px) {
-        .wedding-hero {
+        .weddings-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(../static/images/heros/about/1080p.jpg);
             background-repeat: no-repeat;
@@ -206,7 +222,7 @@
     }
 
     @media only screen and (min-width: 1920px) {
-        .wedding-hero {
+        .weddings-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(../static/images/heros/about/2k.jpg);
             background-repeat: no-repeat;

@@ -2,7 +2,7 @@
 
     <a @click.prevent="$emit('openModal')" href="javascript:void(0)" :title="imageTitle">
         <img :src="image" :alt="imageTitle + ' - Video Thumbnail'">
-        <p class="allura title">{{ title }}</p>
+        <p class="title">{{ title }}</p>
     </a>
 
 </template>
@@ -68,10 +68,7 @@
             text-shadow: 4px 4px 10px rgba(0, 0, 0, 1);
             width: 90%;
             text-align: center;
-
-            &.allura.loaded {
-                font-family: 'Allura', cursive;
-            }
+            font-family: 'Allura', sans-serif;
 
         }
 

@@ -205,5 +205,38 @@
         }
     }
 
+    /* Slide-down transitions for navigation and dropdowns */
+
+	.slide-down-enter-active,
+    .slide-down-leave-active {
+		-moz-transition-duration: 0.3s;
+		-webkit-transition-duration: 0.3s;
+		-o-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		-moz-transition-timing-function: ease-in;
+		-webkit-transition-timing-function: ease-in;
+		-o-transition-timing-function: ease-in;
+		transition-timing-function: ease-in;
+		max-height: 1000px;
+		overflow: hidden;
+    }
+
+	.slide-down-enter,
+	.slide-down-leave-to {
+		overflow: hidden;
+		max-height: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+		-moz-transition-duration: 0.3s;
+		-webkit-transition-duration: 0.3s;
+		-o-transition-duration: 0.3s;
+		transition-duration: 0.3s;
+		-moz-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+		-webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+		-o-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+		transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	}
 
 </style>
