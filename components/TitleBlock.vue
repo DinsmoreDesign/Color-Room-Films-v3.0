@@ -40,7 +40,7 @@
         color: #5e5e5e;
 
         h1.title {
-            font-size: 4.5rem;
+            font-size: 3.5rem;
             font-family: cursive;
             font-weight: 400;
             word-wrap: break-word;
@@ -48,12 +48,21 @@
         }
 
         p {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
         }
 
         h1,
         p {
             margin: 0;
+        }
+
+        @media screen and (min-width: 992px) {
+            h1.title {
+                font-size: 4.5rem;
+            }
+            p {
+                font-size: 1.3rem;
+            }
         }
 
     }

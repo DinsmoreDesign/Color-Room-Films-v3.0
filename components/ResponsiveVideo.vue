@@ -1,6 +1,6 @@
 <template>
 
-    <div class="video-container">
+    <div class="video-container" :style="componentStyle">
         <iframe
             :src="videoSource"
             :title="title"
@@ -40,6 +40,11 @@
             title: {
                 type: String,
                 required: true
+            },
+            componentStyle: {
+                type: String,
+                required: false,
+                default: 'padding: 52.73% 0 0 0'
             }
 
         },
@@ -64,7 +69,6 @@
 <style lang="scss" scoped>
 
     .video-container {
-        padding: 52.73% 0 0 0;
         position: relative;
 
         iframe {

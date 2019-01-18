@@ -2,7 +2,7 @@
   
     <div>
 
-        <Hero :class="[$store.state.supportsWebP ? 'about-hero-webp' : 'about-hero']" />
+        <Hero :class="[$store.state.supportsWebP ? 'about-hero-webp' : 'about-hero']" height="calc(100vh - 70px)" />
 
         <TitleBlock title="Our Story" subtitle="Steve & Jane DiMaggio" />
 
