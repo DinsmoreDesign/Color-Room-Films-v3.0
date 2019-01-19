@@ -2,48 +2,22 @@
   
     <div>
 
-        <Hero :class="[$store.state.supportsWebP ? 'contact-hero-webp' : 'contact-hero']" />
+        <Hero :class="[$store.state.supportsWebP ? 'contact-hero-webp' : 'contact-hero']" height="calc(100vh - 70px)" />
 
         <TitleBlock title="We'd love to talk!" subtitle="Call, text or email us your questions." />
 
         <section class="dark">
             <div class="container address-container">
 
-                <div class="row">
+                <div class="row" v-for="section in contactInfo" :key="section.title">
                     <div class="col-xs-12 col-sm-6 has-text-right">
-                        <p><strong>Location:</strong></p>
+                        <p><strong>{{ section.title }}:</strong></p>
                     </div>
                     <div class="col-xs-12 col-sm-6">
-                        <p>
-                            521 Bangs Ave,<br/>
-                            Ashbury Park, NJ 07712
-                        </p>
+                        <p v-html="section.content"></p>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 has-text-right">
-                        <p><strong>Phone #:</strong></p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <p>+1.862.221.5716</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 has-text-right">
-                        <p><strong>Email Address:</strong></p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <p>info@colorroomfilms.com</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 has-text-right">
-                        <p><strong>Hours:</strong></p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <p>By appointment</p>
-                    </div>
-                </div>
+
             </div>
         </section>
 
@@ -63,7 +37,7 @@
 
 <script>
 
-    import { mapActions } from 'vuex';
+    import { mapState, mapActions } from 'vuex';
 
     import Hero from '../components/Hero.vue';
     import TitleBlock from '../components/TitleBlock.vue';
@@ -83,6 +57,13 @@
 
             Hero,
             TitleBlock
+
+        },
+        computed: {
+
+            ...mapState({
+                contactInfo: state => state.contactInfo
+            })
 
         },
         created() {

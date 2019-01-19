@@ -185,7 +185,7 @@
                             url(../static/images/heros/about/720p.webp);
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: fixed;
+        background-size: cover;
     }
 
     @media only screen and (min-width: 1280px) {
@@ -194,7 +194,7 @@
                                 url(../static/images/heros/about/1080p.webp);
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: fixed;
+            background-size: cover;
         }
     }
 
@@ -204,7 +204,7 @@
                                 url(../static/images/heros/about/2k.webp);
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: fixed;
+            background-size: cover;
         }
     }
 
@@ -214,7 +214,7 @@
                             url(../static/images/heros/about/720p.jpg);
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: fixed;
+        background-size: cover;
     }
 
     @media only screen and (min-width: 1280px) {
@@ -223,7 +223,7 @@
                                 url(../static/images/heros/about/1080p.jpg);
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: fixed;
+            background-size: cover;
         }
     }
 
@@ -233,7 +233,7 @@
                                 url(../static/images/heros/about/2k.jpg);
             background-repeat: no-repeat;
             background-position: center center;
-            background-size: fixed;
+            background-size: cover;
         }
     }
 

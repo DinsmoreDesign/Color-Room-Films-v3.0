@@ -2,32 +2,21 @@
 
     <div>
 
-        <div class="row no-gap between-xs">
-            <div class="col-xs-12 col-sm-6">
-                <div class="image-container right-border">
-                    <ResponsiveImage style="opacity: 0.7;"
-                        smallImage="/images/heros/home/720p"
-                        mediumImage="/images/heros/home/1080p"
-                        largeImage="/images/heros/home/2k"
-                        title="Couple Embracing Outdoors"
-                    />
+        <video playsinline autoplay muted loop poster="../static/images/heros/home/2k.jpg" id="bgvid">
+            <!-- <source src="../static/videos/testvideobg.webm" type="video/webm"> -->
+            <source src="../static/videos/weddingtrailer.mp4" type="video/mp4">
+        </video>
+
+        <Hero>
+            <div class="container">
+                <div class="row">
+                    <img src="../static/images/crf-mark-w.svg" style="height: 350px">
+                </div>
+                <div class="row">
+                    <ButtonLink url="/home" title="Enter the Color Room Films website" :isWhite="true">ENTER</ButtonLink>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6">
-                <div class="image-container left-border">
-                    <ResponsiveImage style="opacity: 0.7;"
-                        smallImage="/images/heros/reviews/720p"
-                        mediumImage="/images/heros/reviews/1080p"
-                        largeImage="/images/heros/reviews/2k"
-                        title="Couple Embracing by Rolls Royce"
-                    />
-                </div>
-            </div>
-        </div>
-
-        <TitleBlock title="Your wedding, your way" subtitle="Award-winning #MotionPictureMemories for every event." />
-
-        <AwardsContainer/>
+        </Hero>
 
     </div>
     
@@ -40,15 +29,13 @@
 
 <script>
 
-    import { mapActions } from 'vuex';
-
-    import ResponsiveImage from '../components/ResponsiveImage.vue';
-    import AwardsContainer from '../components/AwardsContainer.vue';
-    import TitleBlock from '../components/TitleBlock.vue';
+    import Hero from '../components/Hero.vue';
+    import ButtonLink from '../components/ButtonLink.vue';
 
     export default {
 
-        name: 'Home',
+        name: 'Index',
+        layout: 'blank',
         watchQuery: ["page"],
         key: to => to.fullPath,
         transition(to, from) {
@@ -58,30 +45,19 @@
             
         },
         components: {
-
-            ResponsiveImage,
-            AwardsContainer,
-            TitleBlock
+            
+            Hero,
+            ButtonLink
 
         },
         created() {
 
-            this.updateCallToAction({
-                isVisible: false
-            });
-
-            this.updateFooter({
-                title: '',
-                content: `Every story is unique and we strive to create a film as unique as your relationship, which you can share with your loved ones for years to come. Your wedding is a precious moment in your life and our goal is to capture it in the most emotional and honest way possible. We pride ourselves on getting it right without getting in the way to deliver a film you'll be proud to call your own.`
-            })
+            
 
         },
         methods: {
 
-            ...mapActions([
-                'updateCallToAction',
-                'updateFooter'
-            ])
+            
 
         }
 
@@ -95,29 +71,85 @@
 
 <style lang="scss" scoped>
 
-    .row div[class^="col-"] {
-        margin-bottom: -0.4rem !important;
+    video {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0.7;
+        z-index: -1;
     }
 
-    .image-container {
-        box-sizing: border-box;
+    .row {
+        margin-top: 2rem;
+
+        * {
+            margin: 0 auto;
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
     }
 
-    @media only screen and (min-width: 768px) {
-        .left-border {
-            border-left: .5rem solid transparent;
-        }
-        .right-border {
-            border-right: .5rem solid transparent;
+    /* Modern Browsers: */
+    .home-hero-webp {
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(../static/images/heros/home/720p.webp);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    @media only screen and (min-width: 1280px) {
+        .home-hero-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/home/1080p.webp);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
         }
     }
 
-    @media only screen and (min-width: 992px) {
-        .left-border {
-            border-left: 1rem solid transparent;
+    @media only screen and (min-width: 1920px) {
+        .home-hero-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/home/2k.webp);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
         }
-        .right-border {
-            border-right: 1rem solid transparent;
+    }
+
+    /* Legacy Browsers: */
+    .home-hero {
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(../static/images/heros/home/720p.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    @media only screen and (min-width: 1280px) {
+        .home-hero {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/home/1080p.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    }
+
+    @media only screen and (min-width: 1920px) {
+        .home-hero {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(../static/images/heros/home/2k.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
         }
     }
 

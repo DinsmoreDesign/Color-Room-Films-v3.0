@@ -14,11 +14,11 @@
 
         <MainFooter
             iconName="crf"
-            :address="contactInfo.address"
-            :phone="contactInfo.phoneNumber"
-            :email="contactInfo.emailAddress"
-            :companyName="contactInfo.companyName"
-            :socialLinks="contactInfo.socialLinks"
+            :address="footer.contactInfo.address"
+            :phone="footer.contactInfo.phoneNumber"
+            :email="footer.contactInfo.emailAddress"
+            :companyName="footer.contactInfo.companyName"
+            :socialLinks="footer.contactInfo.socialLinks"
             :title="footer.title"
             :content="footer.content"
         />
@@ -44,17 +44,17 @@
 
     export default {
 
-        name: 'DefaultLayout',
         components: {
+
             Navigation,
             ButtonLink,
             MainFooter,
             SubFooter
+            
         },
         computed: {
 
             ...mapState({
-                contactInfo: state => state.contactInfo,
                 cta: state => state.cta,
                 footer: state => state.footer,
                 navItems: state => state.navItems

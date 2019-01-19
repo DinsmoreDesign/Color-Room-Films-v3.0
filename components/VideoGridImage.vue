@@ -58,7 +58,8 @@
         width: 100%;
         opacity: 0.7;
         transition: opacity 1s;
-        -webkit-backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
     }
 
     a {
