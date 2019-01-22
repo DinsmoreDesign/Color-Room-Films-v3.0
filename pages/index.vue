@@ -2,15 +2,15 @@
 
     <div>
 
-        <video playsinline autoplay muted loop poster="../static/images/heros/home/2k.jpg" id="bgvid">
-            <!-- <source src="../static/videos/testvideobg.webm" type="video/webm"> -->
-            <source src="../static/videos/weddingtrailer.mp4" type="video/mp4">
+        <video playsinline autoplay muted loop :poster="require('~/static/images/heros/reviews/2k.jpg')">
+            <!-- <source src="~/static/videos/weddingtrailer.webm" type="video/webm"> -->
+            <source src="~/static/videos/weddingtrailer.mp4" type="video/mp4">
         </video>
 
         <Hero>
             <div class="container">
                 <div class="row">
-                    <img src="../static/images/crf-mark-w.svg" style="height: 350px">
+                    <img class="logo" src="~/static/images/crf-mark-w.svg" alt="Color Room Films Logo">
                 </div>
                 <div class="row">
                     <ButtonLink url="/home" title="Enter the Color Room Films website" :isWhite="true">ENTER</ButtonLink>
@@ -29,8 +29,8 @@
 
 <script>
 
-    import Hero from '../components/Hero.vue';
-    import ButtonLink from '../components/ButtonLink.vue';
+    import Hero from '~/components/Hero.vue';
+    import ButtonLink from '~/components/ButtonLink.vue';
 
     export default {
 
@@ -95,62 +95,18 @@
 
     }
 
-    /* Modern Browsers: */
-    .home-hero-webp {
-        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/home/720p.webp);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
+    .logo {
+        max-width: 200px;
+        max-height: 200px;
     }
 
-    @media only screen and (min-width: 1280px) {
-        .home-hero-webp {
-            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/home/1080p.webp);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
+    @media screen and (min-width: 768px) {
+
+        .logo {
+            max-width: 350px;
+            max-height: 350px;
         }
-    }
 
-    @media only screen and (min-width: 1920px) {
-        .home-hero-webp {
-            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/home/2k.webp);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-        }
-    }
-
-    /* Legacy Browsers: */
-    .home-hero {
-        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/home/720p.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    }
-
-    @media only screen and (min-width: 1280px) {
-        .home-hero {
-            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/home/1080p.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-        }
-    }
-
-    @media only screen and (min-width: 1920px) {
-        .home-hero {
-            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/home/2k.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-        }
     }
 
 </style>

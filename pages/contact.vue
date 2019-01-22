@@ -39,8 +39,8 @@
 
     import { mapState, mapActions } from 'vuex';
 
-    import Hero from '../components/Hero.vue';
-    import TitleBlock from '../components/TitleBlock.vue';
+    import Hero from '~/components/Hero.vue';
+    import TitleBlock from '~/components/TitleBlock.vue';
 
     export default {
 
@@ -130,7 +130,7 @@
     /* Modern Browsers: */
     .contact-hero-webp {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/about/720p.webp);
+                            url(/images/heros/about/720p.webp);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: fixed;
@@ -139,7 +139,7 @@
     @media only screen and (min-width: 1280px) {
         .contact-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/1080p.webp);
+                                url(/images/heros/about/1080p.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: fixed;
@@ -149,7 +149,7 @@
     @media only screen and (min-width: 1920px) {
         .contact-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/2k.webp);
+                                url(/images/heros/about/2k.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: fixed;
@@ -159,7 +159,7 @@
     /* Legacy Browsers: */
     .contact-hero {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/about/720p.jpg);
+                            url(/images/heros/about/720p.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: fixed;
@@ -168,7 +168,7 @@
     @media only screen and (min-width: 1280px) {
         .contact-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/1080p.jpg);
+                                url(/images/heros/about/1080p.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: fixed;
@@ -178,7 +178,7 @@
     @media only screen and (min-width: 1920px) {
         .contact-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/2k.jpg);
+                                url(/images/heros/about/2k.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: fixed;

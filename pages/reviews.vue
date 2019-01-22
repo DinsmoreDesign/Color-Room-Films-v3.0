@@ -51,9 +51,9 @@
 
     import { mapState, mapActions } from 'vuex';
 
-    import Hero from '../components/Hero.vue';
-    import TitleBlock from '../components/TitleBlock.vue';
-    import ReviewBlock from '../components/ReviewBlock.vue';
+    import Hero from '~/components/Hero.vue';
+    import TitleBlock from '~/components/TitleBlock.vue';
+    import ReviewBlock from '~/components/ReviewBlock.vue';
 
     export default {
 
@@ -157,7 +157,7 @@
     /* Modern Browsers: */
     .reviews-hero-webp {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/reviews/720p.webp);
+                            url(/images/heros/reviews/720p.webp);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -166,7 +166,7 @@
     @media only screen and (min-width: 1280px) {
         .reviews-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/reviews/1080p.webp);
+                                url(/images/heros/reviews/1080p.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -176,7 +176,7 @@
     @media only screen and (min-width: 1920px) {
         .reviews-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/reviews/2k.webp);
+                                url(/images/heros/reviews/2k.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -186,7 +186,7 @@
     /* Legacy Browsers: */
     .reviews-hero {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/reviews/720p.jpg);
+                            url(/images/heros/reviews/720p.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -195,7 +195,7 @@
     @media only screen and (min-width: 1280px) {
         .reviews-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/reviews/1080p.jpg);
+                                url(/images/heros/reviews/1080p.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -205,7 +205,7 @@
     @media only screen and (min-width: 1920px) {
         .reviews-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/reviews/2k.jpg);
+                                url(/images/heros/reviews/2k.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;

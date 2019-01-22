@@ -74,12 +74,12 @@
 
     import { mapActions, mapState } from 'vuex';
 
-    import Hero from '../components/Hero.vue';
-    import VideoGridImage from '../components/VideoGridImage.vue';
-    import Modal from '../components/Modal.vue';
-    import TitleBlock from '../components/TitleBlock.vue';
-    import ResponsiveVideo from '../components/ResponsiveVideo';
-    import PlayButton from '../components/PlayButton';
+    import Hero from '~/components/Hero.vue';
+    import VideoGridImage from '~/components/VideoGridImage.vue';
+    import Modal from '~/components/Modal.vue';
+    import TitleBlock from '~/components/TitleBlock.vue';
+    import ResponsiveVideo from '~/components/ResponsiveVideo';
+    import PlayButton from '~/components/PlayButton';
 
     export default {
 
@@ -182,7 +182,7 @@
     /* Modern Browsers: */
     .weddings-hero-webp {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/about/720p.webp);
+                            url(/images/heros/about/720p.webp);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -191,7 +191,7 @@
     @media only screen and (min-width: 1280px) {
         .weddings-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/1080p.webp);
+                                url(/images/heros/about/1080p.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -201,7 +201,7 @@
     @media only screen and (min-width: 1920px) {
         .weddings-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/2k.webp);
+                                url(/images/heros/about/2k.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -211,7 +211,7 @@
     /* Legacy Browsers: */
     .weddings-hero {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/about/720p.jpg);
+                            url(/images/heros/about/720p.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -220,7 +220,7 @@
     @media only screen and (min-width: 1280px) {
         .weddings-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/1080p.jpg);
+                                url(/images/heros/about/1080p.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -230,7 +230,7 @@
     @media only screen and (min-width: 1920px) {
         .weddings-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/2k.jpg);
+                                url(/images/heros/about/2k.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;

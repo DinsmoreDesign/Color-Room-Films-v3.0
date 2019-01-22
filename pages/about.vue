@@ -36,8 +36,8 @@
 
     import { mapActions } from 'vuex';
 
-    import Hero from '../components/Hero.vue';
-    import TitleBlock from '../components/TitleBlock.vue';
+    import Hero from '~/components/Hero.vue';
+    import TitleBlock from '~/components/TitleBlock.vue';
 
     export default {
 
@@ -93,7 +93,7 @@
     /* Modern Browsers: */
     .about-hero-webp {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/about/720p.webp);
+                            url(/images/heros/about/720p.webp);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -102,7 +102,7 @@
     @media only screen and (min-width: 1280px) {
         .about-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/1080p.webp);
+                                url(/images/heros/about/1080p.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -112,7 +112,7 @@
     @media only screen and (min-width: 1920px) {
         .about-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/2k.webp);
+                                url(/images/heros/about/2k.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -122,7 +122,7 @@
     /* Legacy Browsers: */
     .about-hero {
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(../static/images/heros/about/720p.jpg);
+                            url(/images/heros/about/720p.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
@@ -131,7 +131,7 @@
     @media only screen and (min-width: 1280px) {
         .about-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/1080p.jpg);
+                                url(/images/heros/about/1080p.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -141,7 +141,7 @@
     @media only screen and (min-width: 1920px) {
         .about-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(../static/images/heros/about/2k.jpg);
+                                url(/images/heros/about/2k.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;

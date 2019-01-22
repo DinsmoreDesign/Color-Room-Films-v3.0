@@ -42,9 +42,9 @@
 
     import { mapActions } from 'vuex';
 
-    import ResponsiveImage from '../components/ResponsiveImage.vue';
-    import AwardsContainer from '../components/AwardsContainer.vue';
-    import TitleBlock from '../components/TitleBlock.vue';
+    import ResponsiveImage from '~/components/ResponsiveImage.vue';
+    import AwardsContainer from '~/components/AwardsContainer.vue';
+    import TitleBlock from '~/components/TitleBlock.vue';
 
     export default {
 
