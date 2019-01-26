@@ -18,7 +18,7 @@
                     <ResponsiveImage style="opacity: 0.7;"
                         smallImage="/images/heros/reviews/720p"
                         mediumImage="/images/heros/reviews/1080p"
-                        largeImage="/images/heros/reviews/2k"
+                        largeImage="/images/heros/reviews/1440p"
                         title="Couple Embracing by Rolls Royce"
                     />
                 </div>

@@ -155,15 +155,25 @@
     }
 
     /* Modern Browsers: */
-    .reviews-hero-webp {
+    .reviews-hero-webp { // 480p default
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(/images/heros/reviews/720p.webp);
+                            url(/images/heros/reviews/480p.webp);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
     }
 
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (min-width: 960px) { // Halfway between 480p and 720p
+        .reviews-hero-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/reviews/720p.webp);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    }
+
+    @media only screen and (min-width: 1600px) { // Halfway between 720p and 1080p
         .reviews-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/reviews/1080p.webp);
@@ -173,10 +183,10 @@
         }
     }
 
-    @media only screen and (min-width: 1920px) {
+    @media only screen and (min-width: 2240px) { // Halfway between 1080p and 1440p
         .reviews-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(/images/heros/reviews/2k.webp);
+                                url(/images/heros/reviews/1440p.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -184,15 +194,25 @@
     }
 
     /* Legacy Browsers: */
-    .reviews-hero {
+    .reviews-hero { // 480p default
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(/images/heros/reviews/720p.jpg);
+                            url(/images/heros/reviews/480p.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
     }
 
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (min-width: 960px) { // Halfway between 480p and 720p
+        .reviews-hero {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/reviews/720p.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    }
+
+    @media only screen and (min-width: 1600px) { // Halfway between 720p and 1080p
         .reviews-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/reviews/1080p.jpg);
@@ -202,10 +222,10 @@
         }
     }
 
-    @media only screen and (min-width: 1920px) {
+    @media only screen and (min-width: 2240px) { // Halfway between 1080p and 1440p
         .reviews-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(/images/heros/reviews/2k.jpg);
+                                url(/images/heros/reviews/1440p.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;

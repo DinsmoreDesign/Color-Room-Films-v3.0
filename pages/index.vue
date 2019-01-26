@@ -2,7 +2,7 @@
 
     <div>
 
-        <video playsinline autoplay muted loop :poster="require('~/static/images/heros/reviews/2k.jpg')">
+        <video playsinline autoplay muted loop :poster="require('~/static/images/heros/reviews/1440p.jpg')">
             <!-- <source src="~/static/videos/weddingtrailer.webm" type="video/webm"> -->
             <source src="~/static/videos/weddingtrailer.mp4" type="video/mp4">
         </video>
