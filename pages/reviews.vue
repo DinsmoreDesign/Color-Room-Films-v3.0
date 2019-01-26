@@ -8,7 +8,7 @@
             <TitleBlock title="Reviews of our favorite memories" subtitle="...cherished forever." />
 
         <!-- Reviews Section -->
-            <section :class="[$store.state.supportsWebP ? 'reviews-hero-webp' : 'reviews-hero']">
+            <section :class="[$store.state.supportsWebP ? 'reviews-testimonial-webp' : 'testimonial-hero']">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-xs-12 review" v-for="review in reviews.list" :key="review.name">
@@ -167,9 +167,6 @@
         .reviews-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/reviews/720p.webp);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
         }
     }
 
@@ -177,9 +174,6 @@
         .reviews-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/reviews/1080p.webp);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
         }
     }
 
@@ -187,9 +181,35 @@
         .reviews-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/reviews/1440p.webp);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
+        }
+    }
+
+    .reviews-testimonial-webp { // 480p default
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(/images/heros/reviews/testimonial-480p.webp);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    @media only screen and (min-width: 960px) { // Halfway between 480p and 720p
+        .reviews-testimonial-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/reviews/testimonial-720p.webp);
+        }
+    }
+
+    @media only screen and (min-width: 1600px) { // Halfway between 720p and 1080p
+        .reviews-testimonial-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/reviews/testimonial-1080p.webp);
+        }
+    }
+
+    @media only screen and (min-width: 2240px) { // Halfway between 1080p and 1440p
+        .reviews-testimonial-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/reviews/testimonial-1440p.webp);
         }
     }
 
@@ -206,9 +226,6 @@
         .reviews-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/reviews/720p.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
         }
     }
 
@@ -216,9 +233,6 @@
         .reviews-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/reviews/1080p.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
         }
     }
 
@@ -226,9 +240,35 @@
         .reviews-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/reviews/1440p.jpg);
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
+        }
+    }
+
+    .reviews-testimonial { // 480p default
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(/images/heros/reviews/testimonial-480p.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    @media only screen and (min-width: 960px) { // Halfway between 480p and 720p
+        .reviews-testimonial {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/reviews/testimonial-720p.jpg);
+        }
+    }
+
+    @media only screen and (min-width: 1600px) { // Halfway between 720p and 1080p
+        .reviews-testimonial {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/reviews/testimonial-1080p.jpg);
+        }
+    }
+
+    @media only screen and (min-width: 2240px) { // Halfway between 1080p and 1440p
+        .reviews-testimonial {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/reviews/testimonial-1440p.jpg);
         }
     }
 
