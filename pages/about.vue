@@ -91,15 +91,25 @@
 <style lang="scss" scoped>
 
     /* Modern Browsers: */
-    .about-hero-webp {
+    .about-hero-webp { // 480p default
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(/images/heros/about/720p.webp);
+                            url(/images/heros/about/480p.webp);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
     }
 
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (min-width: 960px) { // Halfway between 480p and 720p
+        .about-hero-webp {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/about/720p.webp);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    }
+
+    @media only screen and (min-width: 1600px) { // Halfway between 720p and 1080p
         .about-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/about/1080p.webp);
@@ -109,10 +119,10 @@
         }
     }
 
-    @media only screen and (min-width: 1920px) {
+    @media only screen and (min-width: 2240px) { // Halfway between 1080p and 1440p
         .about-hero-webp {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(/images/heros/about/2k.webp);
+                                url(/images/heros/about/1440p.webp);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
@@ -120,15 +130,25 @@
     }
 
     /* Legacy Browsers: */
-    .about-hero {
+    .about-hero { // 480p default
         background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(/images/heros/about/720p.jpg);
+                            url(/images/heros/about/480p.jpg);
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
     }
 
-    @media only screen and (min-width: 1280px) {
+    @media only screen and (min-width: 960px) { // Halfway between 480p and 720p
+        .about-hero {
+            background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                                url(/images/heros/about/720p.jpg);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+    }
+
+    @media only screen and (min-width: 1600px) { // Halfway between 720p and 1080p
         .about-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/about/1080p.jpg);
@@ -138,10 +158,10 @@
         }
     }
 
-    @media only screen and (min-width: 1920px) {
+    @media only screen and (min-width: 2240px) { // Halfway between 1080p and 1440p
         .about-hero {
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                                url(/images/heros/about/2k.jpg);
+                                url(/images/heros/about/1440p.jpg);
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
