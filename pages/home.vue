@@ -2,28 +2,32 @@
 
     <div>
 
-        <div class="row no-gap between-xs">
+        <div class="row no-gap between-xs show-tablet">
             <div class="col-xs-12 col-sm-6">
                 <div class="image-container right-border">
                     <ResponsiveImage style="opacity: 0.7;"
-                        smallImage="/images/heros/home/720p"
-                        mediumImage="/images/heros/home/1080p"
-                        largeImage="/images/heros/home/2k"
-                        title="Couple Embracing Outdoors"
+                        smallImage="/images/heros/home/left-480p"
+                        mediumImage="/images/heros/home/left-720p"
+                        largeImage="/images/heros/home/left-1080p"
+                        xlImage="/images/heros/home/left-1440p"
+                        title="Bride Surrounded by Bridesmaids"
                     />
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <div class="image-container left-border">
                     <ResponsiveImage style="opacity: 0.7;"
-                        smallImage="/images/heros/reviews/720p"
-                        mediumImage="/images/heros/reviews/1080p"
-                        largeImage="/images/heros/reviews/1440p"
-                        title="Couple Embracing by Rolls Royce"
+                        smallImage="/images/heros/home/right-480p"
+                        mediumImage="/images/heros/home/right-720p"
+                        largeImage="/images/heros/home/right-1080p"
+                        xlImage="/images/heros/home/right-1440p"
+                        title="Bride and Groom Outside Church"
                     />
                 </div>
             </div>
         </div>
+
+        <Hero :class="[ 'show-mobile', $store.state.supportsWebP ? 'home-hero-webp' : 'home-hero']" height="calc(100vh - 61px)" />
 
         <TitleBlock title="Your wedding, your way" subtitle="Award-winning #MotionPictureMemories for every event." />
 
@@ -42,6 +46,7 @@
 
     import { mapActions } from 'vuex';
 
+    import Hero from '~/components/Hero.vue';
     import ResponsiveImage from '~/components/ResponsiveImage.vue';
     import AwardsContainer from '~/components/AwardsContainer.vue';
     import TitleBlock from '~/components/TitleBlock.vue';
@@ -59,6 +64,7 @@
         },
         components: {
 
+            Hero,
             ResponsiveImage,
             AwardsContainer,
             TitleBlock
@@ -119,6 +125,40 @@
         .right-border {
             border-right: 1rem solid transparent;
         }
+    }
+
+    .show-mobile {
+        display: flex;
+    }
+    .show-tablet {
+        display: none;
+    }
+
+    @media only screen and (min-width: 768px) { // Halfway between 480p and 720p
+        .show-mobile {
+            display: none;
+        }
+        .show-tablet {
+            display: flex;
+        }
+    }
+
+    /* Modern Browsers: */
+    .home-hero-webp { // Only shows on mobile
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(/images/heros/home/left-480p.webp);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    /* Legacy Browsers: */
+    .home-hero { // Only shows on mobile
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(/images/heros/home/left-480p.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
     }
 
 </style>

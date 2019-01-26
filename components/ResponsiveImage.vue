@@ -2,21 +2,21 @@
 
     <picture>
 
-        <!-- ((1280px - 640px) / 2) + 640px -->
-        <!-- <source media="(max-width: 960px)" type="image/webp" :srcset=" smallImage + '.webp' " v-if="smallImage" />
-        <source media="(max-width: 960px)" type="image/jpeg" :srcset=" smallImage + '.jpg' " v-if="smallImage" /> -->
+        <!-- Default: 480p -->
+        <source media="(max-width: 960px)" type="image/webp" :srcset=" smallImage + '.webp' " v-if="smallImage" />
+        <source media="(max-width: 960px)"type="image/jpeg" :srcset=" smallImage + '.jpg' " v-if="smallImage" />
 
-        <!-- ((1920px - 1280px) / 2) + 1280px -->
-        <source media="(max-width: 1600px)" type="image/webp" :srcset=" smallImage + '.webp' " v-if="smallImage" />
-        <source media="(max-width: 1600px)" type="image/jpeg" :srcset=" smallImage + '.jpg' " v-if="smallImage" />
+        <!-- Halfway between 480p and 720p -->
+        <source media="(min-width: 960px)" type="image/webp" :srcset=" mediumImage + '.webp' " v-if="mediumImage" />
+        <source media="(min-width: 960px)" type="image/jpeg" :srcset=" mediumImage + '.jpg' " v-if="mediumImage" />
 
-        <!-- 1px + ((2560px - 1920px) / 2) + 1920px -->
-        <source media="(min-width: 1601px)" type="image/webp" :srcset=" mediumImage + '.webp' " v-if="mediumImage" />
-        <source media="(min-width: 1601px)" type="image/jpeg" :srcset=" mediumImage + '.jpg' " v-if="mediumImage" />
+        <!-- Halfway between 720p and 1080p -->
+        <source media="(min-width: 1600px)" type="image/webp" :srcset=" largeImage + '.webp' " v-if="largeImage" />
+        <source media="(min-width: 1600px)" type="image/jpeg" :srcset=" largeImage + '.jpg' " v-if="largeImage" />
 
-        <!-- 2560px - ((2560px - 1920px) / 2) + 1px -->
-        <source media="(min-width: 2241px)" type="image/webp" :srcset=" largeImage + '.webp' " v-if="largeImage" />
-        <source media="(min-width: 2241px)" type="image/jpeg" :srcset=" largeImage + '.jpg' " v-if="largeImage" />
+        <!-- Halfway between 1080p and 1440p -->
+        <source media="(min-width: 2240px)" type="image/webp" :srcset=" xlImage + '.webp' " v-if="xlImage" />
+        <source media="(min-width: 2240px)" type="image/jpeg" :srcset=" xlImage + '.jpg' " v-if="xlImage" />
 
         <img :src=" largeImage + '.jpg' " sizes="100vw" :srcset="imageSources.jpg">
 
@@ -43,6 +43,10 @@
             },
             largeImage: { // 1080p
                 type: String,
+                required: true
+            },
+            xlImage: { // 1440p
+                type: String,
                 required: false
             },
             title: {
@@ -58,17 +62,20 @@
                     jpg: ''
                 };
 
-                if (this.smallImage) {
-                    sources.webp += `${ this.smallImage }.webp 640w`;
-                    sources.jpg += `${ this.smallImage }.jpg 640w`;
-                }
+                sources.webp += `${ this.smallImage }.webp 640w`;
+                sources.jpg += `${ this.smallImage }.jpg 640w`;
+
                 if (this.mediumImage) {
-                    sources.webp += `, ${this.mediumImage}.webp 1280w`;
-                    sources.jpg += `, ${this.mediumImage}.jpg 1280w`;
+                    sources.webp += `, ${ this.mediumImage }.webp 960w`;
+                    sources.jpg += `, ${ this.mediumImage }.jpg 960w`;
                 }
                 if (this.largeImage) {
-                    sources.webp += `, ${this.largeImage}.webp 1920w`;
-                    sources.jpg += `, ${this.largeImage}.jpg 1920w`;
+                    sources.webp += `, ${this.largeImage}.webp 1600w`;
+                    sources.jpg += `, ${this.largeImage}.jpg 1600w`;
+                }
+                if (this.xlImage) {
+                    sources.webp += `, ${this.xlImage}.webp 2240w`;
+                    sources.jpg += `, ${this.xlImage}.jpg 2240w`;
                 }
 
                 return sources;
