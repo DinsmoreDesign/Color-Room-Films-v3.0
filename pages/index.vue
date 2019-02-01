@@ -2,9 +2,10 @@
 
     <div>
 
-        <video playsinline autoplay muted loop :poster="require('~/static/images/heros/reviews/1440p.jpg')">
-            <!-- <source src="~/static/videos/weddingtrailer.webm" type="video/webm"> -->
-            <source src="~/static/videos/weddingtrailer.mp4" type="video/mp4">
+        <video playsinline autoplay muted loop :poster="require('~/static/videos/landing.jpg')">
+            <source src="~/static/videos/landing.webm" type="video/webm">
+            <source src="~/static/videos/landing.mp4" type="video/mp4">
+            <img src="~/static/videos/landing.jpg" alt="Couple walking up stairs">
         </video>
 
         <Hero>

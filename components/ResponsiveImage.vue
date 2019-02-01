@@ -4,7 +4,7 @@
 
         <!-- Default: 480p -->
         <source media="(max-width: 960px)" type="image/webp" :srcset=" smallImage + '.webp' " v-if="smallImage" />
-        <source media="(max-width: 960px)"type="image/jpeg" :srcset=" smallImage + '.jpg' " v-if="smallImage" />
+        <source media="(max-width: 960px)" type="image/jpeg" :srcset=" smallImage + '.jpg' " v-if="smallImage" />
 
         <!-- Halfway between 480p and 720p -->
         <source media="(min-width: 960px)" type="image/webp" :srcset=" mediumImage + '.webp' " v-if="mediumImage" />

@@ -4,7 +4,7 @@ export default {
         
         {
             title: 'Location',
-            content: '521 Bangs Ave,<br/>Ashbury Park, NJ 07712'
+            content: 'Monmouth County, NJ'
         },
         {
             title: 'Phone #',
