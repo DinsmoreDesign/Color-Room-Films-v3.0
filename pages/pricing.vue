@@ -12,6 +12,7 @@
 
                     <div class="col-xs-12 col-sm-6" v-for="option in pricingOptions" :key="option.videoId">
                         <PricingCard
+                            :image="supportsWebP ? option.webp : option.jpg"
                             :videoId="option.videoId"
                             :title="option.title"
                             :price="option.price"
@@ -58,11 +59,31 @@
             TitleBlock
 
         },
+        head() {
+            return {
+
+                title: 'Package Pricing | Color Room Films NJ',
+                meta: [
+                    { property: 'og:title', content: 'Package Pricing | Color Room Films NJ' },
+                    { name: 'description', content: 'Color Room Films is New Jersey’s premier cinematographer. One price - All the coverage you want.' },
+                    { property: 'og-description', content: 'Color Room Films is New Jersey’s premier cinematographer. One price - All the coverage you want.' },
+                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, special, Jackson, pricing' }
+                ]
+
+            }
+        },
         computed: {
 
             ...mapState({
+
                 pricingOptions: state => state.pricing
-            })
+
+            }),
+            supportsWebP() {
+
+                return this.$store.state.supportsWebP;
+
+            }
 
         },
         created() {

@@ -1,5 +1,3 @@
-const pkg = require("./package");
-
 module.exports = {
     mode: "spa",
 
@@ -7,39 +5,22 @@ module.exports = {
      ** Headers of the page
      */
     head: {
-        title: pkg.name,
+        title: 'Color Room Films',
         meta: [
+            { property: 'og:title', content: 'Color Room Films' },
             { charset: "utf-8" },
-            {
-                name: "viewport",
-                content: "width=device-width, initial-scale=1"
-            },
-            {
-                hid: "description",
-                name: "description",
-                content: pkg.description
-            },
+            { name: "viewport", content: "width=device-width, initial-scale=1" },
+            { name: "description", content: 'Wedding Videography & Cinematography | Ocean and Monmouth County, Jackson, NJ' },
+            { property: "og:description", content: 'Wedding Videography & Cinematography | Ocean and Monmouth County, Jackson, NJ' },
             { name: "msapplication-TileColor", content: "#26a69a" },
-            {
-                name: "msapplication-TileImage",
-                content: "/images/icons/ms-icon-144x144png"
-            },
+            { name: "msapplication-TileImage", content: "/images/icons/ms-icon-144x144png" },
             { name: "theme-color", content: "#26a69a" },
             { name: "msapplication-navbutton-color", content: "#26a69a" },
-            {
-                name: "apple-mobile-web-app-status-bar-style",
-                content: "#26a69a"
-            },
+            { name: "apple-mobile-web-app-status-bar-style", content: "#26a69a" },
             { property: "og:url", content: "https://colorroomfilms.com" },
             { property: "og:site_name", content: "Color Room Films" },
-            {
-                property: "og:image",
-                content: "https://colorroomfilms.com/images/heros/home-2k.jpg"
-            },
-            {
-                name: "twitter:card",
-                content: "https://colorroomfilms.com/images/heros/home-2k.jpg"
-            },
+            { property: "og:image", content: "https://colorroomfilms.com/images/heros/home/1440p.jpg" },
+            { name: "twitter:card", content: "https://colorroomfilms.com/images/heros/home/1440p.jpg" },
             { name: "twitter:site", content: "@colorroomfilms" },
             { name: "twitter:creator", content: "@dinsmoredesign" },
             { property: "fb:admins", content: "946947812026207" },

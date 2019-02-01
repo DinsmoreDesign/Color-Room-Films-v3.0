@@ -70,6 +70,19 @@
             TitleBlock
 
         },
+        head() {
+            return {
+
+                title: 'Home | Color Room Films',
+                meta: [
+                    { property: 'og:title', content: 'Home | Color Room Films' },
+                    { name: 'description', content: 'We create the MotionPictureMemories you’ll cherish forever. We deliver precious memories of your special day that you can relive for years to come.' },
+                    { property: 'og-description', content: 'We create the MotionPictureMemories you’ll cherish forever. We deliver precious memories of your special day that you can relive for years to come.' },
+                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie' }
+                ]
+
+            }
+        },
         created() {
 
             this.updateCallToAction({

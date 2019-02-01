@@ -2,11 +2,17 @@
 
     <div class="card">
         <div class="video">
-            <ResponsiveVideo
+            <VideoGridImage v-if="!showVideo"
+                :image="image"
+                :title="videoTitle"
+                :showTitle="false"
+                @openModal="showVideo = true"
+            />
+            <ResponsiveVideo v-else
                 style="background-color: #7a7a7a;"
                 source="https://player.vimeo.com/video/"
                 :id="videoId"
-                queries="?color=26a69a&title=0&byline=0&portrait=0"
+                queries="?color=26a69a&title=0&byline=0&portrait=0&autoplay=1"
                 :title="videoTitle"
             />
         </div>
@@ -33,16 +39,22 @@
 <script>
 
     import ResponsiveVideo from '~/components/ResponsiveVideo.vue';
+    import VideoGridImage from '~/components/VideoGridImage.vue';
 
     export default {
 
         components: {
 
-            ResponsiveVideo
+            ResponsiveVideo,
+            VideoGridImage
 
         },
         props: {
 
+            image: {
+                type: String,
+                required: true
+            },
             videoId: {
                 type: Number,
                 required: true
@@ -60,6 +72,13 @@
                 required: true
             }
 
+        },
+        data() {
+            return {
+
+                showVideo: false
+
+            }
         },
         computed: {
 
@@ -91,7 +110,7 @@
         .content {
             padding: 1.5rem;
         }
-        
+
         .header {
             padding-bottom: 0;
             text-align: center;

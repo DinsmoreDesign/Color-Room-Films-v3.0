@@ -66,10 +66,25 @@
             TitleBlock
 
         },
+        head() {
+            return {
+
+                title: 'Contact | Color Room Films NJ',
+                meta: [
+                    { property: 'og:title', content: 'Contact | Color Room Films NJ' },
+                    { name: 'description', content: 'Contact New Jersey’s Color Room Films today and let us transform your wedding or special event into a film you can treasure for years.' },
+                    { property: 'og-description', content: 'Contact New Jersey’s Color Room Films today and let us transform your wedding or special event into a film you can treasure for years.' },
+                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, contact us, special, Jackson' }
+                ]
+
+            }
+        },
         computed: {
 
             ...mapState({
+
                 contactInfo: state => state.contactInfo
+                
             })
 
         },

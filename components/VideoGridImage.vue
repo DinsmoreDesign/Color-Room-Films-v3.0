@@ -2,8 +2,9 @@
 
     <a @click.prevent="$emit('openModal')" href="javascript:void(0)" :title="imageTitle">
         <img :src="image" :alt="imageTitle + ' - Video Thumbnail'">
-        <p class="title">{{ title }}</p>
-        <PlayButton class="play-button" width="100px" />
+        <p class="title" v-if="showTitle">{{ title }}</p>
+        <PlayButton class="play-button has-title" width="100px" v-if="showTitle" />
+        <PlayButton class="play-button" width="100px" v-else />
     </a>
 
 </template>
@@ -19,7 +20,9 @@
     export default {
 
         components: {
+
             PlayButton
+            
         },
         props: {
 
@@ -30,6 +33,11 @@
             title: {
                 type: String,
                 required: true
+            },
+            showTitle: {
+                type: Boolean,
+                required: false,
+                default: true
             }
 
         },
@@ -77,7 +85,7 @@
                 opacity: 0;
             }
 
-            .play-button {
+            .play-button.has-title {
                 visibility: visible;
                 opacity: 1;
             }
@@ -104,7 +112,7 @@
             font-family: 'Allura', sans-serif;
         }
 
-        .play-button {
+        .play-button.has-title {
             visibility: hidden;
             opacity: 0;
         }

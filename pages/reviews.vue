@@ -8,7 +8,7 @@
             <TitleBlock title="Reviews of our favorite memories" subtitle="...cherished forever." />
 
         <!-- Reviews Section -->
-            <section :class="[$store.state.supportsWebP ? 'reviews-testimonial-webp' : 'testimonial-hero']">
+            <section :class="[$store.state.supportsWebP ? 'reviews-testimonial-webp' : 'reviews-testimonial']">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4 col-xs-12 review" v-for="review in reviews.list" :key="review.name">
@@ -72,10 +72,25 @@
             ReviewBlock
 
         },
+        head() {
+            return {
+
+                title: 'Reviews | Color Room Films NJ',
+                meta: [
+                    { property: 'og:title', content: 'Reviews | Color Room Films NJ' },
+                    { name: 'description', content: 'We are the best Wedding videographer and photographer  in ocean county. Don’t just take our word for it, see what others have to say about us.' },
+                    { property: 'og-description', content: 'We are the best Wedding videographer and photographer  in ocean county. Don’t just take our word for it, see what others have to say about us.' },
+                    { name: 'keywords', content: 'New Jersey, videographer, reviews, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day' }
+                ]
+
+            }
+        },
         computed: {
 
             ...mapState({
+
                 reviews: state => state.reviews
+
             })
 
         },

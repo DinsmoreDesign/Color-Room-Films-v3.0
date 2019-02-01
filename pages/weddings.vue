@@ -102,6 +102,19 @@
             PlayButton
 
         },
+        head() {
+            return {
+
+                title: 'Weddings | Color Room Films NJ',
+                meta: [
+                    { property: 'og:title', content: 'Weddings | Color Room Films NJ' },
+                    { name: 'description', content: 'View New Jersey’s premier videographers’ portfolio of recent wedding films. We specialize in cinematic films and making everyone feel like a star.' },
+                    { property: 'og-description', content: 'View New Jersey’s premier videographers’ portfolio of recent wedding films. We specialize in cinematic films and making everyone feel like a star.' },
+                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day' }
+                ]
+
+            }
+        },
         data() {
             return {
 
@@ -117,7 +130,9 @@
         computed: {
 
             ...mapState({
+
                 videos: state => state.weddingVideos
+                
             })
 
         },
