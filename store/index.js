@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import contactInfo from './modules/contactInfo.js';
 import cta from './modules/cta.js';
 import footer from './modules/footer.js';
+import pricing from './modules/pricing.js';
 import reviews from './modules/reviews.js';
 import weddingVideos from './modules/weddingVideos.js';
 
@@ -13,6 +14,7 @@ const createStore = () => {
             contactInfo,
             cta,
             footer,
+            pricing,
             reviews,
             weddingVideos
         },
