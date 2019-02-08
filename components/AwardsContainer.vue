@@ -4,10 +4,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-xs-12">
-                    <div class="row middle-xs">
-                        <div class="col-xs-4 icon-container">
-                            <i class="icon-theknot"></i>
-                        </div>
+                    <div class="row middle-xs award">
+                        <div class="col-xs-4 icon-container" v-html="require('!svg-inline-loader!../static/images/the-knot.svg')"></div>
                         <div class="col-xs-8 content">
                             <h3 class="title is-1">
                                 <strong>2019</strong> the knot
@@ -17,15 +15,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <div class="row middle-xs icon-container">
-                        <i class="icon-smp-logo"></i>
-                    </div>
+                    <div class="row middle-xs icon-container award" v-html="require('!svg-inline-loader!../static/images/style-me-pretty.svg')"></div>
                 </div>
                 <div class="col-md-4 col-xs-12">
-                    <div class="row middle-xs">
-                        <div class="col-xs-4 icon-container">
-                            <i class="icon-weddingwire"></i>
-                        </div>
+                    <div class="row middle-xs award">
+                        <div class="col-xs-4 icon-container" v-html="require('!svg-inline-loader!../static/images/wedding-wire.svg')"></div>
                         <div class="col-xs-8 content">
                             <h3 class="title is-1">
                                 <strong>2018</strong> WeddingWire
@@ -61,7 +55,6 @@
 <style lang="scss" scoped>
 
     .awards {
-        padding: 3rem 0;
         background-color: #5e5e5e;
         color: #FFF;
 
@@ -69,12 +62,29 @@
             width: 90%;
         }
 
+        .award {
+            padding: 3rem 0;
+        }
+
         .icon-container {
             justify-content: center;
             text-align: center;
 
-            i {
-                font-size: 8rem;
+            /deep/ svg {
+                height: 125px;
+
+                * {
+                    fill: #FFF;
+                }
+
+            }
+
+            @media screen and (min-width: 1350px) {
+
+                /deep/ svg {
+                    height: 150px;
+                }
+
             }
 
         }

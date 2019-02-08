@@ -5,6 +5,9 @@
         <a role="button" href="javascript:void(0);" title="Continue to content" @click="scrollToContent" v-if="showScrollIcon">
             <i class="icon-angle-down subtitle is-1" aria-hidden="true"></i>
         </a>
+        <footer v-if="$slots.footer">
+            <slot name="footer"/>
+        </footer>
     </section>
 
 </template>
@@ -70,6 +73,29 @@
         justify-content: center;
         flex-direction: column;
         text-align: center;
+    }
+
+    footer {
+        margin-top: 4rem;
+        text-align: center;
+
+        /deep/ * {
+            text-align: center;
+        }
+
+    }
+
+    @media screen and (min-height: 550px) {
+
+        footer {
+            position: absolute;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            bottom: 0;
+            width: 100%;
+        }
+
     }
 
 </style>

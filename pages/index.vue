@@ -11,11 +11,21 @@
         <Hero>
             <div class="container">
                 <div class="row">
-                    <img class="logo" src="~/static/images/crf-mark-w.svg" alt="Color Room Films Logo">
+                    <div class="logo-container" v-html="require('!svg-inline-loader!../static/images/crf-mark-w.svg')"></div>
                 </div>
                 <div class="row">
                     <ButtonLink url="/home" title="Enter the Color Room Films website" :isWhite="true">ENTER</ButtonLink>
                 </div>
+            </div>
+            <div class="social-icons" slot="footer">
+                <a v-for="link in socialLinks" :key="link.icon"
+                    :href="link.url"
+                    :title="link.title"
+                    target="_blank"
+                    class="icon"
+                >
+                    <i :class="[ 'icon-' + link.icon ]"></i>
+                </a>
             </div>
         </Hero>
 
@@ -29,6 +39,8 @@
 
 
 <script>
+
+    import { mapState } from 'vuex';
 
     import Hero from '~/components/Hero.vue';
     import ButtonLink from '~/components/ButtonLink.vue';
@@ -51,14 +63,11 @@
             ButtonLink
 
         },
-        created() {
+        computed: {
 
-            
-
-        },
-        methods: {
-
-            
+            ...mapState({
+                socialLinks: state => state.footer.contactInfo.socialLinks,
+            })
 
         }
 
@@ -96,16 +105,42 @@
 
     }
 
-    .logo {
-        max-width: 200px;
-        max-height: 200px;
+    .logo-container {
+        max-width: 90%;
+
+        /deep/ svg {
+            height: 100%;
+            width: 100%;
+            max-width: 350px;
+        }
+
     }
 
-    @media screen and (min-width: 768px) {
+    .social-icons {
+        width: 100%;
 
-        .logo {
-            max-width: 350px;
-            max-height: 350px;
+        a {
+            text-decoration: none;
+            padding: 0.5rem;
+
+            i {
+                font-size: 1.5rem;
+                width: 1.5rem;
+                text-align: center;
+                line-height: 1.5rem;
+                background-color: #FFF;
+                color: #5e5e5e;
+                border-radius: 50%;
+                padding: 0.5rem 0.5rem 0.1rem 0.5rem;
+                transition: color 0.3s, background-color 0.3s;
+
+                &:hover {
+                    color: #FFF;
+                    background-color: transparent;
+                }
+
+            }
+
         }
 
     }
