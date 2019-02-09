@@ -7,10 +7,13 @@
                     <div class="row middle-xs award">
                         <div class="col-xs-4 icon-container" v-html="require('!svg-inline-loader!../static/images/the-knot.svg')"></div>
                         <div class="col-xs-8 content">
-                            <h3 class="title is-1">
+                            <p>
+                                <small>2017, 2018 &</small>
+                            </p>
+                            <h3>
                                 <strong>2019</strong> the knot
                             </h3>
-                            <p class="subtitle is-4"> Best of Weddings</p>
+                            <p> Best of Weddings</p>
                         </div>
                     </div>
                 </div>
@@ -21,10 +24,13 @@
                     <div class="row middle-xs award">
                         <div class="col-xs-4 icon-container" v-html="require('!svg-inline-loader!../static/images/wedding-wire.svg')"></div>
                         <div class="col-xs-8 content">
-                            <h3 class="title is-1">
-                                <strong>2018</strong> WeddingWire
+                            <p>
+                                <small>2017, 2018 &</small>
+                            </p>
+                            <h3>
+                                <strong>2019</strong> WeddingWire
                             </h3>
-                            <p class="subtitle is-4"> Couples' Choice Awards</p>
+                            <p> Couples' Choice Awards</p>
                         </div>
                     </div>
                 </div>
@@ -101,6 +107,10 @@
         p {
             font-size: 1.5rem;
             font-weight: 400;
+        }
+
+        .small {
+            font-size: 100%;
         }
 
     }

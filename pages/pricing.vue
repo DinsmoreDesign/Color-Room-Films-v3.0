@@ -76,14 +76,10 @@
 
             ...mapState({
 
-                pricingOptions: state => state.pricing
+                pricingOptions: state => state.pricing,
+                supportsWebP: state => state.supportsWebP
 
-            }),
-            supportsWebP() {
-
-                return this.$store.state.supportsWebP;
-
-            }
+            })
 
         },
         created() {

@@ -41,7 +41,7 @@
                 <div class="row video-grid">
                     <div class="col-xs-12 col-sm-6 col-md-4" v-for="video in videos" :key="video.id">
                         <VideoGridImage
-                            :image="video.image"
+                            :image="supportsWebP ? video.webp : video.jpg"
                             :title="video.title"
                             @openModal="toggleModal(true, video.title, video.id)"
                         />
@@ -131,7 +131,8 @@
 
             ...mapState({
 
-                videos: state => state.weddingVideos
+                videos: state => state.weddingVideos,
+                supportsWebP: state => state.supportsWebP
                 
             })
 
