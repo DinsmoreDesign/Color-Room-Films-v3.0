@@ -5,24 +5,28 @@
         <div class="row no-gap between-xs show-tablet">
             <div class="col-xs-12 col-sm-6">
                 <div class="image-container right-border">
-                    <ResponsiveImage style="opacity: 0.7;"
-                        smallImage="/images/heros/home/left-480p"
-                        mediumImage="/images/heros/home/left-720p"
-                        largeImage="/images/heros/home/left-1080p"
-                        xlImage="/images/heros/home/left-1440p"
-                        title="Bride Surrounded by Bridesmaids"
-                    />
+                    <nuxt-link to="/weddings" title="View some of our recent wedding trailers">
+                        <ResponsiveImage style="opacity: 0.7;"
+                            smallImage="/images/heros/home/left-480p"
+                            mediumImage="/images/heros/home/left-720p"
+                            largeImage="/images/heros/home/left-1080p"
+                            xlImage="/images/heros/home/left-1440p"
+                            title="Bride Surrounded by Bridesmaids"
+                        />
+                    </nuxt-link>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <div class="image-container left-border">
-                    <ResponsiveImage style="opacity: 0.7;"
-                        smallImage="/images/heros/home/right-480p"
-                        mediumImage="/images/heros/home/right-720p"
-                        largeImage="/images/heros/home/right-1080p"
-                        xlImage="/images/heros/home/right-1440p"
-                        title="Bride and Groom Outside Church"
-                    />
+                    <nuxt-link to="/reviews" title="Learn what others have to say about us">
+                        <ResponsiveImage style="opacity: 0.7;"
+                            smallImage="/images/heros/home/right-480p"
+                            mediumImage="/images/heros/home/right-720p"
+                            largeImage="/images/heros/home/right-1080p"
+                            xlImage="/images/heros/home/right-1440p"
+                            title="Bride and Groom Outside Church"
+                        />
+                    </nuxt-link>
                 </div>
             </div>
         </div>

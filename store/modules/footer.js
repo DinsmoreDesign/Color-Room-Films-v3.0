@@ -18,11 +18,6 @@ export default {
                     icon: 'facebook'
                 },
                 {
-                    url: 'https://twitter.com/colorroomfilms',
-                    title: 'Follow Color Room Films on Twitter',
-                    icon: 'twitter'
-                },
-                {
                     url: 'https://www.instagram.com/color_room_films/',
                     title: 'Follow Color Room Films on Instagram',
                     icon: 'instagram'

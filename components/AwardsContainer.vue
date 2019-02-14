@@ -35,6 +35,12 @@
                     </div>
                 </div>
             </div>
+            <div class="row single-icon">
+                <div class="today">
+                    <h3>As seen on</h3>
+                    <div v-html="require('!svg-inline-loader!../static/images/today.svg')"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -42,7 +48,7 @@
 
 
 
-
+ 
 
 <script>
 
@@ -70,6 +76,27 @@
 
         .award {
             padding: 3rem 0;
+        }
+
+        .single-icon {
+            justify-content: center;
+            text-align: center;
+
+            .today {
+                padding: 3rem 0;
+                max-width: 300px;
+
+                h3 {
+                    text-align: right;
+                    font-size: 1.54rem;
+                }
+
+                /deep/ svg {
+                    width: 100%;
+                }
+
+            }
+
         }
 
         .icon-container {

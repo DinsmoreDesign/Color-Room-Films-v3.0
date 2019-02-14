@@ -7,14 +7,15 @@
             <i class="icon-close" v-else></i>
         </span>
 
-        <nuxt-link class="logo" to="/">
-            <img src="https://colorroomfilms.com/img/logo.svg" alt="View the Color Room Films Homepage">
+        <nuxt-link class="logo" to="/" title="Return to the Color Room Films landing page">
+            <img src="~static/images/logo.svg" alt="View the Color Room Films Homepage">
         </nuxt-link>
 
         <ul :class="{ 'main-nav': true, 'active': showMobileNav }">
 
             <li v-for="item in navItems" :key="item.name" @click="showMobileNav = false">
                 <nuxt-link
+                    :title="`View the Color Room Films ${item.name.toLowerCase()} page`"
                     class="nav-links"
                     :to="item.url"
                     exactActiveClass="active"
@@ -22,7 +23,7 @@
                 >{{ item.name }}</nuxt-link>
             </li>
             <li>
-                <a class="nav-links" title="Visit Color Room Films on WeddingWire" href="http://www.weddingwire.com/reviews/color-room-films-jackson/fd77ea76d63e4a5f.html" target="_blank">
+                <a class="nav-links" title="Visit Color Room Films on WeddingWire" href="https://www.weddingwire.com/reviews/color-room-films-jackson/fd77ea76d63e4a5f.html" target="_blank">
                     <i class="icon-weddingwire"></i>
                 </a>
             </li>
