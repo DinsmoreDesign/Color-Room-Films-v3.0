@@ -153,6 +153,7 @@ module.exports = {
      */
     sitemap: {
         // See https://github.com/nuxt-community/sitemap-module
+        generate: true,
         path: '/sitemap.xml',
         hostname: 'https://www.colorroomfilms.com',
         cacheTime: 1000 * 60 * 15,
