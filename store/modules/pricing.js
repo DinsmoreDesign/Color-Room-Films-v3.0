@@ -4,7 +4,7 @@ export default {
         
         {
             title: 'Epic',
-            price: 4000,
+            price: 4200,
             videoId: 280197591,
             jpg: require('~/static/images/thumbs/katie_daniel.jpg'),
             webp: require('~/static/images/thumbs/katie_daniel.webp'),
@@ -15,7 +15,7 @@ export default {
         },
         {
             title: 'Gemini',
-            price: 3600,
+            price: 3800,
             videoId: 291922022,
             jpg: require('~/static/images/thumbs/kari_tom.jpg'),
             webp: require('~/static/images/thumbs/kari_tom.webp'),
