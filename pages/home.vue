@@ -6,26 +6,30 @@
             <div class="col-xs-12 col-sm-6">
                 <div class="image-container right-border">
                     <nuxt-link to="/weddings" title="View some of our recent wedding trailers">
-                        <ResponsiveImage style="opacity: 0.7;"
+                        <ResponsiveImage
+                            class="rollover-image"
                             smallImage="/images/heros/home/left-480p"
                             mediumImage="/images/heros/home/left-720p"
                             largeImage="/images/heros/home/left-1080p"
                             xlImage="/images/heros/home/left-1440p"
                             title="Bride Surrounded by Bridesmaids"
                         />
+                        <!-- <p class="title">Wedding Trailers</p> -->
                     </nuxt-link>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <div class="image-container left-border">
                     <nuxt-link to="/reviews" title="Learn what others have to say about us">
-                        <ResponsiveImage style="opacity: 0.7;"
+                        <ResponsiveImage
+                            class="rollover-image"
                             smallImage="/images/heros/home/right-480p"
                             mediumImage="/images/heros/home/right-720p"
                             largeImage="/images/heros/home/right-1080p"
                             xlImage="/images/heros/home/right-1440p"
                             title="Bride and Groom Outside Church"
                         />
+                        <!-- <p class="title">Reviews</p> -->
                     </nuxt-link>
                 </div>
             </div>
@@ -124,6 +128,42 @@
 
     .image-container {
         box-sizing: border-box;
+    }
+
+    .rollover-image {
+        opacity: 0.7;
+        transition: opacity 1s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    a {
+        display: block;
+        position: relative;
+
+        .title {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+
+        &:hover .title {
+            opacity: 1;
+            margin: 0;
+            text-shadow: 3px 3px 15px #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFF;
+            font-size: 4rem;
+            font-family: cursive;
+            font-weight: 400;
+            width: 90%;
+            text-align: center;
+            font-family: 'Allura', sans-serif;
+        }
     }
 
     @media only screen and (min-width: 768px) {
