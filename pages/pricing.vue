@@ -2,26 +2,46 @@
   
     <div>
 
-        <Hero :class="[$store.state.supportsWebP ? 'pricing-hero-webp' : 'pricing-hero']" height="calc(100vh - 70px)" />
-
         <TitleBlock title="All the coverage you want" subtitle="...with packages for every budget." />
 
         <section class="dark">
             <div class="container">
                 <div class="row">
 
-                    <div class="col-xs-12 col-sm-6" v-for="option in pricingOptions" :key="option.videoId">
+                    <div class="col-xs-12 col-sm-6">
                         <PricingCard
-                            :image="supportsWebP ? option.webp : option.jpg"
-                            :videoId="option.videoId"
-                            :title="option.title"
-                            :price="option.price"
-                            :content="option.content"
+                            :image="supportsWebP ? pricingOptions[0].webp : pricingOptions[0].jpg"
+                            :videoId="pricingOptions[0].videoId"
+                            :title="pricingOptions[0].title"
+                            :price="pricingOptions[0].price"
+                            :content="pricingOptions[0].content"
                         />
                     </div>
 
+                    <div class="col-xs">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <PricingCard
+                                    :image="supportsWebP ? pricingOptions[1].webp : pricingOptions[1].jpg"
+                                    :videoId="pricingOptions[1].videoId"
+                                    :title="pricingOptions[1].title"
+                                    :price="pricingOptions[1].price"
+                                    :content="pricingOptions[1].content"
+                                />
+                            </div>
+                            <div class="col-xs-12" style="margin-top: 2rem;">
+                                <PricingCard
+                                    :image="supportsWebP ? pricingOptions[2].webp : pricingOptions[2].jpg"
+                                    :videoId="pricingOptions[2].videoId"
+                                    :title="pricingOptions[2].title"
+                                    :price="pricingOptions[2].price"
+                                    :content="pricingOptions[2].content"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <p class="callout">Couples with budgets under $3800 or with other specific coverage needs please contact us directly!</p>
             </div>
         </section>
 
@@ -121,6 +141,22 @@
         text-align: center;
         font-size: 2rem;
         font-weight: 300;
+    }
+
+    .row {
+        margin-top: 2rem;
+    }
+
+    @media only screen and (min-width: 768px) {
+
+        .row {
+            margin-top: 0;
+        }
+        
+        .row:not(:first-child) {
+            margin-top: 2rem;
+        }
+
     }
 
     /* Modern Browsers: */

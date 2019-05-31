@@ -4,13 +4,15 @@ export default {
         
         {
             title: 'Epic',
-            price: 4499,
+            price: 4500,
             videoId: 280197591,
             jpg: require('~/static/images/thumbs/katie_daniel.jpg'),
             webp: require('~/static/images/thumbs/katie_daniel.webp'),
             content: [
-                `Our most booked package which includes 2 Shooters, 10 Hours of Coverage, Trailer and Full Film. Your Trailer will be shot exclusively in 5K resolutions and include the highest grade audio gear. Our post production "Cinematic Re-Touching" which is only found in our Epic package contains specific color grades and looks customized for you wedding. 4K drone footage is include (*weather dependent). All films will be delivered in 4K via Vimeo and also include a Mediazilla delivery in 1080P.`,
-                `Average turn around time of 2 weeks.`
+                `Our most popular package with couples needing all day coverage. 10 hour-2 shooter coverage. We use our Red Digital Cinema 5K & 4K Black Magic cameras for this package for the ultimate cinematic feel. Steve shoots vintage lenses exclusively with softening filters for this package and the highest quality audio components are used. Drone is included weather pending.`,
+                `This package works great for couples that want everything captured and usually gets us close to the end of the night! Epic package couples take priority when it comes to turn around time, usually within a week or 2.`,
+                `You will receive a trailer and full film (full film lengths can vary), we never put a limit on the length of your full film either! Couples receive all dance floor footage in it's entirety along with all the days major events. Delivery is via Vimeo in 4K resolution and Mediazilla in 1080P.`,
+                `Leave us a review and we send you a free dvd!`
             ]
         },
         {
@@ -20,9 +22,14 @@ export default {
             jpg: require('~/static/images/thumbs/kari_tom.jpg'),
             webp: require('~/static/images/thumbs/kari_tom.webp'),
             content: [
-                `The Gemini package includes 2 Shooters, 8 hours, Trailer and Full Film. Your trailer and full film will be shot in a minimum of 4K resolution.`,
-                `4K drone footage is include (*weather dependent). All films will be delivered in 4K via Vimeo and also include a Mediazilla delivery in 1080P.`,
-                `Average turn around time of 2 weeks.`
+                `All the same coverages as Epic but in an 8 Hour package, if you are not sure if you will need 8 or 10 hours, you can book the Gemini and upgrade to the Epic up to a month before hand! Usually this package will get you from morning prep through intros and occasionally cake.`
+            ]
+        },
+        {
+            title: 'Legacy',
+            price: 3389,
+            content: [
+                `This package works great for couples who only need 8 hours and one shooter with only a couple locations. We shoot this package in 4K and deliver is the same as our other packages. Normally drone is not including in single shooter packages. We shoot this package mainly for the full film and put together a complimentary recap for you also. This is part of our associate program and generally Steve will not shoot these but does on occasion. Please contact Steve directly for availability! info@colorroomfilms.com`
             ]
         }
 

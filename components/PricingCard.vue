@@ -1,7 +1,7 @@
 <template>
 
     <div class="card">
-        <div class="video">
+        <div class="video" v-if="videoId && image">
             <VideoGridImage v-if="!showVideo"
                 :image="image"
                 :title="videoTitle"
@@ -53,11 +53,11 @@
 
             image: {
                 type: String,
-                required: true
+                required: false
             },
             videoId: {
                 type: Number,
-                required: true
+                required: false
             },
             title: {
                 type: String,
