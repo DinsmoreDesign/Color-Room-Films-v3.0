@@ -1,8 +1,16 @@
 <template>
 
-    <section class="container title-block has-text-centered">
-        <h1 class="title" v-if="title">{{ title }}</h1>
-        <p class="subtitle" v-if="subtitle">{{ subtitle }}</p>
+    <section
+        :class="[
+            'has-text-centered title-block',
+            color,
+            { 'container': color === 'default' }
+        ]"
+    >
+        <div :class="{ 'container': color !== 'default' }">
+            <h1 class="title" v-if="title">{{ title }}</h1>
+            <p class="subtitle" v-if="subtitle">{{ subtitle }}</p>
+        </div>
     </section>
 
 </template>
@@ -16,6 +24,7 @@
     export default {
 
         props: {
+
             title: {
                 type: String,
                 required: false
@@ -23,7 +32,13 @@
             subtitle: {
                 type: String,
                 required: false
+            },
+            color: {
+                type: String,
+                required: false,
+                default: 'default'
             }
+
         }
 
     }
@@ -37,10 +52,14 @@
 <style lang="scss" scoped>
 
     .title-block {
-        color: #5e5e5e;
 
+        &.default {
+            color: #5e5e5e;
+        }
+        
         h1.title {
             font-size: 3.5rem;
+            line-height: 1;
             font-family: cursive;
             font-weight: 400;
             word-wrap: break-word;

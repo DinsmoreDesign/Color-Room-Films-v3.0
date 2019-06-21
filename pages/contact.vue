@@ -99,12 +99,15 @@
                 content: `Every wedding is unique and every couple is different, that's why every project we work on is approached differently. No two events we've filmed are ever the same; we purchase exclusive music publishing rights for each wedding and don't believe in releasing films that are lacking individuality. It's our job to get to know you and what you like, so we can represent your personality as genuinely as possible.`
             })
 
+            this.updateCurrentQuote();
+
         },
         methods: {
 
             ...mapActions([
                 'updateCallToAction',
-                'updateFooter'
+                'updateFooter',
+                'updateCurrentQuote'
             ])
 
         }

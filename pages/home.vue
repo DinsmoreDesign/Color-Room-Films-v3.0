@@ -102,12 +102,15 @@
                 content: `Every story is unique and we strive to create a film as unique as your relationship, which you can share with your loved ones for years to come. Your wedding is a precious moment in your life and our goal is to capture it in the most emotional and honest way possible. We pride ourselves on getting it right without getting in the way to deliver a film you'll be proud to call your own.`
             })
 
+            this.updateCurrentQuote();
+
         },
         methods: {
 
             ...mapActions([
                 'updateCallToAction',
-                'updateFooter'
+                'updateFooter',
+                'updateCurrentQuote'
             ])
 
         }

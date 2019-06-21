@@ -83,12 +83,15 @@
                 content: 'The most important thing to us is your story. At Color Room Films, we deliver precious memories of your special day that you can relive for years to come. Our goal is to remain discreet and make sure you remain the focal point all day, while telling your story in the most emotional, cinematic and honest way possible. We use only the highest grade cinematic tools available to tell your story; the same cameras, lenses, aerial drones and other tools you would see on a Hollywood set, at the best value for your dollar.'
             })
 
+            this.updateCurrentQuote();
+
         },
         methods: {
 
             ...mapActions([
                 'updateCallToAction',
-                'updateFooter'
+                'updateFooter',
+                'updateCurrentQuote'
             ])
 
         }

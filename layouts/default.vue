@@ -6,11 +6,25 @@
 
         <nuxt />
 
+        <TitleBlock
+            v-if="showQuote && quote.position === 1"
+            title="What others say:"
+            :subtitle="quote.message"
+            :color="cta && cta.isVisible ? 'light' : 'dark'"
+        />
+
         <section class="container has-text-centered" v-if="cta.isVisible">
             <ButtonLink :url="cta.url" :title="cta.title">
                 {{ cta.content }}
             </ButtonLink>
         </section>
+
+        <TitleBlock
+            v-if="showQuote && quote.position === 2"
+            title="What others say:"
+            :subtitle="quote.message"
+            color="dark"
+        />
 
         <MainFooter
             iconName="crf"
@@ -37,6 +51,7 @@
 
     import { mapState, mapActions } from 'vuex';
 
+    import TitleBlock from '../components/TitleBlock.vue';
     import Navigation from '../components/Navigation.vue';
     import ButtonLink from '../components/ButtonLink.vue';
     import MainFooter from '../components/MainFooter.vue';
@@ -46,6 +61,7 @@
 
         components: {
 
+            TitleBlock,
             Navigation,
             ButtonLink,
             MainFooter,
@@ -55,21 +71,32 @@
         computed: {
 
             ...mapState({
+
                 cta: state => state.cta,
                 footer: state => state.footer,
-                navItems: state => state.navItems
-            })
+                navItems: state => state.navItems,
+                quote: state => state.currentQuote
+
+            }),
+            showQuote() {
+
+                return this.$route.name !== 'reviews' ? true : false;
+
+            }
 
         },
         created() {
 
-            this.updateSupportsWebP();
+            this.updateSupportsWebP().then(() => { this.updateQuotePositions(2) });
 
         },
         methods: {
 
             ...mapActions([
-                'updateSupportsWebP'
+
+                'updateSupportsWebP',
+                'updateQuotePositions'
+
             ])
 
         }
@@ -147,6 +174,11 @@
         &.dark {
             background: #5e5e5e;
             color: #FFF;
+        }
+
+        &.light {
+            background: #dbdbdb;
+            color: #5e5e5e;
         }
 
     }
