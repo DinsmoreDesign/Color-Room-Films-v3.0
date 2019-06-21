@@ -8,7 +8,7 @@
 
         <TitleBlock
             v-if="showQuote && quote.position === 1"
-            title="What others say:"
+            title="Why couples love us:"
             :subtitle="quote.message"
             :color="cta && cta.isVisible ? 'light' : 'dark'"
         />
@@ -21,7 +21,7 @@
 
         <TitleBlock
             v-if="showQuote && quote.position === 2"
-            title="What others say:"
+            title="Why couples love us:"
             :subtitle="quote.message"
             color="dark"
         />
