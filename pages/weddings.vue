@@ -28,7 +28,7 @@
             <ResponsiveVideo v-else
                 style="background-color: #000;"
                 source="https://player.vimeo.com/video/"
-                id="311700211"
+                id="347521909"
                 queries="?color=26a69a&title=0&byline=0&portrait=0&autoplay=1"
                 title="Wedding Header Video"
                 componentStyle="height: calc(100vh - 70px)"
@@ -42,8 +42,8 @@
                     <div class="col-xs-12 col-sm-6 col-md-4" v-for="video in videos" :key="video.id">
                         <VideoGridImage
                             :image="supportsWebP ? video.webp : video.jpg"
-                            :title="video.title"
-                            @openModal="toggleModal(true, video.title, video.id)"
+                            :title="`${video.bride} & ${video.groom}`"
+                            @openModal="toggleModal(true, `${video.bride} & ${video.groom}`, video.id)"
                         />
                     </div>
                 </div>

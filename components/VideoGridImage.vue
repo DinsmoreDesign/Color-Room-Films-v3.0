@@ -2,7 +2,10 @@
 
     <a @click.prevent="$emit('openModal')" href="javascript:void(0)" :title="imageTitle">
         <img :src="image" :alt="imageTitle + ' - Video Thumbnail'">
-        <p class="title" v-if="showTitle">{{ title }}</p>
+        <div class="title-block" v-if="showTitle || subtitle">
+            <p class="title" v-if="showTitle">{{ title }}</p>
+            <p class="subtitle" v-if="subtitle">{{ subtitle }}</p>
+        </div>
         <PlayButton class="play-button has-title" width="100px" v-if="showTitle" />
         <PlayButton class="play-button" width="100px" v-else />
     </a>
@@ -33,6 +36,10 @@
             title: {
                 type: String,
                 required: true
+            },
+            subtitle: {
+                type: String,
+                required: false
             },
             showTitle: {
                 type: Boolean,
@@ -80,7 +87,7 @@
                 opacity: 1;
             }
 
-            p.title {
+            .title-block {
                 visibility: hidden;
                 opacity: 0;
             }
@@ -92,7 +99,7 @@
 
         }
 
-        p.title,
+        .title-block,
         .play-button {
             position: absolute;
             top: 50%;
@@ -101,15 +108,25 @@
             transition: opacity 1s;
         }
 
-        p.title {
+        .title-block {
             opacity: 1;
             color: #FFF;
-            font-size: 2rem;
-            font-family: cursive;
-            font-weight: 400;
             width: 90%;
             text-align: center;
-            font-family: 'Allura', sans-serif;
+
+            .title {
+                font-size: 2rem;
+                font-family: cursive;
+                font-weight: 400;
+                font-family: 'Allura', sans-serif;
+                margin-bottom: 0;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                font-family: sans-serif;
+            }
+
         }
 
         .play-button.has-title {

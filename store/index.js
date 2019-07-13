@@ -5,6 +5,7 @@ import cta from './modules/cta.js';
 import footer from './modules/footer.js';
 import pricing from './modules/pricing.js';
 import reviews from './modules/reviews.js';
+import venues from './modules/venues.js';
 import weddingVideos from './modules/weddingVideos.js';
 
 const createStore = () => {
@@ -16,6 +17,7 @@ const createStore = () => {
             footer,
             pricing,
             reviews,
+            venues,
             weddingVideos
         },
         state: {
@@ -27,6 +29,7 @@ const createStore = () => {
                 { name: 'ABOUT', url: '/about' },
                 { name: 'WEDDINGS', url: '/weddings' },
                 { name: 'REVIEWS', url: '/reviews' },
+                { name: 'VENUES', url: '/venues' },
                 { name: 'CONTACT', url: '/contact' }
             ],
             quotes: [
