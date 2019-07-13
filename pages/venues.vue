@@ -18,12 +18,12 @@
             </transition>
 
         <!-- Header -->
-            <Hero :class="[$store.state.supportsWebP ? 'venues-hero-webp' : 'venues-hero']" height="calc(100vh - 70px)" />
+            <!-- <Hero :class="[$store.state.supportsWebP ? 'venues-hero-webp' : 'venues-hero']" height="calc(65vh - 70px)" /> -->
 
-            <TitleBlock title="Great Venues" subtitle="We love to work with." />
+            <TitleBlock title="Great Venues" subtitle="We love to work with." color="dark" />
 
         <!-- Content -->
-            <section class="dark">
+            <section>
                 <div class="container" style="padding-top: 0;">
 
                     <div class="select-container">
@@ -39,16 +39,20 @@
                         </label>
                     </div>
 
-                    <div class="row video-grid" v-if="videos.length > 0">
-                        <div class="col-xs-12 col-sm-6 col-md-4" v-for="video in videos" :key="video.id">
-                            <VideoGridImage
-                                :image="supportsWebP ? video.webp : video.jpg"
-                                :title="`${video.bride} & ${video.groom}`"
-                                :subtitle="video.venue"
-                                @openModal="toggleModal(true, `${video.bride} & ${video.groom}`, video.id)"
-                            />
-                        </div>
-                    </div>
+                    <transition name="fade">
+                        <transition-group name="list" tag="div" class="row video-grid" v-if="videos.length > 0">
+                            <div class="col-xs-12 col-sm-6 col-md-4" v-for="video in videos" :key="video.id">
+                                <VideoGridImage
+                                    :image="supportsWebP ? video.webp : video.jpg"
+                                    :title="`${video.bride} & ${video.groom}`"
+                                    :subtitle="video.venue"
+                                    :url="`https://vimeo.com/${video.id}`"
+                                    @openModal="toggleModal(true, `${video.bride} & ${video.groom}`, video.id)"
+                                />
+                            </div>
+                        </transition-group>
+                    </transition>
+                   
 
                 </div>
             </section>
@@ -126,7 +130,7 @@
             ...mapGetters({
 
                 venues: 'getVenues',
-                videos: 'getVenueVideos'
+                videos: 'shuffleVenueVideos'
 
             })
 
@@ -231,7 +235,7 @@
 
             button {
                 padding: 1rem;
-                border: 2px solid #FFF;
+                border: 2px solid #5e5e5e;
                 color: #5e5e5e;
                 background: #FFF;
                 border-radius: 3px;
@@ -252,7 +256,7 @@
         label {
             display: inline-block;
             padding: 1rem;
-            border: 2px solid #FFF;
+            border: 2px solid #5e5e5e;
             border-radius: 3px;
             font-size: 1.2rem;
             margin: 0 0.5rem 0.5rem 0;

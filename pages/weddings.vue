@@ -43,6 +43,7 @@
                         <VideoGridImage
                             :image="supportsWebP ? video.webp : video.jpg"
                             :title="`${video.bride} & ${video.groom}`"
+                            :url="`https://vimeo.com/${video.id}`"
                             @openModal="toggleModal(true, `${video.bride} & ${video.groom}`, video.id)"
                         />
                     </div>

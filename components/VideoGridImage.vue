@@ -1,6 +1,6 @@
 <template>
 
-    <a @click.prevent="$emit('openModal')" href="javascript:void(0)" :title="imageTitle">
+    <a @click.prevent="$emit('openModal')" :href="url" :title="imageTitle">
         <img :src="image" :alt="imageTitle + ' - Video Thumbnail'">
         <div class="title-block" v-if="showTitle || subtitle">
             <p class="title" v-if="showTitle">{{ title }}</p>
@@ -45,6 +45,11 @@
                 type: Boolean,
                 required: false,
                 default: true
+            },
+            url: {
+                type: String,
+                required: false,
+                default: 'javascript:void(0)'
             }
 
         },
