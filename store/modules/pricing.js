@@ -6,8 +6,8 @@ export default {
             title: 'Epic',
             price: 4500,
             videoId: 280197591,
-            jpg: require('~/static/images/thumbs/katie_daniel.jpg'),
-            webp: require('~/static/images/thumbs/katie_daniel.webp'),
+            jpg: '/images/thumbs/katie_daniel.jpg',
+            webp: '/images/thumbs/katie_daniel.webp',
             content: [
                 `Our most popular package with couples needing all day coverage. 10 hour-2 shooter coverage. We use our Red Digital Cinema 5K & 4K Black Magic cameras for this package for the ultimate cinematic feel. Steve shoots vintage lenses exclusively with softening filters for this package and the highest quality audio components are used. Drone is included weather pending.`,
                 `This package works great for couples that want everything captured and usually gets us close to the end of the night! Epic package couples take priority when it comes to turn around time, usually within a week or 2.`,
@@ -19,8 +19,8 @@ export default {
             title: 'Gemini',
             price: 3800,
             videoId: 291922022,
-            jpg: require('~/static/images/thumbs/kari_tom.jpg'),
-            webp: require('~/static/images/thumbs/kari_tom.webp'),
+            jpg: '/images/thumbs/kari_tom.jpg',
+            webp: '/images/thumbs/kari_tom.webp',
             content: [
                 `All the same coverages as Epic but in an 8 Hour package, if you are not sure if you will need 8 or 10 hours, you can book the Gemini and upgrade to the Epic up to a month before hand! Usually this package will get you from morning prep through intros and occasionally cake.`
             ]

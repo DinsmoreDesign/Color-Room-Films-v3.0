@@ -26,18 +26,13 @@
             <section>
                 <div class="container" style="padding-top: 0;">
 
-                    <div class="select-container">
-                        <header>
-                            <h3>Select a Venue:</h3>
-                            <button type="button" @click="unselectVenues(venues.length === selectedVenues.length)">
-                                {{ venues.length === selectedVenues.length ? 'Unselect All' : 'Select All' }}
-                            </button>
-                        </header>
-                        <label v-for="(venue, index) in venues" :key="venue" :for="'venue-' + index">
-                            <input type="checkbox" :id="'venue-' + index" :name="'venue-' + index" :value="venue" v-model="selectedVenues">
-                            {{ venue }}
-                        </label>
-                    </div>
+                    <SelectContainer
+                        title="Select a Venue"
+                        :buttonTitle="venues.length === selectedVenues.length ? 'Unselect All' : 'Select All'"
+                        :options="venues"
+                        v-model="selectedVenues"
+                        @buttonClicked="unselectVenues(venues.length === selectedVenues.length)"
+                    />
 
                     <transition name="fade">
                         <transition-group name="list" tag="div" class="row video-grid" v-if="videos.length > 0">
@@ -74,6 +69,7 @@
     import Modal from '~/components/Modal.vue';
     import TitleBlock from '~/components/TitleBlock.vue';
     import ResponsiveVideo from '~/components/ResponsiveVideo';
+    import SelectContainer from '~/components/SelectContainer'
 
     export default {
 
@@ -92,7 +88,8 @@
             VideoGridImage,
             VideoModal: Modal,
             TitleBlock,
-            ResponsiveVideo
+            ResponsiveVideo,
+            SelectContainer
 
         },
         head() {
