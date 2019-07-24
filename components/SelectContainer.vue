@@ -11,33 +11,36 @@
             >
                 {{ title }} {{ showFilters ? '&#9662;' : '&#9656;' }}
             </button>
-            <button
-                v-if="showFilters"
-                type="button"
-                class="toggle"
-                @click="$emit('buttonClicked')"
-            >
-                {{ buttonTitle }}
-            </button>
+            <transition name="fade">
+                <button
+                    v-if="showFilters"
+                    type="button"
+                    class="toggle"
+                    @click="$emit('buttonClicked')"
+                >
+                    {{ buttonTitle }}
+                </button>
+            </transition>
         </header>
 
         <transition name="fade">
 
             <div class="filters" v-if="showFilters">
-                <label
+                <div
                     v-for="(option, index) in options"
                     :key="option"
-                    :for="'option-' + index"
                 >
-                    <input
-                        type="checkbox"
-                        :id="'option-' + index"
-                        :name="'option-' + index"
-                        :value="option"
-                        v-model="selected"
-                    >
-                    {{ option }}
-                </label>
+                    <label :for="'option-' + index" >
+                        <input
+                            type="checkbox"
+                            :id="'option-' + index"
+                            :name="'option-' + index"
+                            :value="option"
+                            v-model="selected"
+                        >
+                        {{ option }}
+                    </label>
+                </div>
             </div>
 
         </transition>
@@ -121,10 +124,8 @@
             padding: 1rem;
             border: 2px solid transparent;
         }
-        
+
         header {
-            display: flex;
-            align-items: center;
             cursor: pointer;
 
             &:not(:last-child) {
@@ -132,13 +133,18 @@
             }
 
             .header {
-                flex: 1;
+                width: 100%;
+                text-align: center;
+                padding: 0;
                 margin-bottom: 0;
                 font-size: 2rem;
                 font-weight: 300;
             }
 
             .toggle {
+                display: block;
+                width: 100%;
+                text-align: center;
                 border: 2px solid #5e5e5e;
                 color: #FFF;
                 background: #5e5e5e;
@@ -157,22 +163,89 @@
         }
 
         .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-column-gap: 0.5rem;
+            grid-row-gap: 0.5rem;
             padding-top: 2rem;
             border-top: 2px solid #dbdbdb;
 
-            label {
-                display: inline-block;
-                padding: 1rem;
-                border: 2px solid #5e5e5e;
-                border-radius: 3px;
-                font-size: 1.2rem;
-                margin: 0 0.5rem 0.5rem 0;
-                cursor: pointer;
+            div {
+                display: flex;
 
-                &:hover {
-                    opacity: 0.6;
+                label {
+                    padding: 0.5rem;
+                    font-size: 1rem;
+                    display: flex;
+                    align-items: center;
+                    flex: 1;
+                    border: 2px solid #5e5e5e;
+                    border-radius: 3px;
+                    cursor: pointer;
+
+                    input[type=checkbox] {
+                        margin-right: 1rem;
+                        width: 1.5rem;
+                        min-width: 1.5rem;
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        height: 1.5rem;
+                        min-height: 1.5rem;
+                        border-radius: 3px;
+                        background: transparent;
+                        border: solid #5e5e5e;
+                        cursor: pointer;
+
+                        &:after {
+                            margin-left: .35rem;
+                            margin-top: -.05rem;
+                            width: .35rem;
+                            height: .85rem;
+                            border: solid transparent;
+                            border-width: 0 3px 3px 0;
+                            content: "";
+                            display: inline-block;
+                        }
+
+                        &:checked:after {
+                            border: solid #5e5e5e;
+                            border-width: 0 3px 3px 0;
+                            -webkit-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                        }
+
+                    }
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+
+                }
+            }
+
+        }
+
+        @media screen and (min-width: 533px) {
+
+            header {
+                display: flex;
+                align-items: center;
+
+                .header {
+                    flex: 1;
+                    width: auto;
+                    text-align: left;
                 }
 
+                .toggle {
+                    width: auto;
+                }
+
+            }
+
+            .filters div label {
+                padding: 1rem;
+                font-size: 1.2rem;
             }
 
         }
