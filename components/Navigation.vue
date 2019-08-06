@@ -14,13 +14,23 @@
         <ul :class="{ 'main-nav': true, 'active': showMobileNav }">
 
             <li v-for="item in navItems" :key="item.name" @click="showMobileNav = false">
-                <nuxt-link
+
+                <a  v-if="item.url.includes('.')"
+                    class="nav-links"
+                    :title="`View the Color Room Films ${item.name.toLowerCase()} page`"
+                    :href="item.url"
+                >
+                    {{ item.name }}
+                </a>
+
+                <nuxt-link v-else
                     :title="`View the Color Room Films ${item.name.toLowerCase()} page`"
                     class="nav-links"
                     :to="item.url"
                     exactActiveClass="active"
                     activeClass="parent-active"
                 >{{ item.name }}</nuxt-link>
+
             </li>
             <li>
                 <a class="nav-links" title="Visit Color Room Films on WeddingWire" href="https://www.weddingwire.com/reviews/color-room-films-jackson/fd77ea76d63e4a5f.html" target="_blank">
@@ -138,7 +148,7 @@
         font-size: 1.75rem;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1200px) {
         .navbar {
             display: flex;
             justify-content: space-between;

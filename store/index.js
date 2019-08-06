@@ -30,6 +30,7 @@ const createStore = () => {
                 { name: 'WEDDINGS', url: '/weddings' },
                 { name: 'REVIEWS', url: '/reviews' },
                 { name: 'VENUES', url: '/venues' },
+                { name: 'CASE STUDY', url: '/REDCaseStudy-ColorRoomFilms.pdf' },
                 { name: 'CONTACT', url: '/contact' }
             ],
             quotes: [

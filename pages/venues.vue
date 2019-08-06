@@ -69,7 +69,7 @@
     import Modal from '~/components/Modal.vue';
     import TitleBlock from '~/components/TitleBlock.vue';
     import ResponsiveVideo from '~/components/ResponsiveVideo';
-    import SelectContainer from '~/components/SelectContainer'
+    import SelectContainer from '~/components/SelectContainer';
 
     export default {
 
@@ -126,10 +126,15 @@
             }),
             ...mapGetters({
 
-                venues: 'getVenues',
+                venuesObjects: 'getVenues',
                 videos: 'shuffleVenueVideos'
 
-            })
+            }),
+            venues() {
+
+                return this.venuesObjects.map(obj => obj.name);
+
+            }
 
         },
         watch: {

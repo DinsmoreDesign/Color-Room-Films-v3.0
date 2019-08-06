@@ -6,6 +6,14 @@ export default {
         videos: [
             // Ryland Inn
             {
+                bride: 'Lauren',
+                groom: 'Garret',
+                venue: 'Ryland Inn',
+                jpg: '/images/thumbs/lauren_garret.jpg',
+                webp: '/images/thumbs/lauren_garret.webp',
+                id: 351308338
+            },
+            {
                 bride: 'Jillian',
                 groom: 'Kyle',
                 venue: 'Ryland Inn',
@@ -233,14 +241,6 @@ export default {
                 webp: '/images/thumbs/ellen_michael.webp',
                 id: 340455628
             },
-            // {
-            //     bride: 'Kathryn',
-            //     groom: 'Christopher',
-            //     venue: 'Country Club Weddings',
-            //     jpg: '/images/thumbs/kathryn_christopher.jpg',
-            //     webp: '/images/thumbs/kathryn_christopher.webp',
-            //     id: 300603230
-            // },
             {
                 bride: 'Kari',
                 groom: 'Tom',
@@ -354,9 +354,14 @@ export default {
 
             for (const video of state.videos) {
 
-                if (!venues.includes(video.venue)) {
+                const filtered = venues.filter(venue => venue.name === video.venue);
 
-                    venues.push(video.venue);
+                if (filtered.length === 0) {
+
+                    venues.push({
+                        name: video.venue,
+                        slug: video.venue.toLowerCase().replace(/\s/g, '')
+                    });
 
                 };
 
