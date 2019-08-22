@@ -299,6 +299,14 @@ export default {
                 webp: '/images/thumbs/jessica_benji.webp',
                 id: 233336221
             },
+            {
+                bride: 'Christina',
+                groom: 'Justin',
+                venue: 'Park Chateau',
+                jpg: '/images/thumbs/christina_justin.jpg',
+                webp: '/images/thumbs/christina_justin.webp',
+                id: 351660584
+            },
 
             // Windows on the Water Fogbridge
             {
