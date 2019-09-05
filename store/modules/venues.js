@@ -61,6 +61,22 @@ export default {
                 webp: '/images/thumbs/tina_ed.webp',
                 id: 244086183
             },
+            {
+                bride: 'Christina',
+                groom: 'Michael',
+                venue: 'Ryland Inn',
+                jpg: '/images/thumbs/christina_michael.jpg',
+                webp: '/images/thumbs/christina_michael.webp',
+                id: 355163482
+            },
+            {
+                bride: 'Jacquelyn',
+                groom: 'Andrew',
+                venue: 'Ryland Inn',
+                jpg: '/images/thumbs/jacquelyn_andrew.jpg',
+                webp: '/images/thumbs/jacquelyn_andrew.webp',
+                id: 353624598
+            },
 
             // Stone House Sterling Ridge
             {
