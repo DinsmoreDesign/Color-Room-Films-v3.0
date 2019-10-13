@@ -77,6 +77,22 @@ export default {
                 webp: '/images/thumbs/jacquelyn_andrew.webp',
                 id: 353624598
             },
+            {
+                bride: 'Kristie',
+                groom: 'Daniel',
+                venue: 'Ryland Inn',
+                jpg: '/images/thumbs/kristie_daniel.jpg',
+                webp: '/images/thumbs/kristie_daniel.webp',
+                id: 364068294
+            },
+            {
+                bride: 'Ashley',
+                groom: 'Christopher',
+                venue: 'Ryland Inn',
+                jpg: '/images/thumbs/ashley_christopher.jpg',
+                webp: '/images/thumbs/ashley_christopher.webp',
+                id: 358948441
+            },
 
             // Stone House Sterling Ridge
             {
@@ -197,6 +213,14 @@ export default {
                 webp: '/images/thumbs/danielle_tyler.webp',
                 id: 237608486
             },
+            {
+                bride: 'Heather',
+                groom: 'Michael',
+                venue: 'Cape May & Avalon',
+                jpg: '/images/thumbs/heather_michael.jpg',
+                webp: '/images/thumbs/heather_michael.webp',
+                id: 360531313
+            },
 
             // Clarks Landing Yacht Club
             {
@@ -296,6 +320,22 @@ export default {
                 jpg: '/images/thumbs/nicole_chris.jpg',
                 webp: '/images/thumbs/nicole_chris.webp',
                 id: 190918944
+            },
+            {
+                bride: 'Stephanie',
+                groom: 'Fabian',
+                venue: 'Country Club Weddings',
+                jpg: '/images/thumbs/stephanie_fabian.jpg',
+                webp: '/images/thumbs/stephanie_fabian.webp',
+                id: 363592250
+            },
+            {
+                bride: 'Jessica',
+                groom: 'Michael',
+                venue: 'Country Club Weddings',
+                jpg: '/images/thumbs/jessica_michael.jpg',
+                webp: '/images/thumbs/jessica_michael.webp',
+                id: 357596902
             },
 
             // Park Chateau
