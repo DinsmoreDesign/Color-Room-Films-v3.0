@@ -363,6 +363,14 @@ export default {
                 webp: '/images/thumbs/christina_justin.webp',
                 id: 351660584
             },
+            {
+                bride: 'Megan',
+                groom: 'Ryan',
+                venue: 'Park Chateau',
+                jpg: '/images/thumbs/megan_ryan.jpg',
+                webp: '/images/thumbs/megan_ryan.webp',
+                id: 366793381
+            },
 
             // Windows on the Water Fogbridge
             {
