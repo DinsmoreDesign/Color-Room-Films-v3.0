@@ -8,12 +8,13 @@
                         <div class="col-xs-4 icon-container" v-html="require('!svg-inline-loader!../static/images/the-knot.svg')"></div>
                         <div class="col-xs-8 content">
                             <p>
-                                <small>2017, 2018 &</small>
+                                <small>2017, 2018, 2019 &</small>
                             </p>
                             <h3>
-                                <strong>2019</strong> the knot
+                                <strong>2020</strong> the knot
                             </h3>
-                            <p> Best of Weddings</p>
+                            <p>Best of Weddings</p>
+                            <p>+ <strong>2020</strong> Hall of Fame</p>
                         </div>
                     </div>
                 </div>
