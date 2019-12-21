@@ -17,7 +17,7 @@ export default {
         },
         {
             title: 'Gemini',
-            price: 3700,
+            price: 3600,
             videoId: 291922022,
             jpg: '/images/thumbs/kari_tom.jpg',
             webp: '/images/thumbs/kari_tom.webp',
