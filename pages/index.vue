@@ -2,32 +2,44 @@
 
     <div>
 
-        <video playsinline autoplay muted loop :poster="require('~/static/videos/landing.jpg')">
-            <source src="~/static/videos/landing.webm" type="video/webm">
-            <source src="~/static/videos/landing.mp4" type="video/mp4">
-            <img src="~/static/videos/landing.jpg" alt="Couple walking up stairs">
-        </video>
+        <div class="row no-gap between-xs show-tablet">
+            <div class="col-xs-12 col-sm-6">
+                <div class="image-container right-border">
+                    <nuxt-link to="/weddings" title="View some of our recent wedding trailers">
+                        <ResponsiveImage
+                            class="rollover-image"
+                            smallImage="/images/heros/home/left-480p"
+                            mediumImage="/images/heros/home/left-720p"
+                            largeImage="/images/heros/home/left-1080p"
+                            xlImage="/images/heros/home/left-1440p"
+                            title="Bride Surrounded by Bridesmaids"
+                        />
+                        <!-- <p class="title">Wedding Trailers</p> -->
+                    </nuxt-link>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="image-container left-border">
+                    <nuxt-link to="/reviews" title="Learn what others have to say about us">
+                        <ResponsiveImage
+                            class="rollover-image"
+                            smallImage="/images/heros/home/right-480p"
+                            mediumImage="/images/heros/home/right-720p"
+                            largeImage="/images/heros/home/right-1080p"
+                            xlImage="/images/heros/home/right-1440p"
+                            title="Bride and Groom Outside Church"
+                        />
+                        <!-- <p class="title">Reviews</p> -->
+                    </nuxt-link>
+                </div>
+            </div>
+        </div>
 
-        <Hero>
-            <div class="container">
-                <div class="row">
-                    <div class="logo-container" v-html="require('!svg-inline-loader!../static/images/crf-mark-w.svg')"></div>
-                </div>
-                <div class="row">
-                    <ButtonLink url="/home" title="Enter the Color Room Films website" :isWhite="true">ENTER</ButtonLink>
-                </div>
-            </div>
-            <div class="social-icons" slot="footer">
-                <a v-for="link in socialLinks" :key="link.icon"
-                    :href="link.url"
-                    :title="link.title"
-                    target="_blank"
-                    class="icon"
-                >
-                    <i :class="[ 'icon-' + link.icon ]"></i>
-                </a>
-            </div>
-        </Hero>
+        <Hero :class="[ 'show-mobile', $store.state.supportsWebP ? 'home-hero-webp' : 'home-hero']" height="calc(100vh - 61px)" />
+
+        <TitleBlock title="Your wedding, your way" subtitle="Award-winning #MotionPictureMemories for every event." />
+
+        <AwardsContainer/>
 
     </div>
     
@@ -40,15 +52,16 @@
 
 <script>
 
-    import { mapState } from 'vuex';
+    import { mapActions } from 'vuex';
 
     import Hero from '~/components/Hero.vue';
-    import ButtonLink from '~/components/ButtonLink.vue';
+    import ResponsiveImage from '~/components/ResponsiveImage.vue';
+    import AwardsContainer from '~/components/AwardsContainer.vue';
+    import TitleBlock from '~/components/TitleBlock.vue';
 
     export default {
 
-        name: 'Index',
-        layout: 'blank',
+        name: 'Home',
         watchQuery: ["page"],
         key: to => to.fullPath,
         transition(to, from) {
@@ -58,16 +71,47 @@
             
         },
         components: {
-            
+
             Hero,
-            ButtonLink
+            ResponsiveImage,
+            AwardsContainer,
+            TitleBlock
 
         },
-        computed: {
+        head() {
+            return {
 
-            ...mapState({
-                socialLinks: state => state.footer.contactInfo.socialLinks,
+                title: 'Home | Color Room Films',
+                meta: [
+                    { property: 'og:title', content: 'Home | Color Room Films' },
+                    { name: 'description', content: 'We create the MotionPictureMemories you’ll cherish forever. We deliver precious memories of your special day that you can relive for years to come.' },
+                    { property: 'og-description', content: 'We create the MotionPictureMemories you’ll cherish forever. We deliver precious memories of your special day that you can relive for years to come.' },
+                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie' }
+                ]
+
+            }
+        },
+        created() {
+
+            this.updateCallToAction({
+                isVisible: false
+            });
+
+            this.updateFooter({
+                title: '',
+                content: `Every story is unique and we strive to create a film as unique as your relationship, which you can share with your loved ones for years to come. Your wedding is a precious moment in your life and our goal is to capture it in the most emotional and honest way possible. We pride ourselves on getting it right without getting in the way to deliver a film you'll be proud to call your own.`
             })
+
+            this.updateCurrentQuote();
+
+        },
+        methods: {
+
+            ...mapActions([
+                'updateCallToAction',
+                'updateFooter',
+                'updateCurrentQuote'
+            ])
 
         }
 
@@ -81,68 +125,100 @@
 
 <style lang="scss" scoped>
 
-    video {
-        object-fit: cover;
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        left: 0;
+    .row div[class^="col-"] {
+        margin-bottom: -0.4rem !important;
+    }
+
+    .image-container {
+        box-sizing: border-box;
+    }
+
+    .rollover-image {
         opacity: 0.7;
-        z-index: -1;
+        transition: opacity 1s;
+
+        &:hover {
+            opacity: 1;
+        }
     }
 
-    .row {
-        margin-top: 2rem;
+    a {
+        display: block;
+        position: relative;
 
-        * {
-            margin: 0 auto;
+        .title {
+            opacity: 0;
+            transition: opacity 1s;
         }
 
-        &:first-child {
-            margin-top: 0;
+        &:hover .title {
+            opacity: 1;
+            margin: 0;
+            text-shadow: 3px 3px 15px #000;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #FFF;
+            font-size: 4rem;
+            font-family: cursive;
+            font-weight: 400;
+            width: 90%;
+            text-align: center;
+            font-family: 'Allura', sans-serif;
         }
-
     }
 
-    .logo-container {
-        max-width: 90%;
-
-        /deep/ svg {
-            height: 100%;
-            width: 100%;
-            max-width: 350px;
+    @media only screen and (min-width: 768px) {
+        .left-border {
+            border-left: .5rem solid transparent;
         }
-
+        .right-border {
+            border-right: .5rem solid transparent;
+        }
     }
 
-    .social-icons {
-        width: 100%;
-
-        a {
-            text-decoration: none;
-            padding: 0.5rem;
-
-            i {
-                font-size: 1.5rem;
-                width: 1.5rem;
-                text-align: center;
-                line-height: 1.5rem;
-                background-color: #FFF;
-                color: #5e5e5e;
-                border-radius: 50%;
-                padding: 0.5rem 0.5rem 0.1rem 0.5rem;
-                transition: color 0.3s, background-color 0.3s;
-
-                &:hover {
-                    color: #FFF;
-                    background-color: transparent;
-                }
-
-            }
-
+    @media only screen and (min-width: 992px) {
+        .left-border {
+            border-left: 1rem solid transparent;
         }
+        .right-border {
+            border-right: 1rem solid transparent;
+        }
+    }
 
+    .show-mobile {
+        display: flex;
+    }
+    .show-tablet {
+        display: none;
+    }
+
+    @media only screen and (min-width: 768px) { // Halfway between 480p and 720p
+        .show-mobile {
+            display: none;
+        }
+        .show-tablet {
+            display: flex;
+        }
+    }
+
+    /* Modern Browsers: */
+    .home-hero-webp { // Only shows on mobile
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(/images/heros/home/left-480p.webp);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    /* Legacy Browsers: */
+    .home-hero { // Only shows on mobile
+        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                            url(/images/heros/home/left-480p.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
     }
 
 </style>

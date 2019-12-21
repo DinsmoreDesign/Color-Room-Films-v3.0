@@ -221,6 +221,22 @@ export default {
                 webp: '/images/thumbs/heather_michael.webp',
                 id: 360531313
             },
+            {
+                bride: 'Shannon',
+                groom: 'Taylor',
+                venue: 'Cape May & Avalon',
+                jpg: '/images/thumbs/shannon_taylor.jpg',
+                webp: '/images/thumbs/shannon_taylor.webp',
+                id: 270450537
+            },
+            {
+                bride: 'Christina',
+                groom: 'Chris',
+                venue: 'Cape May & Avalon',
+                jpg: '/images/thumbs/christina_chris.jpg',
+                webp: '/images/thumbs/christina_chris.webp',
+                id: 372930649
+            },
 
             // Clarks Landing Yacht Club
             {

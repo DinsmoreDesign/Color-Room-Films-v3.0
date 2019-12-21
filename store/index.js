@@ -25,7 +25,7 @@ const createStore = () => {
             checkedWebPSupport: false,
             supportsWebP: false,
             navItems: [
-                { name: 'HOME', url: '/home' },
+                { name: 'HOME', url: '/' },
                 { name: 'ABOUT', url: '/about' },
                 { name: 'WEDDINGS', url: '/weddings' },
                 { name: 'REVIEWS', url: '/reviews' },

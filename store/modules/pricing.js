@@ -9,10 +9,10 @@ export default {
             jpg: '/images/thumbs/katie_daniel.jpg',
             webp: '/images/thumbs/katie_daniel.webp',
             content: [
-                `Our most popular package with couples needing all day coverage. 10 hour-2 shooter coverage. We use our Red Digital Cinema 5K & 4K Black Magic cameras for this package for the ultimate cinematic feel. Steve shoots vintage lenses exclusively with softening filters for this package and the highest quality audio components are used. Drone is included weather pending.`,
-                `This package works great for couples that want everything captured and usually gets us close to the end of the night! Epic package couples take priority when it comes to turn around time, usually within a week or 2.`,
-                `You will receive a trailer and full film (full film lengths can vary), we never put a limit on the length of your full film either! Couples receive all dance floor footage in it's entirety along with all the days major events. Delivery is via Vimeo in 4K resolution and Mediazilla in 1080P.`,
-                `Leave us a review and we send you a free dvd!`
+                `Our most popular package with couples needing all day coverage. 10 hour-2 shooter coverage. Drone is included weather pending.`,
+                `This package works great for couples that want everything captured and usually gets us close to the end of the night!`,
+                `You will receive a trailer and full film (full film lengths can vary), we never put a limit on the length of your full film either! Couples receive all dance floor footage in it's entirety along with all the days major events. Delivery is via Vimeo in 4K resolution.`,
+                `We also NEVER USE LIGHTS! This helps us achieve the best ambience when it comes to candid dancefloor footage!`
             ]
         },
         {
