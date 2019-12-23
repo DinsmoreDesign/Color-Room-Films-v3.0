@@ -5,6 +5,7 @@ export default {
         {
             title: 'Epic',
             price: 4200,
+            currentPrice: 3889,
             videoId: 280197591,
             jpg: '/images/thumbs/katie_daniel.jpg',
             webp: '/images/thumbs/katie_daniel.webp',
@@ -18,6 +19,7 @@ export default {
         {
             title: 'Gemini',
             price: 3600,
+            currentPrice: 3499,
             videoId: 291922022,
             jpg: '/images/thumbs/kari_tom.jpg',
             webp: '/images/thumbs/kari_tom.webp',
@@ -28,6 +30,7 @@ export default {
         {
             title: 'Legacy',
             price: 3300,
+            currentPrice: 3389,
             content: [
                 `This package works great for couples who only need 8 hours and one shooter with only a couple locations. We shoot this package in 4K and deliver is the same as our other packages. Normally drone is not including in single shooter packages. We shoot this package mainly for the full film and put together a complimentary recap for you also. This is part of our associate program and generally Steve will not shoot these but does on occasion. Please contact Steve directly for availability! info@colorroomfilms.com`
             ]

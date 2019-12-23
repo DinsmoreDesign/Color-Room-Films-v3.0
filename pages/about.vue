@@ -21,6 +21,9 @@
                 <p>
                     Through Jane's love for the visual arts, their film work organically grew to what it is today. Because of this gradual maturation process, Steve and Jane have been able to hone their skills and really dig into what each couple wants. Our deepest core value is to deliver a wedding film that is honest and far above any previous expectation by the couple. We are able to accomplish this by keeping our rates low, using Hollywood-grade equipment and never allowing ourselves to be completely satisfied.
                 </p>
+                <a href="/REDCaseStudy-ColorRoomFilms.pdf" class="button white" title="View the Color Room Films Recent Press page">
+                    Recent Press
+                </a>
             </div>
         </section>
 
@@ -36,6 +39,7 @@
 
     import { mapActions } from 'vuex';
 
+    import ButtonLink from '../components/ButtonLink.vue';
     import Hero from '~/components/Hero.vue';
     import TitleBlock from '~/components/TitleBlock.vue';
 
@@ -52,6 +56,7 @@
         },
         components: {
 
+            ButtonLink,
             Hero,
             TitleBlock
 
@@ -164,6 +169,35 @@
             background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
                                 url(/images/heros/about/1440p.jpg);
         }
+    }
+
+    .button {
+        display: inline-block;
+        padding: .5rem;
+        border-radius: 3px;
+        font-weight: 300;
+        font-size: 2rem;
+        text-decoration: none;
+        box-sizing: border-box;
+        transition: all 0.5s;
+
+        &.white {
+            border: 2px solid #FFF;
+            background: transparent;
+            color: #FFF;
+
+            &:hover {
+                background: #FFF;
+                color: #5e5e5e;
+                border-color: #5e5e5e;
+                transform: scale(1.05);
+                    -webkit-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.3);
+                    -moz-box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.3);
+                box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.3);
+            }
+
+        }
+
     }
 
 </style>
