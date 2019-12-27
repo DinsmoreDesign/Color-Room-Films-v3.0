@@ -2,40 +2,32 @@
 
     <div>
 
-        <div class="row no-gap between-xs show-tablet">
-            <div class="col-xs-12 col-sm-6">
-                <div class="image-container right-border">
-                    <nuxt-link to="/weddings" title="View some of our recent wedding trailers">
-                        <ResponsiveImage
-                            class="rollover-image"
-                            smallImage="/images/heros/home/left-480p"
-                            mediumImage="/images/heros/home/left-720p"
-                            largeImage="/images/heros/home/left-1080p"
-                            xlImage="/images/heros/home/left-1440p"
-                            title="Bride Surrounded by Bridesmaids"
-                        />
-                        <!-- <p class="title">Wedding Trailers</p> -->
-                    </nuxt-link>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <div class="image-container left-border">
-                    <nuxt-link to="/reviews" title="Learn what others have to say about us">
-                        <ResponsiveImage
-                            class="rollover-image"
-                            smallImage="/images/heros/home/right-480p"
-                            mediumImage="/images/heros/home/right-720p"
-                            largeImage="/images/heros/home/right-1080p"
-                            xlImage="/images/heros/home/right-1440p"
-                            title="Bride and Groom Outside Church"
-                        />
-                        <!-- <p class="title">Reviews</p> -->
-                    </nuxt-link>
-                </div>
+        <transition name="fade">
+            <VideoModal v-if="modal.isVisible"
+                @close="toggleModal(false, null, null)"
+                background="#000"
+            >
+                <ResponsiveVideo
+                    source="https://player.vimeo.com/video/"
+                    :id="modal.url"
+                    queries="?color=26a69a&title=0&byline=0&portrait=0&autoplay=1"
+                    :title="modal.title"
+                />
+            </VideoModal>
+        </transition>
+
+        <div class="row no-gap between-xs">
+            <div class="col-xs-12 col-sm-4 home-video" v-for="video in videos" :key="video.id">
+                <VideoGridImage
+                    :image="supportsWebP ? video.webp : video.jpg"
+                    :title="video.title"
+                    :showTitle="false"
+                    :url="`https://vimeo.com/${video.id}`"
+                    @openModal="toggleModal(true, `${video.bride} & ${video.groom}`, video.id)"
+                />
+                <p class="image-footer">{{video.title}}</p>
             </div>
         </div>
-
-        <Hero :class="[ 'show-mobile', $store.state.supportsWebP ? 'home-hero-webp' : 'home-hero']" height="calc(100vh - 61px)" />
 
         <TitleBlock title="Your wedding, your way" subtitle="Award-winning #MotionPictureMemories for every event." />
 
@@ -52,12 +44,15 @@
 
 <script>
 
-    import { mapActions } from 'vuex';
+    import { mapActions, mapState } from 'vuex';
 
     import Hero from '~/components/Hero.vue';
-    import ResponsiveImage from '~/components/ResponsiveImage.vue';
     import AwardsContainer from '~/components/AwardsContainer.vue';
+    import ResponsiveImage from '~/components/ResponsiveImage.vue';
+    import ResponsiveVideo from '~/components/ResponsiveVideo.vue';
     import TitleBlock from '~/components/TitleBlock.vue';
+    import VideoGridImage from '~/components/VideoGridImage.vue';
+    import Modal from '~/components/Modal.vue';
 
     export default {
 
@@ -73,9 +68,12 @@
         components: {
 
             Hero,
-            ResponsiveImage,
             AwardsContainer,
-            TitleBlock
+            ResponsiveImage,
+            ResponsiveVideo,
+            TitleBlock,
+            VideoGridImage,
+            VideoModal: Modal
 
         },
         head() {
@@ -90,6 +88,27 @@
                 ]
 
             }
+        },
+        data() {
+            return {
+
+                modal: {
+                    isVisible: false,
+                    title: null,
+                    url: null
+                }
+
+            }
+        },
+        computed: {
+
+            ...mapState({
+
+                supportsWebP: state => state.supportsWebP,
+                videos: state => state.home.videos
+                
+            })
+
         },
         created() {
 
@@ -111,7 +130,18 @@
                 'updateCallToAction',
                 'updateFooter',
                 'updateCurrentQuote'
-            ])
+            ]),
+            toggleModal(condition, title, url) {
+
+                this.modal = {
+
+                    isVisible: condition,
+                    title: title + ' - Wedding Trailer',
+                    url: url
+
+                }
+
+            }
 
         }
 
@@ -125,100 +155,33 @@
 
 <style lang="scss" scoped>
 
-    .row div[class^="col-"] {
-        margin-bottom: -0.4rem !important;
-    }
+    .home-video {
 
-    .image-container {
-        box-sizing: border-box;
-    }
-
-    .rollover-image {
-        opacity: 0.7;
-        transition: opacity 1s;
-
-        &:hover {
-            opacity: 1;
-        }
-    }
-
-    a {
-        display: block;
-        position: relative;
-
-        .title {
-            opacity: 0;
-            transition: opacity 1s;
-        }
-
-        &:hover .title {
-            opacity: 1;
-            margin: 0;
-            text-shadow: 3px 3px 15px #000;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        .image-footer {
             color: #FFF;
-            font-size: 4rem;
-            font-family: cursive;
-            font-weight: 400;
-            width: 90%;
+            background-color: #5e5e5e;
             text-align: center;
-            font-family: 'Allura', sans-serif;
-        }
-    }
+            padding: 1rem;
+            margin: 0;
+            margin-bottom: 4px;
 
-    @media only screen and (min-width: 768px) {
-        .left-border {
-            border-left: .5rem solid transparent;
-        }
-        .right-border {
-            border-right: .5rem solid transparent;
-        }
-    }
+            &:not(:last-child) {
+                border-right: 1px solid #FFF;
+            }
 
-    @media only screen and (min-width: 992px) {
-        .left-border {
-            border-left: 1rem solid transparent;
         }
-        .right-border {
-            border-right: 1rem solid transparent;
+
+        @media screen and (min-width: 768px) {
+
+            &:not(:last-child) .image-footer {
+                border-right: 2px solid #FFF;
+            }
+            &:not(:first-child) .image-footer {
+                border-left: 2px solid #FFF;
+            }
+
         }
-    }
 
-    .show-mobile {
-        display: flex;
-    }
-    .show-tablet {
-        display: none;
-    }
-
-    @media only screen and (min-width: 768px) { // Halfway between 480p and 720p
-        .show-mobile {
-            display: none;
-        }
-        .show-tablet {
-            display: flex;
-        }
-    }
-
-    /* Modern Browsers: */
-    .home-hero-webp { // Only shows on mobile
-        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(/images/heros/home/left-480p.webp);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
-    }
-
-    /* Legacy Browsers: */
-    .home-hero { // Only shows on mobile
-        background-image:   linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
-                            url(/images/heros/home/left-480p.jpg);
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-size: cover;
     }
 
 </style>

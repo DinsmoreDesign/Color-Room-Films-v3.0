@@ -3,6 +3,7 @@ import Vuex from 'vuex';
 import contactInfo from './modules/contactInfo';
 import cta from './modules/cta';
 import footer from './modules/footer';
+import home from './modules/home';
 import pricing from './modules/pricing';
 import reviews from './modules/reviews';
 import venues from './modules/venues';
@@ -12,13 +13,16 @@ const createStore = () => {
     return new Vuex.Store({
 
         modules: {
+
             contactInfo,
             cta,
             footer,
+            home,
             pricing,
             reviews,
             venues,
             weddingVideos
+            
         },
         state: {
 
