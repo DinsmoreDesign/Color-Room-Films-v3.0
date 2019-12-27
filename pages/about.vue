@@ -2,7 +2,12 @@
   
     <div>
 
-        <Hero :class="[$store.state.supportsWebP ? 'about-hero-webp' : 'about-hero']" height="calc(100vh - 70px)" />
+        <div class="hero-wrapper">
+            <Hero :class="[$store.state.supportsWebP ? 'about-hero-webp' : 'about-hero']" height="calc(100vh - 70px)" />
+            <div class="credits">
+                <p>Photo by Limelight Entertainment </p>
+            </div>
+        </div>
 
         <TitleBlock title="Our Story" subtitle="Steve & Jane DiMaggio" />
 
@@ -198,6 +203,33 @@
 
         }
 
+    }
+
+    .hero-wrapper {
+        position: relative;
+
+        .credits {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+
+            p {
+                margin: 0;
+                padding: 1rem;
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+
+        }
+
+        @media screen and (max-width: 540px) {
+
+            .credits {
+                width: 100%;
+                text-align: center;
+            }
+
+        }
+        
     }
 
 </style>

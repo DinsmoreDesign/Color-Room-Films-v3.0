@@ -5,29 +5,12 @@
         <!-- Hero and Title Block -->
             <Hero :class="[$store.state.supportsWebP ? 'reviews-hero-webp' : 'reviews-hero']" height="calc(100vh - 70px)" />
 
-            <TitleBlock title="Reviews of our favorite memories" subtitle="...cherished forever." />
-
-        <!-- Reviews Section -->
-            <section :class="[$store.state.supportsWebP ? 'reviews-testimonial-webp' : 'reviews-testimonial']">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 col-xs-12 review" v-for="review in reviews.list" :key="review.name">
-                            <ReviewBlock
-                                :review="review.text"
-                                :signature="review.name"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <TitleBlock title="Reviews of our favorite memories" subtitle="...cherished forever:" color="dark" />
 
         <!-- CTA -->
             <section class="dark reviews">
                 <div class="container">
                     <div class="row">
-                        <div class="col-xs-12">
-                            <h3>Check out <strong>all</strong> of our reviews:</h3>
-                        </div>
                         <div class="col-sm-4 col-xs-12 review-link" v-for="link in reviews.links" :key="link.icon">
                             <a :href="link.url" :title="link.title" target="_blank">
                                 <p>
@@ -130,6 +113,7 @@
 
     .reviews {
         text-align: center;
+        padding-top: 0;
 
         h3 {
             font-weight: 300;

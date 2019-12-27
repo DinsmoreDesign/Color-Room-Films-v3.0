@@ -1,12 +1,12 @@
 import Vuex from 'vuex';
 
-import contactInfo from './modules/contactInfo.js';
-import cta from './modules/cta.js';
-import footer from './modules/footer.js';
-import pricing from './modules/pricing.js';
-import reviews from './modules/reviews.js';
-import venues from './modules/venues.js';
-import weddingVideos from './modules/weddingVideos.js';
+import contactInfo from './modules/contactInfo';
+import cta from './modules/cta';
+import footer from './modules/footer';
+import pricing from './modules/pricing';
+import reviews from './modules/reviews';
+import venues from './modules/venues';
+import weddingVideos from './modules/weddingVideos';
 
 const createStore = () => {
     return new Vuex.Store({
@@ -28,6 +28,7 @@ const createStore = () => {
                 { name: 'HOME', url: '/' },
                 { name: 'ABOUT', url: '/about' },
                 { name: 'WEDDINGS', url: '/weddings' },
+                { name: 'COLLECTIONS', url: '/collections' },
                 { name: 'REVIEWS', url: '/reviews' },
                 { name: 'VENUES', url: '/venues' },
                 { name: 'CONTACT', url: '/contact' }

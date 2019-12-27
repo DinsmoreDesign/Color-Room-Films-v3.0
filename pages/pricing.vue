@@ -10,11 +10,11 @@
 
                     <div class="col-xs-12 col-sm-6">
                         <PricingCard
-                            :image="supportsWebP ? pricingOptions[0].webp : pricingOptions[0].jpg"
-                            :videoId="pricingOptions[0].videoId"
-                            :title="pricingOptions[0].title"
-                            :price="pricingOptions[0].price"
-                            :content="pricingOptions[0].content"
+                            :image="supportsWebP ? pricingOptions.epic.webp : pricingOptions.epic.jpg"
+                            :videoId="pricingOptions.epic.videoId"
+                            :title="pricingOptions.epic.title"
+                            :price="pricingOptions.epic.price"
+                            :content="pricingOptions.epic.content"
                         />
                     </div>
 
@@ -22,20 +22,20 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <PricingCard
-                                    :image="supportsWebP ? pricingOptions[1].webp : pricingOptions[1].jpg"
-                                    :videoId="pricingOptions[1].videoId"
-                                    :title="pricingOptions[1].title"
-                                    :price="pricingOptions[1].price"
-                                    :content="pricingOptions[1].content"
+                                    :image="supportsWebP ? pricingOptions.gemini.webp : pricingOptions.gemini.jpg"
+                                    :videoId="pricingOptions.gemini.videoId"
+                                    :title="pricingOptions.gemini.title"
+                                    :price="pricingOptions.gemini.price"
+                                    :content="pricingOptions.gemini.content"
                                 />
                             </div>
                             <div class="col-xs-12" style="margin-top: 2rem;">
                                 <PricingCard
-                                    :image="supportsWebP ? pricingOptions[2].webp : pricingOptions[2].jpg"
-                                    :videoId="pricingOptions[2].videoId"
-                                    :title="pricingOptions[2].title"
-                                    :price="pricingOptions[2].price"
-                                    :content="pricingOptions[2].content"
+                                    :image="supportsWebP ? pricingOptions.legacy.webp : pricingOptions.legacy.jpg"
+                                    :videoId="pricingOptions.legacy.videoId"
+                                    :title="pricingOptions.legacy.title"
+                                    :price="pricingOptions.legacy.price"
+                                    :content="pricingOptions.legacy.content"
                                 />
                             </div>
                         </div>
