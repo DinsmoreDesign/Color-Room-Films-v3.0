@@ -130,6 +130,11 @@
             videos: {
                 type: Array,
                 required: true
+            },
+            allowLessTime: {
+                type: Boolean,
+                required: false,
+                default: false
             }
 
         },
@@ -164,6 +169,10 @@
             },
             content() {
 
+                const changeHours = this.allowLessTime
+                    ? `We can also add or subtract hours, if needed. If you want us to push a little later into the night, or don't need as much coverage time, we'd be happy to provide a custom quote!`
+                    : `We can also add hours, if needed. If you want us to push a little later into the night, we'd be happy to provide a custom quote!`
+
                 return `
                     <p>
                         I have designed this package specifically for ${ this.shortName }'s couples. With ${ this.hours } hours of custom coverage, we lock directly in with ${ this.longName }'s timeline allowing a seamless day for you and your families.
@@ -172,7 +181,7 @@
                         You will receive a trailer, full film and Instagram teasers. Full film lengths vary and we never puth a limit to it. For your portrait session, we let ${ this.shortName } and her second shooter run the show, making for a great experience for you and your families!
                     </p>
                     <p>
-                        For your reception, you will receive all dance floor footage in its entirety along with all the day's major events. This custom ${ this.hours }-hour package will ensure all the events of your day are captured, as we will be working on the same timeline. We can also add hours, if needed. If you want us to push a little later into the night, we'd be happy to provide a custom quote!
+                        For your reception, you will receive all dance floor footage in its entirety along with all the day's major events. This custom ${ this.hours }-hour package will ensure all the events of your day are captured, as we will be working on the same timeline. ${ changeHours }
                     </p>
                     <p>
                         <strong>We never use lights</strong>! This is to help us achieve the best ambience when it comes to candid dance floor footage, which also helps ${ this.shortName } capture the best photos possible!
