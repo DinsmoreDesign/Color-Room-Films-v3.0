@@ -2,6 +2,7 @@
   
     <SpecialPricing
         company="Molly Sue Photography"
+        :hours="9"
         shortName="Molly"
         longName="Molly"
         :price="4000"
