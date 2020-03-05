@@ -8,6 +8,7 @@
         :price="4250"
         :packageOptions="options"
         :videos="videos"
+        allowLessTime
     />
 
 </template>
