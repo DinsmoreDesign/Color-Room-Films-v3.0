@@ -55,7 +55,7 @@
 
 <script>
 
-    import { mapState, mapActions } from 'vuex';
+    import { mapActions, mapGetters, mapState } from 'vuex';
 
     import Hero from '~/components/Hero.vue';
     import PricingCard from '~/components/PricingCard.vue';
@@ -63,7 +63,7 @@
 
     export default {
 
-        name: 'Pricing',
+        name: 'Pricing2021',
         watchQuery: ['page'],
         key: to => to.fullPath,
         transition(to, from) {
@@ -80,23 +80,22 @@
 
         },
         head() {
-            return {
 
-                title: 'Package Pricing | Color Room Films NJ',
-                meta: [
-                    { property: 'og:title', content: 'Package Pricing | Color Room Films NJ' },
-                    { name: 'description', content: 'Color Room Films is New Jersey’s premier cinematographer. One price - All the coverage you want.' },
-                    { property: 'og-description', content: 'Color Room Films is New Jersey’s premier cinematographer. One price - All the coverage you want.' },
-                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, special, Jackson, pricing' }
-                ]
+            return this.headData('2021 Package Pricing');
 
-            }
         },
         computed: {
 
+            ...mapGetters([
+
+                'headData'
+
+            ]),
             ...mapState({
 
-                pricingOptions: state => state.pricing,
+                pricingOptions: state => state.pricing.options,
+                cta: state => state.pricing.cta,
+                footer: state => state.pricing.footer,
                 supportsWebP: state => state.supportsWebP
 
             })
@@ -104,18 +103,8 @@
         },
         created() {
 
-            this.updateCallToAction({
-                isVisible: true,
-                url: '/reviews',
-                title: 'Visit our Reviews page to see what others have to say about our work',
-                content: 'SEE WHAT OTHERS HAVE TO SAY'
-            });
-
-            this.updateFooter({
-                title: 'WHY US?',
-                content: `Every wedding is unique and every couple is different, that's why every project we work on is approached differently. No two events we've filmed are ever the same; we purchase exclusive music publishing rights for each wedding and don't believe in releasing films that are lacking individuality. It's our job to get to know you and what you like, so we can represent your personality as genuinely as possible.`
-            })
-
+            this.updateCallToAction(this.cta);
+            this.updateFooter(this.footer);
             this.updateCurrentQuote();
 
         },
