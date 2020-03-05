@@ -171,11 +171,13 @@
 
                 const changeHours = this.allowLessTime
                     ? `We can also add or subtract hours, if needed. If you want us to push a little later into the night, or don't need as much coverage time, we'd be happy to provide a custom quote!`
-                    : `We can also add hours, if needed. If you want us to push a little later into the night, we'd be happy to provide a custom quote!`
+                    : `We can also add hours, if needed. If you want us to push a little later into the night, we'd be happy to provide a custom quote!`;
+
+                const getPossessive = name => name.slice(-1) === 's' ? `'` : `'s`;
 
                 return `
                     <p>
-                        I have designed this package specifically for ${ this.shortName }'s couples. With ${ this.hours } hours of custom coverage, we lock directly in with ${ this.longName }'s timeline allowing a seamless day for you and your families.
+                        I have designed this package specifically for ${ this.shortName }${ getPossessive(this.shortName) } couples. With ${ this.hours } hours of custom coverage, we lock directly in with ${ this.longName }${ getPossessive(this.longName) } timeline allowing a seamless day for you and your families.
                     </p>
                     <p>
                         You will receive a trailer, full film and Instagram teasers. Full film lengths vary and we never puth a limit to it. For your portrait session, we let ${ this.shortName } and her second shooter run the show, making for a great experience for you and your families!

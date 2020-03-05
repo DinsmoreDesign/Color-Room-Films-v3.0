@@ -1,11 +1,11 @@
 <template>
   
     <SpecialPricing
-        company="Molly Sue Photography"
-        :hours="9"
-        shortName="Molly"
-        longName="Molly"
-        :price="4000"
+        company="Jac & Jules"
+        :hours="10"
+        shortName="Jac & Jules"
+        longName="Jacquie & Julia"
+        :price="4250"
         :packageOptions="options"
         :videos="videos"
     />
@@ -24,7 +24,7 @@
 
     export default {
 
-        name: 'PricingMolly',
+        name: 'PricingJJ',
         watchQuery: ['page'],
         key: to => to.fullPath,
         transition(to, from) {
@@ -40,14 +40,14 @@
         },
         head() {
 
-            return this.headData(`Molly's Package Pricing`);
+            return this.headData(`Jac & Jules' Package Pricing`);
 
         },
         data() {
             return {
 
                 options: [
-                    '9-Hour Session',
+                    '10-Hour Session',
                     '2-Shooter Coverage',
                     'Trailer',
                     'Full Film',
