@@ -56,32 +56,53 @@
                 videos: [
 
                     {
-                        bride: 'Kathleen',
-                        groom: 'Christopher',
-                        jpg: '/images/thumbs/kathleen_christopher.jpg',
-                        webp: '/images/thumbs/kathleen_christopher.webp',
-                        id: 368343330
+                        bride: 'Megan',
+                        groom: 'Ryan',
+                        jpg: '/images/thumbs/megan_ryan.jpg',
+                        webp: '/images/thumbs/megan_ryan.webp',
+                        id: 366793381
                     },
                     {
-                        bride: 'Heather',
+                        bride: 'Alina',
+                        groom: 'David',
+                        jpg: '/images/thumbs/alina_david.jpg',
+                        webp: '/images/thumbs/alina_david.webp',
+                        id: 362335967
+                    },
+                    {
+                        bride: 'Nicole',
+                        groom: 'Donald',
+                        jpg: '/images/thumbs/nicole_donald.jpg',
+                        webp: '/images/thumbs/nicole_donald.webp',
+                        id: 344420214
+                    },
+                    {
+                        bride: 'Lisa',
                         groom: 'Michael',
-                        jpg: '/images/thumbs/heather_michael.jpg',
-                        webp: '/images/thumbs/heather_michael.webp',
-                        id: 360531313
+                        jpg: '/images/thumbs/lisa_michael.jpg',
+                        webp: '/images/thumbs/lisa_michael.webp',
+                        id: 294645057
                     },
                     {
-                        bride: 'Ellen',
-                        groom: 'Michael',
-                        jpg: '/images/thumbs/ellen_michael.jpg',
-                        webp: '/images/thumbs/ellen_michael.webp',
-                        id: 340455628
+                        bride: 'Kari',
+                        groom: 'Tom',
+                        jpg: '/images/thumbs/kari_tom.jpg',
+                        webp: '/images/thumbs/kari_tom.webp',
+                        id: 291922022
                     },
                     {
-                        bride: 'Tiffany',
-                        groom: 'Matthew',
-                        jpg: '/images/thumbs/tiffany_matthew.jpg',
-                        webp: '/images/thumbs/tiffany_matthew.webp',
-                        id: 282710433
+                        bride: 'Liz',
+                        groom: 'Rob',
+                        jpg: '/images/thumbs/liz_rob.jpg',
+                        webp: '/images/thumbs/liz_rob.webp',
+                        id: 276253878
+                    },
+                    {
+                        bride: 'Kaitlin',
+                        groom: 'James',
+                        jpg: '/images/thumbs/kaitlin_james.jpg',
+                        webp: '/images/thumbs/kaitlin_james.webp',
+                        id: 239027718
                     }
 
                 ]
