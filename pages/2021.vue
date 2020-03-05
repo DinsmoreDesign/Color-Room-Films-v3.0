@@ -13,7 +13,7 @@
                             :image="supportsWebP ? pricingOptions.epic.webp : pricingOptions.epic.jpg"
                             :videoId="pricingOptions.epic.videoId"
                             :title="pricingOptions.epic.title"
-                            :price="pricingOptions.epic.price20"
+                            :price="pricingOptions.epic.price21"
                             :content="pricingOptions.epic.content"
                         />
                     </div>
@@ -25,7 +25,7 @@
                                     :image="supportsWebP ? pricingOptions.gemini.webp : pricingOptions.gemini.jpg"
                                     :videoId="pricingOptions.gemini.videoId"
                                     :title="pricingOptions.gemini.title"
-                                    :price="pricingOptions.gemini.price20"
+                                    :price="pricingOptions.gemini.price21"
                                     :content="pricingOptions.gemini.content"
                                 />
                             </div>
@@ -34,7 +34,7 @@
                                     :image="supportsWebP ? pricingOptions.legacy.webp : pricingOptions.legacy.jpg"
                                     :videoId="pricingOptions.legacy.videoId"
                                     :title="pricingOptions.legacy.title"
-                                    :price="pricingOptions.legacy.price20"
+                                    :price="pricingOptions.legacy.price21"
                                     :content="pricingOptions.legacy.content"
                                 />
                             </div>
