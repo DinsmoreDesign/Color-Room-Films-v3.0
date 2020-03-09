@@ -180,7 +180,7 @@
                         I have designed this package specifically for ${ this.shortName }${ getPossessive(this.shortName) } couples. With ${ this.hours } hours of custom coverage, we lock directly in with ${ this.longName }${ getPossessive(this.longName) } timeline allowing a seamless day for you and your families.
                     </p>
                     <p>
-                        You will receive a trailer, full film and Instagram teasers. Full film lengths vary and we never puth a limit to it. For your portrait session, we let ${ this.shortName } and her second shooter run the show, making for a great experience for you and your families!
+                        You will receive a trailer, full film and Instagram teasers. Full film lengths vary and we never put a limit to it. For your portrait session, we let ${ this.shortName } run the show, making for a great experience for you and your families!
                     </p>
                     <p>
                         For your reception, you will receive all dance floor footage in its entirety along with all the day's major events. This custom ${ this.hours }-hour package will ensure all the events of your day are captured, as we will be working on the same timeline. ${ changeHours }

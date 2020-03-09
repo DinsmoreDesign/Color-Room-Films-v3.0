@@ -4,7 +4,7 @@
         company="Jac & Jules"
         :hours="10"
         shortName="Jac & Jules"
-        longName="Jacquie & Julia"
+        longName="Jacqui & Julia"
         :price="4250"
         :packageOptions="options"
         :videos="videos"
