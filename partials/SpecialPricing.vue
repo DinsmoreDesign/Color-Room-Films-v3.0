@@ -92,7 +92,7 @@
 
     export default {
 
-        name: 'SpecialPricing',
+        name: 'SpecialPricingPartial',
         components: {
 
             ResponsiveVideo,
