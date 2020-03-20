@@ -2,12 +2,12 @@
 
     <div class="extra-pricing">
         
-        <PricingPartial/>
-
-        <VideoGridPartial
-            title="A curated collection of wedding films, shot with Kaitlin Noel Photography:"
-            :videos="videos"
-            hasLightHeader
+        <PricingPartial
+            :customVideos="{
+                epic: videos[0],
+                gemini: videos[1],
+                legacy: videos[2]
+            }"
         />
 
     </div>
@@ -23,7 +23,6 @@
     import { mapGetters } from 'vuex';
 
     import PricingPartial from '~/partials/Pricing.vue';
-    import VideoGridPartial from '~/partials/VideoGrid.vue';
 
     export default {
 
@@ -38,8 +37,7 @@
         },
         components: {
 
-            PricingPartial,
-            VideoGridPartial
+            PricingPartial
 
         },
         head() {
@@ -57,28 +55,28 @@
                         groom: 'William',
                         jpg: '/images/thumbs/elizabeth_william.jpg',
                         webp: '/images/thumbs/elizabeth_william.webp',
-                        id: 337549579
+                        videoId: 337549579
                     },
                     {
                         bride: 'Alyssa',
                         groom: 'Andrew',
                         jpg: '/images/thumbs/alyssa_andrew.jpg',
                         webp: '/images/thumbs/alyssa_andrew.webp',
-                        id: 365287223
+                        videoId: 365287223
                     },
                     {
                         bride: 'Danielle',
                         groom: 'Jeffrey',
                         jpg: '/images/thumbs/danielle_jeffrey.jpg',
                         webp: '/images/thumbs/danielle_jeffrey.webp',
-                        id: 297977778
+                        videoId: 297977778
                     },
                     {
                         bride: 'Danielle',
                         groom: 'Tyler',
                         jpg: '/images/thumbs/danielle_tyler.jpg',
                         webp: '/images/thumbs/danielle_tyler.webp',
-                        id: 237608486
+                        videoId: 237608486
                     }
 
                 ]
@@ -91,7 +89,14 @@
 
                 'headData'
 
-            ])
+            ]),
+            customVideos() {
+
+                return {
+                    epic: this.videos[0]
+                }
+
+            }
 
         }
 

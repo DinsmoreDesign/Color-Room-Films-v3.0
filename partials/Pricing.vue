@@ -10,11 +10,11 @@
 
                     <div class="col-xs-12 col-sm-6">
                         <PricingCard
-                            :image="supportsWebP ? pricingOptions.epic.webp : pricingOptions.epic.jpg"
-                            :videoId="pricingOptions.epic.videoId"
-                            :title="pricingOptions.epic.title"
-                            :price="pricingOptions.epic[pricingYear]"
-                            :content="pricingOptions.epic.content"
+                            :image="supportsWebP ? options.epic.webp : options.epic.jpg"
+                            :videoId="options.epic.videoId"
+                            :title="options.epic.title"
+                            :price="options.epic[pricingYear]"
+                            :content="options.epic.content"
                         />
                     </div>
 
@@ -22,20 +22,20 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <PricingCard
-                                    :image="supportsWebP ? pricingOptions.gemini.webp : pricingOptions.gemini.jpg"
-                                    :videoId="pricingOptions.gemini.videoId"
-                                    :title="pricingOptions.gemini.title"
-                                    :price="pricingOptions.gemini[pricingYear]"
-                                    :content="pricingOptions.gemini.content"
+                                    :image="supportsWebP ? options.gemini.webp : options.gemini.jpg"
+                                    :videoId="options.gemini.videoId"
+                                    :title="options.gemini.title"
+                                    :price="options.gemini[pricingYear]"
+                                    :content="options.gemini.content"
                                 />
                             </div>
                             <div class="col-xs-12" style="margin-top: 2rem;">
                                 <PricingCard
-                                    :image="supportsWebP ? pricingOptions.legacy.webp : pricingOptions.legacy.jpg"
-                                    :videoId="pricingOptions.legacy.videoId"
-                                    :title="pricingOptions.legacy.title"
-                                    :price="pricingOptions.legacy[pricingYear]"
-                                    :content="pricingOptions.legacy.content"
+                                    :image="supportsWebP ? options.legacy.webp : options.legacy.jpg"
+                                    :videoId="options.legacy.videoId"
+                                    :title="options.legacy.title"
+                                    :price="options.legacy[pricingYear]"
+                                    :content="options.legacy.content"
                                 />
                             </div>
                         </div>
@@ -75,6 +75,13 @@
                 type: [String, Number],
                 required: false,
                 default: ''
+            },
+            customVideos: {
+                type: [Object],
+                required: false,
+                default() {
+                    return {};
+                }
             }
 
         },
@@ -91,6 +98,27 @@
             pricingYear() {
 
                 return `price${this.year}`
+
+            },
+            options() {
+
+                let options = {
+                    epic: { ...this.pricingOptions.epic },
+                    gemini: { ...this.pricingOptions.gemini },
+                    legacy: { ...this.pricingOptions.legacy }
+                };
+
+                const entries = Object.entries(this.customVideos);
+                
+                for (const [key, value] of entries) {
+                    
+                    options[key].jpg = value.jpg;
+                    options[key].webp = value.webp;
+                    options[key].videoId = value.videoId;
+
+                };
+
+                return options;
 
             }
 

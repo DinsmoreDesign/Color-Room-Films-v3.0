@@ -32,15 +32,15 @@
             <div class="container" style="padding-top: 0;">
 
                 <div class="row video-grid">
-                    <div class="col-xs-12 col-sm-6 col-md-4" v-for="video in videos" :key="video.id">
+                    <div class="col-xs-12 col-sm-6 col-md-4" v-for="video in videos" :key="video.videoId">
                         <VideoGridImage
                             :image="supportsWebP ? video.webp : video.jpg"
                             :title="`${video.bride} & ${video.groom}`"
-                            :url="`https://vimeo.com/${video.id}`"
+                            :url="`https://vimeo.com/${video.videoId}`"
                             @openModal="toggleModal({
                                 isVisible: true,
                                 title: `${video.bride} & ${video.groom} - Wedding Trailer`,
-                                videoId: video.id
+                                videoId: video.videoId
                             })"
                         />
                     </div>
