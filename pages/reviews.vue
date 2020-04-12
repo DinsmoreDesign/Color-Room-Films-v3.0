@@ -94,10 +94,12 @@
         },
         methods: {
 
-            ...mapActions([
-                'updateCallToAction',
-                'updateFooter'
-            ])
+            ...mapActions({
+
+                updateCallToAction: 'cta/updateCallToAction',
+                updateFooter: 'footer/updateFooter'
+
+            })
 
         }
 

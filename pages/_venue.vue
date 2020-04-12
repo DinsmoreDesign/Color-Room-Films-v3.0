@@ -108,8 +108,8 @@
             }),
             ...mapGetters({
 
-                venues: 'getVenues',
-                videos: 'shuffleVenueVideos'
+                venues: 'venues/getVenues',
+                videos: 'venues/shuffleVenueVideos'
 
             })
 
@@ -147,14 +147,14 @@
         },
         methods: {
 
-            ...mapActions([
+            ...mapActions({
 
-                'updateCallToAction',
-                'updateFooter',
-                'updateCurrentQuote',
-                'updateSelectedVenues'
+                updateCallToAction: 'cta/updateCallToAction',
+                updateFooter: 'footer/updateFooter',
+                updateCurrentQuote: 'updateCurrentQuote',
+                updateSelectedVenues: 'venues/updateSelectedVenues'
 
-            ]),
+            }),
             toggleModal(condition, title, url) {
 
                 this.modal = {

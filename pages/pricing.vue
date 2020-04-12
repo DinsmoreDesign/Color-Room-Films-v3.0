@@ -37,7 +37,7 @@
         },
         computed: {
 
-            ...mapGetters([
+            ...mapGetters('pricing',[
 
                 'headData'
 

@@ -157,13 +157,13 @@
         },
         methods: {
 
-            ...mapActions([
+            ...mapActions({
 
-                'updateCallToAction',
-                'updateFooter',
-                'updateCurrentQuote'
+                updateCallToAction: 'cta/updateCallToAction',
+                updateFooter: 'footer/updateFooter',
+                updateCurrentQuote: 'updateCurrentQuote'
 
-            ]),
+            }),
             toggleModal(condition, title, url) {
 
                 this.modal = {

@@ -89,7 +89,7 @@
 
             ...mapState({
 
-                pricingOptions: state => state.pricing,
+                pricingOptions: state => state.pricing.options,
                 supportsWebP: state => state.supportsWebP
 
             })
@@ -114,11 +114,13 @@
         },
         methods: {
 
-            ...mapActions([
-                'updateCallToAction',
-                'updateFooter',
-                'updateCurrentQuote'
-            ])
+            ...mapActions({
+
+                updateCallToAction: 'cta/updateCallToAction',
+                updateFooter: 'footer/updateFooter',
+                updateCurrentQuote: 'updateCurrentQuote'
+
+            })
 
         }
 
