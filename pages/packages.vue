@@ -2,7 +2,7 @@
   
     <div>
 
-        <TitleBlock title="All the coverage you want" subtitle="...with collections starting at only $3389." color="dark" />
+        <TitleBlock title="All the coverage you want" subtitle="...with packages starting at only $3389." color="dark" />
 
         <section>
             <div class="container">
@@ -56,7 +56,7 @@
 
     export default {
 
-        name: 'Collections',
+        name: 'Packages',
         watchQuery: ['page'],
         key: to => to.fullPath,
         transition(to, from) {
