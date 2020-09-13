@@ -75,12 +75,12 @@
         head() {
             return {
 
-                title: 'Package Pricing | Color Room Films NJ',
+                title: 'Package Pricing | Color Room Films IN',
                 meta: [
-                    { property: 'og:title', content: 'Package Pricing | Color Room Films NJ' },
+                    { property: 'og:title', content: 'Package Pricing | Color Room Films IN' },
                     { name: 'description', content: 'Color Room Films is New Jersey’s premier cinematographer. One price - All the coverage you want.' },
                     { property: 'og-description', content: 'Color Room Films is New Jersey’s premier cinematographer. One price - All the coverage you want.' },
-                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, special, Jackson, pricing' }
+                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, special, Jackson, pricing, Fort Wayne, Indiana, IN' }
                 ]
 
             }

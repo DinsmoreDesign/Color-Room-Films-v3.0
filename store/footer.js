@@ -4,9 +4,7 @@ export const state = () => ({
     content: '',
     contactInfo: {
         companyName: 'Color Room Films',
-        address: [
-            'Jackson, NJ'
-        ],
+        address: [ '' ],
         phoneNumber: '+1.862.221.5716',
         emailAddress: 'info@colorroomfilms.com',
         socialLinks: [

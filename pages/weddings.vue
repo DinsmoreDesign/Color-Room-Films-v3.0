@@ -106,12 +106,12 @@
         head() {
             return {
 
-                title: 'Weddings | Color Room Films NJ',
+                title: 'Weddings | Color Room Films IN',
                 meta: [
-                    { property: 'og:title', content: 'Weddings | Color Room Films NJ' },
+                    { property: 'og:title', content: 'Weddings | Color Room Films IN' },
                     { name: 'description', content: 'View New Jersey’s premier videographers’ portfolio of recent wedding films. We specialize in cinematic films and making everyone feel like a star.' },
                     { property: 'og-description', content: 'View New Jersey’s premier videographers’ portfolio of recent wedding films. We specialize in cinematic films and making everyone feel like a star.' },
-                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day' }
+                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day, Fort Wayne, Indiana, IN' }
                 ]
 
             }

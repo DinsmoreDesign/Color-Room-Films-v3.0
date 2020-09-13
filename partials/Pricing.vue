@@ -6,9 +6,9 @@
 
         <section class="dark">
             <div class="container">
-                <div class="row">
+                <div class="row center-xs">
 
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-xs-12 col-sm-10 col-lg-6">
                         <PricingCard
                             :image="supportsWebP ? options.epic.webp : options.epic.jpg"
                             :videoId="options.epic.videoId"
@@ -18,7 +18,7 @@
                         />
                     </div>
 
-                    <div class="col-xs">
+                    <!-- <div class="col-xs">
                         <div class="row">
                             <div class="col-xs-12">
                                 <PricingCard
@@ -39,7 +39,7 @@
                                 />
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

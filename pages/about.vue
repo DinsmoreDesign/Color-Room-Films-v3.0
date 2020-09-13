@@ -69,12 +69,12 @@
         head() {
             return {
 
-                title: 'About | Color Room Films NJ',
+                title: 'About | Color Room Films IN',
                 meta: [
-                    { property: 'og:title', content: 'About | Color Room Films NJ' },
+                    { property: 'og:title', content: 'About | Color Room Films IN' },
                     { name: 'description', content: 'Steve and Jane DiMaggio are New Jersey’s premier cinematographers. Learn all about Color Room Films, its values and its mission here!' },
                     { property: 'og-description', content: 'Steve and Jane DiMaggio are New Jersey’s premier cinematographers. Learn all about Color Room Films, its values and its mission here!' },
-                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, about, Steve DiMaggio, Jane DiMaggio, recording' }
+                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, about, Steve DiMaggio, Jane DiMaggio, recording, Fort Wanyne, Indiana, IN' }
                 ]
 
             }

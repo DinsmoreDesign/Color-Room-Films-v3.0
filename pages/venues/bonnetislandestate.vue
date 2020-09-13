@@ -77,12 +77,12 @@
         head() {
             return {
 
-                title: 'Bonnet Island Estate | Color Room Films NJ',
+                title: 'Bonnet Island Estate | Color Room Films IN',
                 meta: [
-                    { property: 'og:title', content: 'Bonnet Island Estate | Color Room Films NJ' },
+                    { property: 'og:title', content: 'Bonnet Island Estate | Color Room Films IN' },
                     { name: 'description', content: 'View New Jersey’s premier videographers’ favorite moments at Bonnet Island Estate. We specialize in cinematic films and making everyone feel like a star.' },
                     { property: 'og-description', content: 'View New Jersey’s premier videographers’ favorite moments at Bonnet Island Estate. We specialize in cinematic films and making everyone feel like a star.' },
-                    { name: 'keywords', content: 'Bonnet Island Estate, New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day, venues' }
+                    { name: 'keywords', content: 'Bonnet Island Estate, New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day, venues, Fort Wayne, Indiana, IN' }
                 ]
 
             }

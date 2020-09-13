@@ -58,12 +58,12 @@
         head() {
             return {
 
-                title: 'Reviews | Color Room Films NJ',
+                title: 'Reviews | Color Room Films IN',
                 meta: [
-                    { property: 'og:title', content: 'Reviews | Color Room Films NJ' },
+                    { property: 'og:title', content: 'Reviews | Color Room Films IN' },
                     { name: 'description', content: 'We are the best Wedding videographer and photographer  in ocean county. Don’t just take our word for it, see what others have to say about us.' },
                     { property: 'og-description', content: 'We are the best Wedding videographer and photographer  in ocean county. Don’t just take our word for it, see what others have to say about us.' },
-                    { name: 'keywords', content: 'New Jersey, videographer, reviews, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day' }
+                    { name: 'keywords', content: 'New Jersey, videographer, reviews, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day, Fort Wayne, Indiana, IN' }
                 ]
 
             }

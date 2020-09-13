@@ -77,12 +77,12 @@
         head() {
             return {
 
-                title: `${ this.venueObj ? this.venueObj.name : 'Venue'} | Color Room Films NJ`,
+                title: `${ this.venueObj ? this.venueObj.name : 'Venue'} | Color Room Films IN`,
                 meta: [
-                    { property: 'og:title', content: `${ this.venueObj ? this.venueObj.name : 'Venue'} | Color Room Films NJ` },
+                    { property: 'og:title', content: `${ this.venueObj ? this.venueObj.name : 'Venue'} | Color Room Films IN` },
                     { name: 'description', content: `View New Jersey’s premier videographers' favorite videos ${ this.venueObj ? 'from ' + this.venueObj.name : ''}. We specialize in cinematic films and making everyone feel like a star.` },
                     { property: 'og-description', content: `View New Jersey’s premier videographers' favorite ${ this.venueObj ? 'from ' + this.venueObj.name : ''}. We specialize in cinematic films and making everyone feel like a star.` },
-                    { name: 'keywords', content: `${ this.venueObj ? this.venueObj.name + ', ' : ''} New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day, venues` }
+                    { name: 'keywords', content: `${ this.venueObj ? this.venueObj.name + ', ' : ''} New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, portfolio, contact, special day, venues, Fort Wayne, Indiana, IN` }
                 ]
 
             }
