@@ -34,7 +34,7 @@
     .subfooter {
         background-color: #5e5e5e;
         text-align: center;
-        padding: 0.45rem 0;
+        padding: 0.45rem 0 6rem;
 
         p {
             font-size: 0.9rem;
@@ -55,6 +55,10 @@
 
         }
         
+    }
+
+    @media screen and (min-width: 530px) {
+        .subfooter { padding-bottom: 5rem; }
     }
 
 </style>

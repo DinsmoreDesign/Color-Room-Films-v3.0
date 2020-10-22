@@ -1,6 +1,14 @@
 <template>
 
     <div>
+
+        <Banner
+            v-if="banner.show"
+            :title="banner.title"
+            :urlTitle="banner.urlTitle"
+            :url="banner.url"
+            :cta="banner.cta"
+        />
         
         <Navigation :navItems="navItems" />
 
@@ -51,6 +59,7 @@
 
     import { mapState, mapActions } from 'vuex';
 
+    import Banner from '../components/Banner.vue';
     import TitleBlock from '../components/TitleBlock.vue';
     import Navigation from '../components/Navigation.vue';
     import ButtonLink from '../components/ButtonLink.vue';
@@ -61,6 +70,7 @@
 
         components: {
 
+            Banner,
             TitleBlock,
             Navigation,
             ButtonLink,
@@ -81,6 +91,20 @@
             showQuote() {
 
                 return this.$route.name !== 'reviews' ? true : false;
+
+            },
+            banner() {
+
+                return {
+                    title: 'Now accepting bookings for 2022 and beyond.',
+                    urlTitle: 'Book your wedding now!',
+                    url: {
+                        name: 'contact',
+                        hash: '#formTitle'
+                    },
+                    cta: 'Book now!',
+                    show: this.$route.name !== 'contact'
+                }
 
             }
 

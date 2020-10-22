@@ -4,7 +4,7 @@
 
         <Hero :class="[$store.state.supportsWebP ? 'contact-hero-webp' : 'contact-hero']" height="calc(100vh - 70px)" />
 
-        <TitleBlock title="We'd love to talk!" subtitle="Call, text or email us your questions." />
+        <TitleBlock title="We'd love to talk!" subtitle="Call, text or email us your questions." id="formTitle" />
 
         <section class="dark">
             <div class="container address-container">
@@ -21,7 +21,7 @@
             </div>
         </section>
 
-        <section class="container">
+        <section class="container" id="form">
 
             <iframe
                 name="lc_contact_form"
