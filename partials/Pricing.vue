@@ -2,7 +2,7 @@
 
     <div class="pricing">
 
-        <TitleBlock title="All the coverage you want" subtitle="...with packages for every budget." />
+        <TitleBlock title="All the coverage you want" subtitle="...in one inclusive package." />
 
         <section class="dark">
             <div class="container">
