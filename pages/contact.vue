@@ -4,34 +4,25 @@
 
         <Hero :class="[$store.state.supportsWebP ? 'contact-hero-webp' : 'contact-hero']" height="calc(100vh - 70px)" />
 
-        <TitleBlock title="We'd love to talk!" subtitle="Call, text or email us your questions." id="formTitle" />
+        <TitleBlock title="We'd love to talk!" subtitle="Email us your questions." id="formTitle" color="dark" />
 
-        <section class="dark">
-            <div class="container address-container">
+        <section>
+            <div class="container contact-container">
 
-                <div class="row" v-for="section in contactInfo" :key="section.title">
-                    <div class="col-xs-12 col-sm-6 has-text-right">
-                        <p><strong>{{ section.title }}:</strong></p>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <p v-html="section.content"></p>
-                    </div>
+                <div class="email-container">
+
+                    <a 
+                        href="#"
+                        class="email"
+                        data-address="info"
+                        data-domain="colorroomfilms"
+                        data-tld="com"
+                        onclick="window.location.href = 'mailto:' + this.dataset.address + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"
+                    ></a>
+
                 </div>
 
             </div>
-        </section>
-
-        <section class="container" id="form">
-
-            <iframe
-                name="lc_contact_form"
-                frameborder="0"
-                width="100%"
-                height="600"
-                src="https://302419.17hats.com/embed/lead/form/bbkznbwthtzczfvphrfcrwfzrfzntdbf"
-            ></iframe>
-            <script type="text/javascript" src="https://302419.17hats.com/vendor/iframeSizer.min.js"></script>
-
         </section>
 
     </div>
@@ -79,15 +70,6 @@
 
             }
         },
-        computed: {
-
-            ...mapState({
-
-                contactInfo: state => state.contactInfo
-                
-            })
-
-        },
         created() {
 
             this.updateCallToAction({
@@ -124,7 +106,7 @@
 
 <style lang="scss" scoped>
 
-    .address-container {
+    .contact-container {
         
         p {
             font-size: 1.5rem;
@@ -147,6 +129,32 @@
                     }
 
                 }
+            }
+
+        }
+
+        .email-container {
+            display: flex;
+            justify-content: center;
+
+            .email {
+                color: #5e5e5e;
+                font-size: 2rem;
+                text-align: center;
+                text-decoration: none;
+                border-style: solid;
+                border-width: 0 0 1px 0;
+                border-color: #FFF;
+                transition: border-color 0.5s;
+
+                &:after {
+                    content: attr(data-address) "@" attr(data-domain) "." attr(data-tld); 
+                }
+
+                &:hover {
+                    border-color: #5e5e5e;
+                }
+
             }
 
         }

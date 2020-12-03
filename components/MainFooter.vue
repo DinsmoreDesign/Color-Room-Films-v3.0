@@ -21,9 +21,9 @@
                 <p v-for="(line, index) in address" :key="index">
                     {{ line }}
                 </p>
-                <p>
+                <!-- <p>
                     <a :href=" 'tel:' + phone " :title=" 'Give ' + companyName + ' a Call' ">{{ phone }}</a>
-                </p>
+                </p> -->
                 <p>
                     <a :href=" 'mailto:' + email " :title=" 'Send ' + companyName + ' an Email' ">{{ email }}</a>
                 </p>
