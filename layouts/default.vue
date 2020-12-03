@@ -2,13 +2,13 @@
 
     <div>
 
-        <Banner
+        <!-- <Banner
             v-if="banner.show"
             :title="banner.title"
             :urlTitle="banner.urlTitle"
             :url="banner.url"
             :cta="banner.cta"
-        />
+        /> -->
         
         <Navigation :navItems="navItems" />
 
