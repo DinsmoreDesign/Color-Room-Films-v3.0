@@ -37,7 +37,6 @@
         <MainFooter
             iconName="crf"
             :address="footer.contactInfo.address"
-            :phone="footer.contactInfo.phoneNumber"
             :email="footer.contactInfo.emailAddress"
             :companyName="footer.contactInfo.companyName"
             :socialLinks="footer.contactInfo.socialLinks"

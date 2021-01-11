@@ -4,7 +4,7 @@ export const state = () => ({
     supportsWebP: false,
     navItems: [
         { name: 'HOME', url: '/' },
-        { name: 'ABOUT', url: '/about' },
+        //{ name: 'ABOUT', url: '/about' },
         { name: 'WEDDINGS', url: '/weddings' },
         { name: 'REVIEWS', url: '/reviews' },
         { name: 'VENUES', url: '/venues' },

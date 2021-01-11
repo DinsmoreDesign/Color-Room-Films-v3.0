@@ -5,7 +5,7 @@ export const state = () => ({
     contactInfo: {
         companyName: 'Color Room Films',
         address: [ '' ],
-        phoneNumber: '+1.862.221.5716',
+        //phoneNumber: '+1.862.221.5716',
         emailAddress: 'info@colorroomfilms.com',
         socialLinks: [
             {
@@ -39,7 +39,7 @@ export const mutations = {
 
         state.content = content;
 
-    },
+    }
 
 };
 
