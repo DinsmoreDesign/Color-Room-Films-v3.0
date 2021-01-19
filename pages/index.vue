@@ -2,36 +2,31 @@
 
     <div>
 
-        <transition name="fade">
-            <VideoModal v-if="modal.isVisible"
-                @close="toggleModal(false, null, null)"
-                background="#000"
-            >
-                <ResponsiveVideo
-                    source="https://player.vimeo.com/video/"
-                    :id="modal.url"
-                    queries="?color=26a69a&title=0&byline=0&portrait=0&autoplay=1"
-                    :title="modal.title"
-                />
-            </VideoModal>
-        </transition>
+        <video playsinline autoplay muted loop :poster="require('~/static/videos/landing.jpg')">
+            <source src="~/static/videos/landing.webm" type="video/webm">
+            <source src="~/static/videos/landing.mp4" type="video/mp4">
+            <img src="~/static/videos/landing.jpg" alt="Couple walking up stairs">
+        </video>
 
-        <div class="row no-gap between-xs">
-            <div class="col-xs-12 col-sm-4 home-video" v-for="video in videos" :key="video.id">
-                <VideoGridImage
-                    :image="supportsWebP ? video.webp : video.jpg"
-                    :title="video.title"
-                    :showTitle="false"
-                    :url="`https://vimeo.com/${video.id}`"
-                    @openModal="toggleModal(true, `${video.bride} & ${video.groom}`, video.id)"
-                />
-                <p class="image-footer">{{video.title}}</p>
+        <Hero style="padding: 0;">
+            <div class="body">
+                <div class="content">
+                    <div class="logo" v-html="require('!svg-inline-loader!../static/images/crf-mark-w.svg')"></div>
+                    <h1>We'd love to talk!</h1>
+                    <a 
+                        href="#"
+                        class="email"
+                        data-address="info"
+                        data-domain="colorroomfilms"
+                        data-tld="com"
+                        onclick="window.location.href = 'mailto:' + this.dataset.address + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"
+                    ></a>
+                </div>
+                <div class="footer">
+                    <p>2022 packages starting at $5500.</p>
+                </div>
             </div>
-        </div>
-
-        <TitleBlock title="Your wedding, your way" subtitle="Award-winning #MotionPictureMemories for every event." />
-
-        <AwardsContainer/>
+        </Hero>
 
     </div>
     
@@ -44,108 +39,15 @@
 
 <script>
 
-    import { mapActions, mapState } from 'vuex';
-
     import Hero from '~/components/Hero.vue';
-    import AwardsContainer from '~/components/AwardsContainer.vue';
-    import ResponsiveImage from '~/components/ResponsiveImage.vue';
-    import ResponsiveVideo from '~/components/ResponsiveVideo.vue';
-    import TitleBlock from '~/components/TitleBlock.vue';
-    import VideoGridImage from '~/components/VideoGridImage.vue';
-    import Modal from '~/components/Modal.vue';
 
     export default {
 
-        name: 'Home',
+        name: 'Maintenance',
+        layout: 'blank',
         watchQuery: ["page"],
         key: to => to.fullPath,
-        transition(to, from) {
-
-            if (!from) return "slide-left";
-            return +to.query.page < +from.query.page ? "slide-right" : "slide-left";
-            
-        },
-        components: {
-
-            Hero,
-            AwardsContainer,
-            ResponsiveImage,
-            ResponsiveVideo,
-            TitleBlock,
-            VideoGridImage,
-            VideoModal: Modal
-
-        },
-        head() {
-            return {
-
-                title: 'Home | Color Room Films',
-                meta: [
-                    { property: 'og:title', content: 'Home | Color Room Films' },
-                    { name: 'description', content: 'We create the MotionPictureMemories you’ll cherish forever. We deliver precious memories of your special day that you can relive for years to come.' },
-                    { property: 'og-description', content: 'We create the MotionPictureMemories you’ll cherish forever. We deliver precious memories of your special day that you can relive for years to come.' },
-                    { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, Fort Wayne, Indiana, IN' }
-                ]
-
-            }
-        },
-        data() {
-            return {
-
-                modal: {
-                    isVisible: false,
-                    title: null,
-                    url: null
-                }
-
-            }
-        },
-        computed: {
-
-            ...mapState({
-
-                supportsWebP: state => state.supportsWebP,
-                videos: state => state.home.videos
-                
-            })
-
-        },
-        created() {
-
-            this.updateCallToAction({
-                isVisible: false
-            });
-
-            this.updateFooter({
-                title: '',
-                content: `Every story is unique and we strive to create a film as unique as your relationship, which you can share with your loved ones for years to come. Your wedding is a precious moment in your life and our goal is to capture it in the most emotional and honest way possible. We pride ourselves on getting it right without getting in the way to deliver a film you'll be proud to call your own.`
-            })
-
-            this.updateCurrentQuote();
-
-        },
-        methods: {
-
-            ...mapActions({
-
-                updateCallToAction: 'cta/updateCallToAction',
-                updateFooter: 'footer/updateFooter',
-                updateCurrentQuote: 'updateCurrentQuote'
-
-            }),
-            toggleModal(condition, title, url) {
-
-                this.modal = {
-
-                    isVisible: condition,
-                    title: title + ' - Wedding Trailer',
-                    url: url
-
-                }
-
-            }
-
-        }
+        components: { Hero }
 
     };
 
@@ -157,33 +59,74 @@
 
 <style lang="scss" scoped>
 
-    .home-video {
+    video {
+        object-fit: cover;
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        opacity: 0.7;
+        z-index: -1;
+    }
 
-        .image-footer {
-            color: #FFF;
-            background-color: #5e5e5e;
-            text-align: center;
-            padding: 1rem;
-            margin: 0;
-            margin-bottom: 4px;
+    .body {
+        min-height: 100vh;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 1rem;
+        gap: 1rem;
 
-            &:not(:last-child) {
-                border-right: 1px solid #FFF;
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .logo { margin-bottom: 2rem; }
+
+            /deep/ svg {
+                height: 100%;
+                width: 100%;
+                max-width: 350px;
+            }
+
+            h1 {
+                margin: 0;
+                font-size: 3.5rem;
+                line-height: 1;
+                font-family: cursive;
+                font-weight: 400;
+                word-wrap: break-word;
+                font-family: 'Allura', sans-serif;
+            }
+
+            .email {
+                color: #FFF;
+                font-size: 1.2rem;
+                text-align: center;
+                text-decoration: none;
+                transition: text-decoration 0.5s;
+
+                &:after { content: attr(data-address) "@" attr(data-domain) "." attr(data-tld); }
+                &:hover { text-decoration: underline; }
             }
 
         }
+        .footer { font-style: italic; }
 
-        @media screen and (min-width: 768px) {
+    }
 
-            &:not(:last-child) .image-footer {
-                border-right: 2px solid #FFF;
-            }
-            &:not(:first-child) .image-footer {
-                border-left: 2px solid #FFF;
-            }
+    @media screen and (min-width: 992px) {
 
+        .content {
+            h1 { font-size: 4.5rem; }
+            .email { font-size: 1.5rem; }
         }
-
     }
 
 </style>
