@@ -3,7 +3,7 @@ export const state = () => ({
     options: {
         epic: {
             title: 'Epic',
-            price: 5900,
+            price: 6500,
             price20: 4900,
             price21: 3800,
             videoId: 280197591,
