@@ -18,7 +18,7 @@
     "nuxt": "^2.8.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1",
+    "nodemon": "^2.0.13",
     "sass": "^1.43.2",
     "sass-loader": "^7.1.0",
     "svg-inline-loader": "^0.8.0"
