@@ -34,9 +34,13 @@
                         onclick="window.location.href = 'mailto:' + this.dataset.address + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"
                     ></a>
                 </div>
-                <!-- <div class="footer">
-                    <p>2022 packages starting at $5500.</p>
-                </div> -->
+                <div class="footer">
+                    <hr />
+                    <p>
+                        Booking select 2023 dates | $3889 single shooter
+                        package, 10 hour coverage | Trailer & full film
+                    </p>
+                </div>
             </div>
         </Hero>
     </div>
