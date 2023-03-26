@@ -1,18 +1,17 @@
 export const state = () => ({
-    
     options: {
         epic: {
-            title: 'Epic',
+            title: "Epic",
             price: 4999,
             price20: 4900,
             price21: 3800,
             videoId: 280197591,
-            jpg: '/images/thumbs/katie_daniel.jpg',
-            webp: '/images/thumbs/katie_daniel.webp',
+            jpg: "/images/thumbs/katie_daniel.jpg",
+            webp: "/images/thumbs/katie_daniel.webp",
             content: [
                 `Our most popular package with couples needing all day coverage. 10 hour-2 shooter coverage. Drone is included weather pending. This package works great for couples that want everything captured and usually gets us close to the end of the night! You will receive a trailer and full film (full film lengths can vary), we never put a limit on the length of your full film either! Couples receive all dance floor footage in it's entirety along with all the days major events. Delivery is via Vimeo in 4K resolution. We also NEVER USE LIGHTS! This helps us achieve the best ambience when it comes to candid dancefloor footage!`
             ]
-        },
+        }
         // gemini: {
         //     title: 'Gemini',
         //     price: 3800,
@@ -37,27 +36,37 @@ export const state = () => ({
     },
     cta: {
         isVisible: true,
-        url: '/reviews',
-        title: 'Visit our Reviews page to see what others have to say about our work',
-        content: 'SEE WHAT OTHERS HAVE TO SAY'
+        url: "/reviews",
+        title:
+            "Visit our Reviews page to see what others have to say about our work",
+        content: "SEE WHAT OTHERS HAVE TO SAY"
     },
     footer: {
-        title: 'WHY US?',
+        title: "WHY US?",
         content: `Every wedding is unique and every couple is different, that's why every project we work on is approached differently. No two events we've filmed are ever the same; we purchase exclusive music publishing rights for each wedding and don't believe in releasing films that are lacking individuality. It's our job to get to know you and what you like, so we can represent your personality as genuinely as possible.`
     }
-
 });
 
 export const getters = {
-
     headData: state => title => ({
         title: `${title} | Color Room Films IN`,
         meta: [
-            { property: 'og:title', content: `${title} | Color Room Films IN` },
-            { name: 'description', content: 'Color Room Films is New Jersey’s premier cinematographer. One price - All the coverage you want.' },
-            { property: 'og-description', content: 'Color Room Films is New Jersey’s premier cinematographer. One price - All the coverage you want.' },
-            { name: 'keywords', content: 'New Jersey, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, special, Jackson, pricing, Fort Wayne, Indiana, IN' }
+            { property: "og:title", content: `${title} | Color Room Films IN` },
+            {
+                name: "description",
+                content:
+                    "Color Room Films is Indiana’s premier cinematographer. One price - All the coverage you want."
+            },
+            {
+                property: "og-description",
+                content:
+                    "Color Room Films is Indiana’s premier cinematographer. One price - All the coverage you want."
+            },
+            {
+                name: "keywords",
+                content:
+                    "Indiana, videographer, wedding film, cinematic, motion picture memories, NJ, wedding video, wedding movie, special, Jackson, pricing, Fort Wayne, Indiana, IN"
+            }
         ]
     })
-
 };

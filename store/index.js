@@ -1,15 +1,14 @@
 export const state = () => ({
-
     checkedWebPSupport: false,
     supportsWebP: false,
     navItems: [
-        { name: 'HOME', url: '/' },
+        { name: "HOME", url: "/" },
         //{ name: 'ABOUT', url: '/about' },
-        { name: 'WEDDINGS', url: '/weddings' },
-        { name: 'REVIEWS', url: '/reviews' },
-        { name: 'VENUES', url: '/venues' },
-        { name: 'PRICING', url: '/pricing' },
-        { name: 'CONTACT', url: '/contact' }
+        { name: "WEDDINGS", url: "/weddings" },
+        { name: "REVIEWS", url: "/reviews" },
+        { name: "VENUES", url: "/venues" },
+        // { name: 'PRICING', url: '/pricing' },
+        { name: "CONTACT", url: "/contact" }
     ],
     quotes: [
         `"During the reception I didn’t even know he was there that’s how well he blended in and was behind the scenes but his camera caught everything!"`,
@@ -24,114 +23,81 @@ export const state = () => ({
         message: null,
         position: null
     }
-
 });
 
 export const mutations = {
-
     UPDATE_CHECKED_WEB_P_SUPPORT(state) {
-
         state.checkedWebPSupport = true;
-
     },
     UPDATE_SUPPORTS_WEB_P(state, condition) {
-
         state.supportsWebP = condition;
-
     },
     UPDATE_CURRENT_QUOTE(state, object) {
-
         state.currentQuote = object;
-
     },
     UPDATE_QUOTE_POSITIONS(state, positions) {
-
         state.quotePositions = positions;
-
     }
-
 };
 
 export const actions = {
-
-    async updateSupportsWebP({state, commit}) {
-        
+    async updateSupportsWebP({ state, commit }) {
         if (!state.checkedWebPSupport) {
-
             async function supportsWebp() {
-
                 if (!self.createImageBitmap) return false;
-                
-                const webpData = 'data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=';
-                const blob = await fetch(webpData).then(r => r.blob());
-                return createImageBitmap(blob).then(() => true, () => false);
 
+                const webpData =
+                    "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAAAAAAfQ//73v/+BiOh/AAA=";
+                const blob = await fetch(webpData).then(r => r.blob());
+                return createImageBitmap(blob).then(
+                    () => true,
+                    () => false
+                );
             }
 
             (async () => {
-
                 if (await supportsWebp()) {
+                    console.log("Browser Supports WebP Images");
 
-                    console.log('Browser Supports WebP Images');
+                    commit("UPDATE_SUPPORTS_WEB_P", true);
+                } else {
+                    console.warn("Browser Does NOT Supports WebP Images");
 
-                    commit('UPDATE_SUPPORTS_WEB_P', true);
-
-                }
-                else {
-
-                    console.warn('Browser Does NOT Supports WebP Images');
-
-                    commit('UPDATE_SUPPORTS_WEB_P', false);
-
+                    commit("UPDATE_SUPPORTS_WEB_P", false);
                 }
 
-                commit('UPDATE_CHECKED_WEB_P_SUPPORT');
-
+                commit("UPDATE_CHECKED_WEB_P_SUPPORT");
             })();
-
         }
-
     },
     updateQuotePositions({ commit }, positions) {
-
         return new Promise(resolve => {
+            commit("UPDATE_QUOTE_POSITIONS", positions);
 
-            commit('UPDATE_QUOTE_POSITIONS', positions);
-
-            resolve('Successfully updated quote.');
-
+            resolve("Successfully updated quote.");
         });
-
     },
     updateCurrentQuote({ commit, state, getters }) {
-
         return new Promise(resolve => {
+            commit(
+                "UPDATE_CURRENT_QUOTE",
+                getters.getRandomQuote(state.quotePositions)
+            );
 
-            commit('UPDATE_CURRENT_QUOTE', getters.getRandomQuote(state.quotePositions));
-
-            resolve('Successfully updated quote.');
-
+            resolve("Successfully updated quote.");
         });
-
     }
-
 };
 
 export const getters = {
-
     getRandomQuote: state => positions => {
-
         const count = state.quotes.length;
         const randomIndex = Math.floor(Math.random() * (count - 1));
         const randomPosition = Math.floor(Math.random() * positions) + 1;
 
         return {
-
             message: state.quotes[randomIndex],
             position: randomPosition
-
-        }
-
+        };
     }
-
 };

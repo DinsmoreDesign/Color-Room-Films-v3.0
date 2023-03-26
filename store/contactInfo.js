@@ -1,20 +1,18 @@
-export const state = () => ([
-    
+export const state = () => [
     {
-        title: 'Location',
-        content: 'Monmouth County, NJ'
+        title: "Location",
+        content: "Fort Wayne, IN"
     },
     // {
     //     title: 'Phone #',
     //     content: '+1.862.221.5716'
     // },
     {
-        title: 'Email Address',
-        content: 'info@colorroomfilms.com'
+        title: "Email Address",
+        content: "info@motionpicturememories.com"
     },
     {
-        title: 'Hours',
-        content: 'By appointment'
+        title: "Hours",
+        content: "By appointment"
     }
-
-]);
+];
