@@ -21,7 +21,7 @@
                         href="#"
                         class="email"
                         data-address="info"
-                        data-domain="colorroomfilms"
+                        data-domain="motionpicturememories"
                         data-tld="com"
                         onclick="window.location.href = 'mailto:' + this.dataset.address + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"
                     ></a>
