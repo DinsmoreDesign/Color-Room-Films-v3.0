@@ -6,8 +6,8 @@ export const state = () => ({
         //{ name: 'ABOUT', url: '/about' },
         { name: "WEDDINGS", url: "/weddings" },
         { name: "REVIEWS", url: "/reviews" },
-        { name: "VENUES", url: "/venues" },
-        // { name: 'PRICING', url: '/pricing' },
+        //{ name: "VENUES", url: "/venues" },
+        { name: "PRICING", url: "/pricing" },
         { name: "CONTACT", url: "/contact" }
     ],
     quotes: [
