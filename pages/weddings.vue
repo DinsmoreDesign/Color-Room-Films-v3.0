@@ -33,7 +33,7 @@
             v-else
             style="background-color: #000;"
             source="https://player.vimeo.com/video/"
-            id="347521909"
+            id="563375659"
             queries="?color=26a69a&title=0&byline=0&portrait=0&autoplay=1"
             title="Wedding Header Video"
             componentStyle="height: calc(100vh - 70px)"
@@ -45,7 +45,7 @@
             subtitle="You'll cherish forever."
         />
 
-        <section class="container" style="padding-top: 0;">
+        <section class="container" style="padding: 0;">
             <div class="row video-grid">
                 <div
                     class="col-xs-12 col-sm-6 col-md-4"
@@ -67,6 +67,11 @@
                 </div>
             </div>
         </section>
+
+        <TitleBlock
+            subtitle="Here is a sampling of the work we have done over the years, if you
+            don't see your wedding style here please contact us!"
+        />
 
         <section class="dark">
             <div class="container">
