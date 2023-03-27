@@ -11,12 +11,10 @@
                             "
                         ></div>
                         <div class="col-xs-8 content">
-                            <p>
-                                <small>2017, 2018, 2019 &</small>
-                            </p>
-                            <h3><strong>2020</strong> the knot</h3>
+                            <h3><strong>2017 - 2023</strong></h3>
+                            <h3>the knot</h3>
                             <p>Best of Weddings</p>
-                            <p>+ <strong>2020</strong> Hall of Fame</p>
+                            <p>+ Hall of Fame</p>
                         </div>
                     </div>
                 </div>
@@ -37,10 +35,8 @@
                             "
                         ></div>
                         <div class="col-xs-8 content">
-                            <p>
-                                <small>2017, 2018 &</small>
-                            </p>
-                            <h3><strong>2019</strong> WeddingWire</h3>
+                            <h3><strong>2017 - 2022</strong></h3>
+                            <h3>WeddingWire</h3>
                             <p>Couples' Choice Awards</p>
                         </div>
                     </div>
@@ -54,6 +50,13 @@
                             require('!svg-inline-loader!../static/images/today.svg')
                         "
                     ></div>
+                    <h3>
+                        +
+                        <br />
+                        The Knot Magazine
+                        <br />
+                        & New Jersey Bride
+                    </h3>
                 </div>
             </div>
         </div>
@@ -66,8 +69,8 @@ export default {};
 
 <style lang="scss" scoped>
 .awards {
-    background-color: #5e5e5e;
-    color: #fff;
+    background-color: #dbdbdb;
+    color: #5e5e5e;
 
     .container {
         width: 90%;
@@ -104,7 +107,7 @@ export default {};
             height: 125px;
 
             * {
-                fill: #fff;
+                fill: #5e5e5e;
             }
         }
 

@@ -38,11 +38,6 @@
             </div>
         </div>
 
-        <TitleBlock
-            title="Your wedding, your way"
-            subtitle="Award-winning #MotionPictureMemories for every event."
-        />
-
         <AwardsContainer />
     </div>
 </template>
