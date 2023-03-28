@@ -14,25 +14,20 @@
             color="dark"
         />
 
-        <section>
-            <div class="container contact-container">
-                <div class="email-container">
-                    <a
-                        href="#"
-                        class="email"
-                        data-address="info"
-                        data-domain="motionpicturememories"
-                        data-tld="com"
-                        onclick="window.location.href = 'mailto:' + this.dataset.address + '@' + this.dataset.domain + '.' + this.dataset.tld; return false;"
-                    ></a>
-                </div>
-            </div>
+        <section class="container" id="form">
+            <iframe
+                name="lc_contact_form"
+                frameborder="0"
+                width="100%"
+                height="600"
+                src="https://302419.17hats.com/p#/embed/bbkznbwthtzczfvphrfcrwfzrfzntdbf"
+            ></iframe>
         </section>
     </div>
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapActions } from "vuex";
 
 import Hero from "~/components/Hero.vue";
 import TitleBlock from "~/components/TitleBlock.vue";
@@ -71,6 +66,12 @@ export default {
                     name: "keywords",
                     content:
                         "Indiana, videographer, wedding film, cinematic, motion picture memories, IN, wedding video, wedding movie, contact us, special, Jackson, Fort Wayne, Indiana, IN"
+                }
+            ],
+            script: [
+                {
+                    src: "https://302419.17hats.com/vendor/iframeSizer.min.js",
+                    type: "text/javascript"
                 }
             ]
         };
