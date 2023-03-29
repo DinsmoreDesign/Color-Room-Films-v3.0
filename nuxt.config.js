@@ -1,9 +1,10 @@
 module.exports = {
-    mode: "spa",
+    //mode: "spa",
 
     /*
      ** Headers of the page
      */
+    target: "static",
     head: {
         title: "Color Room Films",
         meta: [
@@ -162,7 +163,8 @@ module.exports = {
     modules: [
         // Doc: https://github.com/nuxt-community/axios-module#usage
         "@nuxtjs/axios",
-        "@nuxtjs/sitemap"
+        "@nuxtjs/sitemap",
+        "@nuxt/image"
     ],
 
     /*
@@ -199,5 +201,6 @@ module.exports = {
          ** You can extend webpack config here
          */
         extend(config, ctx) {}
-    }
+    },
+    buildModules: ["@nuxt/image"]
 };
